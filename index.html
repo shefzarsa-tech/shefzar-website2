@@ -84,8 +84,8 @@
         .menu-image-container { text-align: center; margin: 15px 0 25px; background: #fff; padding: 10px; border-radius: var(--radius-box); border: 2px solid #000; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
         .menu-image-container img { width: 100%; height: auto; border-radius: 8px; display: block; }
 
-        /* Horizontal Slider Gallery (بعد المنيو مباشرة) */
-        .gallery-slider {
+        /* Shared Horizontal Slider Styling */
+        .horizontal-slider {
             display: flex;
             gap: 15px;
             overflow-x: auto;
@@ -93,10 +93,11 @@
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
         }
-        .gallery-slider::-webkit-scrollbar { height: 8px; }
-        .gallery-slider::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); border-radius: 10px; }
-        .gallery-slider::-webkit-scrollbar-thumb { background: #111; border-radius: 10px; }
-        
+        .horizontal-slider::-webkit-scrollbar { height: 8px; }
+        .horizontal-slider::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); border-radius: 10px; }
+        .horizontal-slider::-webkit-scrollbar-thumb { background: #111; border-radius: 10px; }
+
+        /* Image Gallery Slider Item */
         .gallery-item {
             flex: 0 0 280px;
             scroll-snap-align: start;
@@ -121,48 +122,26 @@
             color: #000;
         }
 
-        /* 6 Grid Layout for Text Menu (نفس نظام الشاشة تماماً) */
-        .text-menu-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 20px;
+        /* Horizontal Scroll for Text Menu (المنيو النصي أفقي بالكامل) */
+        .menu-card-horizontal {
+            flex: 0 0 320px;
+            scroll-snap-align: start;
+            background: #fff;
+            border-radius: var(--radius-box);
+            padding: 15px;
+            border: 2px solid #000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
         }
-
-        @media (max-width: 900px) {
-            .text-menu-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 600px) {
-            .text-menu-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .menu-card { background: #fff; border-radius: var(--radius-box); padding: 15px; border: 2px solid #000; box-shadow: 0 3px 6px rgba(0,0,0,0.05); }
-        .menu-card h3 { background: #111; color: #fff; text-align: center; padding: 10px; border-radius: 8px; font-size: 17px; margin-bottom: 12px; font-weight: bold; }
+        .menu-card-horizontal h3 { background: #111; color: #fff; text-align: center; padding: 10px; border-radius: 8px; font-size: 16px; margin-bottom: 12px; font-weight: bold; }
         
-        .menu-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px dashed #ccc; font-weight: bold; }
+        .menu-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px dashed #ccc; font-weight: bold; }
         .menu-row:last-child { border-bottom: none; }
         .item-info { display: flex; flex-direction: column; align-items: flex-start; }
-        .item-name { font-size: 15px; color: #111; }
-        .item-cal { font-size: 12px; color: #d32f2f; margin-top: 2px; }
+        .item-name { font-size: 14.5px; color: #111; }
+        .item-cal { font-size: 11.5px; color: #d32f2f; margin-top: 2px; }
         .item-price { font-weight: 900; color: #000; font-size: 15px; white-space: nowrap; }
 
-        /* Horizontal Scroll for Trucks (العربات أفقي) */
-        .trucks-horizontal-slider {
-            display: flex;
-            gap: 15px;
-            overflow-x: auto;
-            padding: 10px 5px 25px;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-        }
-        .trucks-horizontal-slider::-webkit-scrollbar { height: 8px; }
-        .trucks-horizontal-slider::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); border-radius: 10px; }
-        .trucks-horizontal-slider::-webkit-scrollbar-thumb { background: #111; border-radius: 10px; }
-
+        /* Horizontal Scroll for Trucks */
         .truck-card {
             flex: 0 0 320px;
             scroll-snap-align: start;
@@ -195,7 +174,7 @@
         .faq-title { padding: 14px; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 14.5px; }
         .faq-content { padding: 0 14px 14px; display: none; font-size: 13.5px; color: #333; line-height: 1.6; border-top: 1px dashed #ccc; }
 
-        /* Floating WhatsApp & Call Buttons */
+        /* Floating Action Buttons */
         .floating-btns { position: fixed; bottom: 20px; left: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 999; }
         .float-btn { width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); text-decoration: none; color: white; }
         .float-wa { background: #25d366; }
@@ -266,12 +245,12 @@
             <img src="images/menu.jpg" alt="قائمة طعام مطعم شفزار الرسمية">
         </div>
 
-        <!-- 2. Horizontal Scrollable Image Gallery (صور الوجبات بعد المنيو مباشر) -->
+        <!-- 2. Horizontal Scrollable Image Gallery (صور الوجبات أفقياً) -->
         <div class="section-header" id="gallery">
             <h2>وجبات شفزار المميزة (اسحب لمشاهدة الصور 👉)</h2>
         </div>
         
-        <div class="gallery-slider">
+        <div class="horizontal-slider">
             <div class="gallery-item">
                 <img src="images/gurtsan-shawarma.jpg" alt="شاورما القرصان">
                 <div class="gallery-item-title">شاورما القرصان المحمصة</div>
@@ -298,14 +277,14 @@
             </div>
         </div>
 
-        <!-- 3. Text Menu Grid (المنيو النصي بنفس ترتيب الشاشة) -->
+        <!-- 3. Horizontal Scrollable Text Menu (المنيو النصي أفقي بالكامل) -->
         <div class="section-header" id="text-menu">
-            <h2>قائمة المنيو النصي الأسعار الكاملة 📝</h2>
+            <h2>قائمة المنيو النصي والأسعار الكاملة 📝 (اسحب أفقياً 👉)</h2>
         </div>
 
-        <div class="text-menu-container">
-            <!-- Row 1 / Col 1 -->
-            <div class="menu-card">
+        <div class="horizontal-slider">
+            <!-- Card 1 -->
+            <div class="menu-card-horizontal">
                 <h3>قسم الساندوتشات</h3>
                 <div class="menu-row">
                     <div class="item-info">
@@ -365,8 +344,8 @@
                 </div>
             </div>
 
-            <!-- Row 1 / Col 2 -->
-            <div class="menu-card">
+            <!-- Card 2 -->
+            <div class="menu-card-horizontal">
                 <h3>قسم الشاورما العربي</h3>
                 <div class="menu-row">
                     <div class="item-info">
@@ -398,7 +377,7 @@
                 </div>
                 <div class="menu-row">
                     <div class="item-info">
-                        <span class="item-name">شاورما عربي دبل بل جبن</span>
+                        <span class="item-name">عربي دبل بل جبن</span>
                         <span class="item-cal">(cal 1250)</span>
                     </div>
                     <span class="item-price">32 ر.س</span>
@@ -419,12 +398,12 @@
                 </div>
             </div>
 
-            <!-- Row 1 / Col 3 -->
-            <div class="menu-card">
+            <!-- Card 3 -->
+            <div class="menu-card-horizontal">
                 <h3>قسم الوجبات والاستربس</h3>
                 <div class="menu-row">
                     <div class="item-info">
-                        <span class="item-name">وجبة الأطفال (3 قطع+بطاطس+عصير)</span>
+                        <span class="item-name">وجبة الأطفال (3 قطع+عصير)</span>
                         <span class="item-cal">(cal 550)</span>
                     </div>
                     <span class="item-price">16 ر.س</span>
@@ -438,14 +417,14 @@
                 </div>
                 <div class="menu-row">
                     <div class="item-info">
-                        <span class="item-name">ستربس 5 قطع (مع بطاطس وصوص)</span>
+                        <span class="item-name">ستربس 5 قطع مع بطاطس</span>
                         <span class="item-cal">(cal 850)</span>
                     </div>
                     <span class="item-price">25 ر.س</span>
                 </div>
                 <div class="menu-row">
                     <div class="item-info">
-                        <span class="item-name">ستربس 10 قطع (مع بطاطس وصوص)</span>
+                        <span class="item-name">ستربس 10 قطع مع بطاطس</span>
                         <span class="item-cal">(cal 1300)</span>
                     </div>
                     <span class="item-price">39 ر.س</span>
@@ -466,8 +445,8 @@
                 </div>
             </div>
 
-            <!-- Row 2 / Col 1 -->
-            <div class="menu-card">
+            <!-- Card 4 -->
+            <div class="menu-card-horizontal">
                 <h3>المشروبات والإضافات</h3>
                 <div class="menu-row">
                     <div class="item-info">
@@ -492,20 +471,20 @@
                 </div>
                 <div class="menu-row">
                     <div class="item-info">
-                        <span class="item-name">عصير الربيع / مشروبات غازية</span>
+                        <span class="item-name">عصير الربيع / غازيات</span>
                     </div>
                     <span class="item-price">2.5 / 3 ر.س</span>
                 </div>
                 <div class="menu-row">
                     <div class="item-info">
-                        <span class="item-name">شريحة جبن / شريحة دجاج</span>
+                        <span class="item-name">شريحة جبن / دجاج</span>
                     </div>
                     <span class="item-price">1 / 4 ر.س</span>
                 </div>
             </div>
 
-            <!-- Row 2 / Col 2 -->
-            <div class="menu-card">
+            <!-- Card 5 -->
+            <div class="menu-card-horizontal">
                 <h3>وجبات التوفير والعروض المميزة</h3>
                 <div class="menu-row">
                     <div class="item-info">
@@ -523,15 +502,15 @@
                 </div>
                 <div class="menu-row">
                     <div class="item-info">
-                        <span class="item-name">بوكس العائلة (30 قطعة شاورما)</span>
+                        <span class="item-name">بوكس العائلة (30 قطعة)</span>
                         <span class="item-cal">(cal 3200)</span>
                     </div>
                     <span class="item-price">49 ر.س</span>
                 </div>
             </div>
 
-            <!-- Row 2 / Col 3 -->
-            <div class="menu-card">
+            <!-- Card 6 -->
+            <div class="menu-card-horizontal">
                 <h3>قسم البرجر</h3>
                 <div class="menu-row">
                     <div class="item-info">
@@ -569,7 +548,7 @@
             <h2>حجز عربات المناسبات والفعاليات 🚚 (اسحب أفقياً 👉)</h2>
         </div>
 
-        <div class="trucks-horizontal-slider">
+        <div class="horizontal-slider">
             <div class="truck-card">
                 <h3>1. قسم عربة الشاورما 🥙</h3>
                 <form class="truck-form" onsubmit="sendTruckWa(event, 'عربة الشاورما', 'sh-n', 'sh-p', 'sh-c')">
