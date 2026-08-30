@@ -10,7 +10,7 @@
     <!-- Open Graph SEO -->
     <meta property="og:title" content="مطعم شفزار للوجبات السريعة">
     <meta property="og:description" content="من مجرد فكرة إلى أسطورة تناقلها الأجيال! طعم أسطوري يرضي جميع الأذواق.">
-    <meta property="og:image" content="images/logo.jpg">
+    <meta property="og:image" content="images/logo.png.jpg">
     <meta property="og:url" content="https://shefzar.com">
     <meta property="og:type" content="restaurant">
 
@@ -20,7 +20,7 @@
       "@context": "https://schema.org",
       "@type": "FastFoodRestaurant",
       "name": "مطعم شفزار",
-      "image": "images/logo.jpg",
+      "image": "images/logo.png.jpg",
       "telephone": "+966558473815",
       "url": "https://shefzar.com",
       "servesCuisine": ["Fast Food", "Shawarma", "Burgers"],
@@ -80,24 +80,29 @@
         .badges-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .badge-box { background: #fff; border: 1px solid #000; border-radius: 10px; padding: 12px; text-align: center; font-weight: bold; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 3px 6px rgba(0,0,0,0.08); }
 
-        /* Menu Image Section */
+        /* Menu Banner Image Container */
         .menu-image-container { text-align: center; margin: 20px 0; background: #fff; padding: 10px; border-radius: var(--radius-box); border: 2px solid #000; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
         .menu-image-container img { width: 100%; height: auto; border-radius: 8px; display: block; }
 
-        /* Text Menu Fallback/Grid */
+        /* Text Menu Grid */
         .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 25px; }
         .menu-card { background: #fff; border-radius: var(--radius-box); padding: 18px; border: 2px solid #000; }
         .menu-card h3 { background: #111; color: var(--bg-yellow); text-align: center; padding: 10px; border-radius: 8px; font-size: 18px; margin-bottom: 15px; }
-        .menu-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px dashed #ddd; font-weight: bold; }
+        
+        /* Menu Item Styling with Images */
+        .menu-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px dashed #ddd; font-weight: bold; gap: 10px; }
         .menu-row:last-child { border-bottom: none; }
-        .item-cal { font-size: 11px; color: #d32f2f; margin-right: 4px; }
-        .item-price { font-weight: 900; color: #000; }
+        .item-info { display: flex; align-items: center; gap: 12px; }
+        .item-thumb { width: 50px; height: 50px; border-radius: 8px; object-fit: cover; border: 1px solid #ddd; flex-shrink: 0; }
+        .item-cal { font-size: 11px; color: #d32f2f; display: block; }
+        .item-price { font-weight: 900; color: #000; white-space: nowrap; }
 
         /* Offers Box */
         .offers-card { background: #fff; border: 2px solid #000; border-radius: var(--radius-box); padding: 18px; margin-top: 20px; }
         .offers-card h3 { background: #111; color: var(--bg-yellow); text-align: center; padding: 10px; border-radius: 8px; font-size: 18px; margin-bottom: 15px; }
         .offers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
         .offer-item { background: #fff8e1; border: 1px solid #ffe082; padding: 15px; border-radius: 10px; text-align: center; }
+        .offer-item img { width: 100%; height: 130px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; }
         .offer-item h4 { font-size: 17px; margin-bottom: 6px; }
         .offer-item p { font-size: 13px; color: #444; margin-bottom: 8px; }
         .offer-price { font-size: 20px; font-weight: 900; color: #d32f2f; }
@@ -139,8 +144,7 @@
     <!-- Header -->
     <header>
         <a href="#" class="logo-area">
-            <!-- تأكد من تسمية صورة اللوجو logo.png وتنزيلها داخل مجلد images -->
-            <img src="images/logo.png" alt="مطعم شفزار" onerror="this.src='images/logo.jpg'">
+            <img src="images/logo.png.jpg" alt="مطعم شفزار">
             <span>مطعم شفزار</span>
         </a>
         <button class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
@@ -191,56 +195,241 @@
             <h2>قائمة الطعام (المنيو الرسمي) 📜</h2>
         </div>
 
-        <!-- عرض صورة المنيو الأصلية الكاملة من الصورة الأولى -->
+        <!-- صورة المنيو الرئيسية -->
         <div class="menu-image-container">
-            <img src="images/menu.jpg" alt="قائمة طعام مطعم شفزار الرسمية" onerror="this.style.display='none'">
+            <img src="images/menu.jpg" alt="قائمة طعام مطعم شفزار الرسمية">
         </div>
 
-        <!-- القائمة النصية التفاعلية -->
+        <!-- القائمة النصية مع الصور المصغرة بالكامل -->
         <div class="menu-grid">
             <!-- Sandwiches -->
             <div class="menu-card">
                 <h3>قسم الساندوتشات</h3>
-                <div class="menu-row"><span>شاورما عادي <span class="item-cal">(cal 320)</span></span> <span class="item-price">6 ر.س</span></div>
-                <div class="menu-row"><span>شاورما مكسيكي <span class="item-cal">(cal 350)</span></span> <span class="item-price">7 ر.س</span></div>
-                <div class="menu-row"><span>شاورما قرصان <span class="item-cal">(cal 340)</span></span> <span class="item-price">6 ر.س</span></div>
-                <div class="menu-row"><span>جامبو شاورما <span class="item-cal">(cal 380)</span></span> <span class="item-price">6.5 ر.س</span></div>
-                <div class="menu-row"><span>شاورما صاروخ <span class="item-cal">(cal 580)</span></span> <span class="item-price">11 ر.س</span></div>
-                <div class="menu-row"><span>صاروخ مكسيكي <span class="item-cal">(cal 620)</span></span> <span class="item-price">12 ر.س</span></div>
-                <div class="menu-row"><span>شاورما صاروخ بالجبن <span class="item-cal">(cal 680)</span></span> <span class="item-price">13 ر.س</span></div>
-                <div class="menu-row"><span>ساندوتش دجاج <span class="item-cal">(cal 420)</span></span> <span class="item-price">13 ر.س</span></div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/samoli-shawarma.jpg" alt="شاورما عادي" class="item-thumb">
+                        <div>
+                            <div>شاورما عادي</div>
+                            <span class="item-cal">(cal 320)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">6 ر.س</span>
+                </div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/mexican-shawarma.jpg" alt="شاورما مكسيكي" class="item-thumb">
+                        <div>
+                            <div>شاورما مكسيكي</div>
+                            <span class="item-cal">(cal 350)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">7 ر.س</span>
+                </div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/gurtsan-shawarma.jpg" alt="شاورما قرصان" class="item-thumb">
+                        <div>
+                            <div>شاورما قرصان</div>
+                            <span class="item-cal">(cal 340)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">6 ر.س</span>
+                </div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/samoli1-shawarma.jpg" alt="جامبو شاورما" class="item-thumb">
+                        <div>
+                            <div>جامبو شاورما</div>
+                            <span class="item-cal">(cal 380)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">6.5 ر.س</span>
+                </div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/shefzar-shawarma-large.jpg" alt="شاورما صاروخ" class="item-thumb">
+                        <div>
+                            <div>شاورما صاروخ</div>
+                            <span class="item-cal">(cal 580)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">11 ر.س</span>
+                </div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/mexican-rocket-shawarma.jpg" alt="صاروخ مكسيكي" class="item-thumb">
+                        <div>
+                            <div>صاروخ مكسيكي</div>
+                            <span class="item-cal">(cal 620)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">12 ر.س</span>
+                </div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/cheese-rocket-shawarma.jpg" alt="شاورما صاروخ بالجبن" class="item-thumb">
+                        <div>
+                            <div>صاروخ بالجبن</div>
+                            <span class="item-cal">(cal 680)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">13 ر.س</span>
+                </div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/Chicken Rocket-shawarma.jpg" alt="ساندوتش دجاج" class="item-thumb">
+                        <div>
+                            <div>ساندوتش دجاج</div>
+                            <span class="item-cal">(cal 420)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">13 ر.س</span>
+                </div>
             </div>
 
             <!-- Arabic Shawarma -->
             <div class="menu-card">
                 <h3>قسم الشاورما العربي</h3>
-                <div class="menu-row"><span>شاورما عربي سادة <span class="item-cal">(cal 650)</span></span> <span class="item-price">16 ر.س</span></div>
-                <div class="menu-row"><span>شاورما عربي بالجبن <span class="item-cal">(cal 770)</span></span> <span class="item-price">17 ر.س</span></div>
-                <div class="menu-row"><span>شاورما عربي لغافييص <span class="item-cal">(cal 850)</span></span> <span class="item-price">20 ر.س</span></div>
-                <div class="menu-row"><span>شاورما عربي دبل <span class="item-cal">(cal 1100)</span></span> <span class="item-price">30 ر.س</span></div>
-                <div class="menu-row"><span>شاورما عربي دبل بل جبن <span class="item-cal">(cal 1250)</span></span> <span class="item-price">32 ر.س</span></div>
-                <div class="menu-row"><span>صحن شاورما <span class="item-cal">(cal 550)</span></span> <span class="item-price">22 ر.س</span></div>
-                <div class="menu-row"><span>مكسيكي صحن <span class="item-cal">(cal 600)</span></span> <span class="item-price">24 ر.س</span></div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/arabic-shawarma.jpg" alt="شاورما عربي سادة" class="item-thumb">
+                        <div>
+                            <div>شاورما عربي سادة</div>
+                            <span class="item-cal">(cal 650)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">16 ر.س</span>
+                </div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/arabic-shawarma-plate.jpg" alt="شاورما عربي بالجبن" class="item-thumb">
+                        <div>
+                            <div>شاورما عربي بالجبن</div>
+                            <span class="item-cal">(cal 770)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">17 ر.س</span>
+                </div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/cheese-arabic-shawarma-plate.jpg" alt="شاورما عربي لغافييص" class="item-thumb">
+                        <div>
+                            <div>عربي لغافييص</div>
+                            <span class="item-cal">(cal 850)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">20 ر.س</span>
+                </div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/double-arabic-shawarma-plate.jpg" alt="شاورما عربي دبل" class="item-thumb">
+                        <div>
+                            <div>شاورما عربي دبل</div>
+                            <span class="item-cal">(cal 1100)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">30 ر.س</span>
+                </div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/shawarma-plate.jpg" alt="صحن شاورما" class="item-thumb">
+                        <div>
+                            <div>صحن شاورما</div>
+                            <span class="item-cal">(cal 550)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">22 ر.س</span>
+                </div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/mexican-shawarma-plate.jpg" alt="مكسيكي صحن" class="item-thumb">
+                        <div>
+                            <div>مكسيكي صحن</div>
+                            <span class="item-cal">(cal 600)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">24 ر.س</span>
+                </div>
             </div>
 
             <!-- Meals & Strips -->
             <div class="menu-card">
                 <h3>قسم الوجبات والاستربس</h3>
-                <div class="menu-row"><span>وجبة الأطفال (3 قطع + بطاطس + عصير) <span class="item-cal">(cal 550)</span></span> <span class="item-price">16 ر.س</span></div>
-                <div class="menu-row"><span>ستربس فردي (3 قطع) <span class="item-cal">(cal 300)</span></span> <span class="item-price">11 ر.س</span></div>
-                <div class="menu-row"><span>ستربس 5 قطع (مع بطاطس وصوص) <span class="item-cal">(cal 850)</span></span> <span class="item-price">25 ر.س</span></div>
-                <div class="menu-row"><span>ستربس 10 قطع (مع بطاطس وصوص) <span class="item-cal">(cal 1300)</span></span> <span class="item-price">39 ر.س</span></div>
-                <div class="menu-row"><span>بروست الدجاج <span class="item-cal">(cal 380)</span></span> <span class="item-price">13 ر.س</span></div>
-                <div class="menu-row"><span>وجبة البروست <span class="item-cal">(cal 680)</span></span> <span class="item-price">18 ر.س</span></div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/strips-meal.jpg.jpg" alt="وجبة الأطفال" class="item-thumb">
+                        <div>
+                            <div>وجبة الأطفال</div>
+                            <span class="item-cal">(cal 550)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">16 ر.س</span>
+                </div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/strips-meal.jpg" alt="ستربس فردي" class="item-thumb">
+                        <div>
+                            <div>ستربس فردي (3 قطع)</div>
+                            <span class="item-cal">(cal 300)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">11 ر.س</span>
+                </div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/strips-meal.jpg" alt="ستربس 5 قطع" class="item-thumb">
+                        <div>
+                            <div>ستربس 5 قطع مع بطاطس</div>
+                            <span class="item-cal">(cal 850)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">25 ر.س</span>
+                </div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/strips-meal.jpg" alt="ستربس 10 قطع" class="item-thumb">
+                        <div>
+                            <div>ستربس 10 قطع مع بطاطس</div>
+                            <span class="item-cal">(cal 1300)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">39 ر.س</span>
+                </div>
             </div>
 
             <!-- Burgers -->
             <div class="menu-card">
                 <h3>قسم البرجر</h3>
-                <div class="menu-row"><span>كريسبي كلاسيك عادي <span class="item-cal">(cal 450)</span></span> <span class="item-price">10 ر.س</span></div>
-                <div class="menu-row"><span>كريسبي كلاسيك وجبة <span class="item-cal">(cal 800)</span></span> <span class="item-price">15 ر.س</span></div>
-                <div class="menu-row"><span>كريسبي سبيشل عادي <span class="item-cal">(cal 520)</span></span> <span class="item-price">11 ر.س</span></div>
-                <div class="menu-row"><span>كريسبي سبيشل وجبة <span class="item-cal">(cal 780)</span></span> <span class="item-price">16 ر.س</span></div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/crispy-classic.jpg" alt="كريسبي كلاسيك عادي" class="item-thumb">
+                        <div>
+                            <div>كريسبي كلاسيك عادي</div>
+                            <span class="item-cal">(cal 450)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">10 ر.س</span>
+                </div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/classic-burger.jpg" alt="كريسبي كلاسيك وجبة" class="item-thumb">
+                        <div>
+                            <div>كريسبي كلاسيك وجبة</div>
+                            <span class="item-cal">(cal 800)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">15 ر.س</span>
+                </div>
+                <div class="menu-row">
+                    <div class="item-info">
+                        <img src="images/crispy-classic.jpg" alt="كريسبي سبيشل عادي" class="item-thumb">
+                        <div>
+                            <div>كريسبي سبيشل عادي</div>
+                            <span class="item-cal">(cal 520)</span>
+                        </div>
+                    </div>
+                    <span class="item-price">11 ر.س</span>
+                </div>
             </div>
         </div>
 
@@ -249,20 +438,23 @@
             <h3>وجبات التوفير والعروض المميزة 🎁</h3>
             <div class="offers-grid">
                 <div class="offer-item">
+                    <img src="images/shefzar-trio.jpg" alt="ثلاثي شفزار">
                     <h4>ثلاثي شفزار</h4>
                     <p>1 شاورما عادي + 1 شاورما مكسيكي + 1 شاورما قرصان + بطاطس صغير</p>
                     <p class="item-cal">(cal 1150)</p>
                     <div class="offer-price">21 ر.س</div>
                 </div>
                 <div class="offer-item">
+                    <img src="images/saadah-mix.jpg" alt="مكس السعادة">
                     <h4>مكس السعادة</h4>
                     <p>2 كريسبي سبيشل عادي + 2 شاورما + 2 مشروب غازي</p>
                     <p class="item-cal">(cal 2200)</p>
                     <div class="offer-price">34 ر.س</div>
                 </div>
                 <div class="offer-item">
+                    <img src="images/box-family.jpg" alt="بوكس العائلة">
                     <h4>بوكس العائلة</h4>
-                    <p>30 قطعة شاورما دجاج مع البطاطس + 8 صوصات (مكس الصوص الخاصة + 2 صوص مكسيكي + 2 صوص كاتشب)</p>
+                    <p>30 قطعة شاورما دجاج مع البطاطس + 8 صوصات متنوعة</p>
                     <p class="item-cal">(cal 3200)</p>
                     <div class="offer-price">49 ر.س</div>
                 </div>
@@ -278,7 +470,7 @@
             <div class="truck-card">
                 <h3>1. قسم عربة الشاورما 🥙</h3>
                 <form class="truck-form" onsubmit="sendTruckWa(event, 'عربة الشاورما', 'sh-n', 'sh-p', 'sh-c')">
-                    <label>اسم العملاء:</label>
+                    <label>اسم العميل:</label>
                     <input type="text" id="sh-n" placeholder="أدخل اسمك" required>
                     <label>جوال العميل:</label>
                     <input type="tel" id="sh-p" placeholder="05XXXXXXXX" required>
