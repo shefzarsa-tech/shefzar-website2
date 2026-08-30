@@ -10,7 +10,7 @@
     <!-- Open Graph SEO -->
     <meta property="og:title" content="مطعم شفزار للوجبات السريعة">
     <meta property="og:description" content="من مجرد فكرة إلى أسطورة تناقلها الأجيال! طعم أسطوري يرضي جميع الأذواق.">
-    <meta property="og:image" content="images/logo.png.jpg">
+    <meta property="og:image" content="images/logo.jpg">
     <meta property="og:url" content="https://shefzar.com">
     <meta property="og:type" content="restaurant">
 
@@ -20,7 +20,7 @@
       "@context": "https://schema.org",
       "@type": "FastFoodRestaurant",
       "name": "مطعم شفزار",
-      "image": "images/logo.png.jpg",
+      "image": "images/logo.jpg",
       "telephone": "+966558473815",
       "url": "https://shefzar.com",
       "servesCuisine": ["Fast Food", "Shawarma", "Burgers"],
@@ -50,9 +50,9 @@
         body { background-color: var(--bg-yellow); color: var(--text-dark); direction: rtl; }
 
         /* Header */
-        header { background: #0d0d0d; padding: 15px 25px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        header { background: #0d0d0d; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
         .logo-area { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--bg-yellow); font-weight: bold; font-size: 20px; }
-        .logo-area img { height: 45px; border-radius: 8px; }
+        .logo-area img { height: 45px; border-radius: 8px; object-fit: contain; }
         .nav-toggle { background: none; border: none; color: var(--bg-yellow); font-size: 26px; cursor: pointer; }
 
         /* Side Menu */
@@ -65,23 +65,27 @@
         .container { max-width: 1100px; margin: 0 auto; padding: 20px 15px; }
 
         /* Hero Section */
-        .hero { text-align: center; padding: 40px 15px 20px; }
-        .hero h1 { font-size: 32px; font-weight: 900; margin-bottom: 12px; }
-        .hero p { font-size: 16px; font-weight: 600; line-height: 1.6; max-width: 800px; margin: 0 auto 20px; }
+        .hero { text-align: center; padding: 30px 15px 20px; }
+        .hero h1 { font-size: 30px; font-weight: 900; margin-bottom: 12px; }
+        .hero p { font-size: 15px; font-weight: 600; line-height: 1.6; max-width: 800px; margin: 0 auto 20px; }
         .hero-buttons { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 30px; }
         .hero-btn { background: #000; color: var(--bg-yellow); padding: 10px 18px; border-radius: 20px; font-weight: bold; font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; }
 
         /* Story & Badges */
-        .section-header { text-align: center; margin: 40px 0 20px; }
-        .section-header h2 { font-size: 26px; font-weight: 900; position: relative; display: inline-block; }
+        .section-header { text-align: center; margin: 35px 0 20px; }
+        .section-header h2 { font-size: 24px; font-weight: 900; position: relative; display: inline-block; }
         .section-header h2::after { content: ''; display: block; width: 60%; height: 4px; background: #000; margin: 6px auto 0; border-radius: 2px; }
         .story-text { text-align: center; font-size: 15px; line-height: 1.8; color: #222; max-width: 900px; margin: 0 auto 25px; font-weight: 600; }
 
-        .badges-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 40px; }
+        .badges-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .badge-box { background: #fff; border: 1px solid #000; border-radius: 10px; padding: 12px; text-align: center; font-weight: bold; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 3px 6px rgba(0,0,0,0.08); }
 
-        /* Menu Grid */
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        /* Menu Image Section */
+        .menu-image-container { text-align: center; margin: 20px 0; background: #fff; padding: 10px; border-radius: var(--radius-box); border: 2px solid #000; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+        .menu-image-container img { width: 100%; height: auto; border-radius: 8px; display: block; }
+
+        /* Text Menu Fallback/Grid */
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 25px; }
         .menu-card { background: #fff; border-radius: var(--radius-box); padding: 18px; border: 2px solid #000; }
         .menu-card h3 { background: #111; color: var(--bg-yellow); text-align: center; padding: 10px; border-radius: 8px; font-size: 18px; margin-bottom: 15px; }
         .menu-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px dashed #ddd; font-weight: bold; }
@@ -135,7 +139,8 @@
     <!-- Header -->
     <header>
         <a href="#" class="logo-area">
-            <img src="images/logo.png.jpg" alt="شفزار">
+            <!-- تأكد من تسمية صورة اللوجو logo.png وتنزيلها داخل مجلد images -->
+            <img src="images/logo.png" alt="مطعم شفزار" onerror="this.src='images/logo.jpg'">
             <span>مطعم شفزار</span>
         </a>
         <button class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
@@ -175,10 +180,10 @@
 
         <!-- Feature Badges -->
         <div class="badges-grid">
-            <div class="badge-item badge-box"><i class="fas fa-check-circle" style="color: green;"></i> خبز قرصان فاخر</div>
-            <div class="badge-item badge-box"><i class="fas fa-check-circle" style="color: green;"></i> خلطة ثوم سحرية</div>
-            <div class="badge-item badge-box"><i class="fas fa-check-circle" style="color: green;"></i> خدمة وتوصيل احترافي</div>
-            <div class="badge-item badge-box"><i class="fas fa-check-circle" style="color: green;"></i> مكونات طازجة يومياً</div>
+            <div class="badge-box"><i class="fas fa-check-circle" style="color: green;"></i> خبز قرصان فاخر</div>
+            <div class="badge-box"><i class="fas fa-check-circle" style="color: green;"></i> خلطة ثوم سحرية</div>
+            <div class="badge-box"><i class="fas fa-check-circle" style="color: green;"></i> خدمة وتوصيل احترافي</div>
+            <div class="badge-box"><i class="fas fa-check-circle" style="color: green;"></i> مكونات طازجة يومياً</div>
         </div>
 
         <!-- Full Menu Section -->
@@ -186,6 +191,12 @@
             <h2>قائمة الطعام (المنيو الرسمي) 📜</h2>
         </div>
 
+        <!-- عرض صورة المنيو الأصلية الكاملة من الصورة الأولى -->
+        <div class="menu-image-container">
+            <img src="images/menu.jpg" alt="قائمة طعام مطعم شفزار الرسمية" onerror="this.style.display='none'">
+        </div>
+
+        <!-- القائمة النصية التفاعلية -->
         <div class="menu-grid">
             <!-- Sandwiches -->
             <div class="menu-card">
@@ -230,16 +241,6 @@
                 <div class="menu-row"><span>كريسبي كلاسيك وجبة <span class="item-cal">(cal 800)</span></span> <span class="item-price">15 ر.س</span></div>
                 <div class="menu-row"><span>كريسبي سبيشل عادي <span class="item-cal">(cal 520)</span></span> <span class="item-price">11 ر.س</span></div>
                 <div class="menu-row"><span>كريسبي سبيشل وجبة <span class="item-cal">(cal 780)</span></span> <span class="item-price">16 ر.س</span></div>
-            </div>
-
-            <!-- Drinks & Extras -->
-            <div class="menu-card">
-                <h3>المشروبات والإضافات</h3>
-                <div class="menu-row"><span>بطاطس صغير <span class="item-cal">(cal 250)</span></span> <span class="item-price">4 ر.س</span></div>
-                <div class="menu-row"><span>بطاطس وسط <span class="item-cal">(cal 380)</span></span> <span class="item-price">6 ر.س</span></div>
-                <div class="menu-row"><span>بطاطس كبير <span class="item-cal">(cal 550)</span></span> <span class="item-price">10 ر.س</span></div>
-                <div class="menu-row"><span>عصير الربيع / مشروبات غازية</span> <span class="item-price">2.5 / 3 ر.س</span></div>
-                <div class="menu-row"><span>شريحة جبن / شريحة دجاج</span> <span class="item-price">1 / 4 ر.س</span></div>
             </div>
         </div>
 
@@ -358,7 +359,7 @@
         
         <div class="faq-item">
             <div class="faq-title" onclick="toggleFaq(this)">ما هي أوقات العمل الرسمية للمطعم؟ <i class="fas fa-chevron-down"></i></div>
-            <div class="faq-content">نستقبل طلباتكم يومياً من الساعة 12:00 ظهراً وحتى الساعة 2:00 صباحاً في الفرع وعبر التوصيل.</div>
+            <div class="faq-content">نستقبل طلباتكم يومياً من الساعة 4:00 عصراً وحتى الساعة 3:00 صباحاً في الفرع وعبر التوصيل.</div>
         </div>
 
         <div class="faq-item">
