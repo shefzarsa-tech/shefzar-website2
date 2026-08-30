@@ -415,7 +415,7 @@
             </div>
 
             <div class="card">
-                <img src="images/mexican-shawarma.jpg" alt="صاروخ شاورما مكسيكي حراق">
+                <img src="images/mexican-rocket-shawarma.jpg" alt="صاروخ شاورما مكسيكي حراق">
                 <div class="card-content">
                     <h3>صاروخ مكسيكي</h3>
                     <p>صاروخ شاورما محشو بالنكهات المكسيكية الحارة والمميزة.</p>
@@ -448,7 +448,7 @@
             </div>
 
             <div class="card">
-                <img src="images/crispy-classic.jpg" alt="برجر دجاج كريسبي سبيشل بالصوص الأصفر">
+                <img src="images/crispy-burger.jpg" alt="برجر دجاج كريسبي سبيشل بالصوص الأصفر">
                 <div class="card-content">
                     <h3>برجر كريسبي سبيشل</h3>
                     <p>صدر دجاج مقرمش ولذيذ مع الخس والجبن الصافي وصوص شفزار الأصفر المبتكر.</p>
@@ -677,7 +677,7 @@
         <div id="truck-burger" class="truck-display-box active">
             <div class="truck-icon"><i class="fas fa-truck-monster"></i></div>
             <h3>عربة البرجر والجمعات (فود تراك)</h3>
-            <p>تجهيز كامل للحفلات والمخيمات والاستراحات. نقدم أفضل أنواع البرجر الكريسبي المشوي والمقرمش طازجاً أمام ضيوفك مع البطاطس وصوصات الممتازة.</p>
+            <p>تجهيز كامل للحفلات والمخيمات والاستراحات. نقدم أفضل أنواع البرجر الكريسبي المشوي والمقرمش طازجاً أمام ضيوفك مع البطاطس والصوصات الممتازة.</p>
             <button class="action-btn" onclick="openModal('عربة البرجر')"><i class="fab fa-whatsapp"></i> احجز العربة لمناسبتك الآن</button>
         </div>
 
