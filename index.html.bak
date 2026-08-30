@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم شفزار للوجبات السريعة | الطعم الأصلي بالرياض</title>
+    <meta name="description" content="مرحباً بكم في مطعم شفزار للوجبات السريعة بالرياض. نقدم أشهى وجبات الشاورما الأصيلة، شاورما القرصان، البرجر الكريسبي، وحجز عربات المناسبات.">
+    <meta name="keywords" content="شفزار, مطعم شفزار, منيو شفزار, شاورما القرصان, عربات شفزار, حجز فود تراك, افضل شاورما بالرياض">
+    <meta name="robots" content="index, follow">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FastFoodRestaurant",
+      "name": "مطعم شفزار للوجبات السريعة",
+      "image": "images/logo.png.jpg",
+      "telephone": "+966558473815",
+      "url": "https://maps.app.goo.gl/W1fiw5UD98r9NF9L8",
+      "servesCuisine": "Fast Food, Shawarma, Burgers",
+      "priceRange": "SR 6 - SR 49",
+      "openingHours": "Mo-Su 16:00-03:00",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "الرياض",
+        "addressCountry": "SA"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { 
+            --primary-yellow: #ffc107;
+            --dark-yellow: #e6a100;
+            --black-accent: #111317;
+            --card-yellow: #fff8e1;
+            --text-color: #111111;
+            --text-secondary: #333333;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--primary-yellow); color: var(--text-color); line-height: 1.6; }
+        
+        /* الهيدر والقائمة الجانبية */
+        header { text-align: center; background-color: #111317; border-bottom: 3px solid var(--dark-yellow); display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; position: sticky; top: 0; z-index: 999; }
+        .logo-container { display: flex; align-items: center; gap: 10px; }
+        .logo-img { max-height: 60px; width: auto; border-radius: 8px; object-fit: contain; }
+        .brand-title { color: var(--primary-yellow); font-size: 20px; font-weight: bold; }
+
+        .menu-toggle-btn { background: none; border: none; color: var(--primary-yellow); font-size: 28px; cursor: pointer; transition: 0.2s; }
+        .menu-toggle-btn:hover { transform: scale(1.1); }
+
+        .side-menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; z-index: 1001; }
+        .side-menu { position: fixed; top: 0; right: -290px; width: 290px; height: 100%; background-color: #111317; border-left: 3px solid var(--primary-yellow); box-shadow: -5px 0 15px rgba(0,0,0,0.5); z-index: 1002; transition: 0.3s ease; padding: 60px 20px 20px; }
+        .side-menu.active { right: 0; }
+        .side-menu-overlay.active { display: block; }
+        .close-btn { position: absolute; top: 15px; left: 20px; background: none; border: none; color: #fff; font-size: 32px; cursor: pointer; }
+        .close-btn:hover { color: var(--primary-yellow); }
+        .side-menu-links { list-style: none; padding: 0; margin-top: 25px; }
+        .side-menu-links li { margin-bottom: 18px; border-bottom: 1px solid #2d3440; padding-bottom: 12px; }
+        .side-menu-links a { color: #ffffff; text-decoration: none; font-size: 18px; font-weight: bold; display: block; transition: 0.2s; }
+        .side-menu-links a:hover { color: var(--primary-yellow); padding-right: 8px; }
+
+        .hero { padding: 50px 20px; text-align: center; background: linear-gradient(rgba(255, 193, 7, 0.92), rgba(255, 193, 7, 0.92)), url('images/menu.jpg'); background-size: cover; background-position: center; border-bottom: 2px solid #e6b800; }
+        .hero h1 { font-size: 32px; color: #000000; margin-bottom: 12px; font-weight: 800; }
+        .hero p { color: #111111; font-size: 17px; max-width: 750px; margin: 0 auto 15px; font-weight: 600; }
+        .info-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 20px; }
+        .info-item { background: #111317; border: 2px solid #000000; padding: 10px 18px; border-radius: 20px; font-size: 14px; font-weight: bold; color: var(--primary-yellow); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+        .info-item:hover { background: #000; }
+
+        .section-title { text-align: center; font-size: 26px; margin: 45px 0 20px; color: #000000; position: relative; font-weight: 800; }
+        .section-title::after { content: ''; display: block; width: 70px; height: 4px; background-color: #000000; margin: 8px auto 0; border-radius: 2px; }
+
+        /* قسم صورة المنيو الكبيرة الشاملة */
+        .full-menu-image-container { max-width: 900px; margin: 0 auto; padding: 0 15px; text-align: center; }
+        .full-menu-image-box { background: #111317; padding: 12px; border-radius: 18px; border: 3px solid #000; box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
+        .full-menu-image-box img { width: 100%; height: auto; border-radius: 12px; display: block; cursor: pointer; transition: transform 0.3s ease; }
+        .full-menu-image-box img:hover { transform: scale(1.01); }
+
+        /* منيو الطعام التفاعلي المصور */
+        .menu-grid-wrapper { position: relative; max-width: 1200px; margin: 0 auto; padding: 0 10px; }
+        .menu-grid { 
+            display: flex; 
+            overflow-x: auto; 
+            gap: 18px; 
+            padding: 15px 10px; 
+            scroll-snap-type: x mandatory; 
+            -webkit-overflow-scrolling: touch; 
+            scrollbar-width: thin;
+            scrollbar-color: #111317 #ffd54f;
+        }
+        .menu-grid::-webkit-scrollbar { height: 6px; }
+        .menu-grid::-webkit-scrollbar-track { background: #ffd54f; border-radius: 10px; }
+        .menu-grid::-webkit-scrollbar-thumb { background: #111317; border-radius: 10px; }
+
+        .card { 
+            flex: 0 0 260px; 
+            scroll-snap-align: start; 
+            background: #fff8e1; 
+            border-radius: 15px; 
+            overflow: hidden; 
+            border: 2px solid #e6b800; 
+            transition: 0.3s; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        .card:hover { transform: translateY(-5px); border-color: #000000; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
+        .card img { width: 100%; height: 190px; object-fit: cover; display: block; }
+        .card-content { padding: 15px; flex-grow: 1; }
+        .card h3 { color: #000000; font-size: 18px; margin-bottom: 6px; font-weight: 700; }
+        .card p { font-size: 13px; color: #333333; margin-bottom: 10px; }
+        .card-footer { display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; background: #111317; border-top: 1px solid #000; }
+        .price { color: var(--primary-yellow); font-size: 19px; font-weight: bold; }
+
+        /* جداول المنيو الكامل */
+        .full-menu-container { max-width: 1100px; margin: 30px auto; padding: 0 15px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .menu-category-card { background: #fff8e1; border: 2px solid #111317; border-radius: 15px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .menu-category-card h3 { background: #111317; color: var(--primary-yellow); padding: 10px 15px; border-radius: 10px; text-align: center; font-size: 18px; margin-bottom: 15px; font-weight: 800; }
+        .menu-item-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px dashed #e6b800; }
+        .menu-item-row:last-child { border-bottom: none; }
+        .item-name { font-weight: bold; font-size: 15px; color: #111; }
+        .item-cal { font-size: 12px; color: #666; margin-right: 5px; }
+        .item-price { font-weight: 800; color: #111317; font-size: 16px; }
+
+        /* قصة المطعم */
+        .story-section { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        .story-box { background: #fff8e1; border-radius: 15px; padding: 30px; border: 2px solid #e6b800; border-right: 6px solid #000000; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .story-box h3 { color: #000000; font-size: 24px; margin-bottom: 15px; font-weight: 800; }
+        .story-box p { color: #222222; font-size: 16px; line-height: 2; margin-bottom: 15px; }
+
+        /* قسم الجمعات التفاعلي */
+        .catering-container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        .catering-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 25px; }
+        .tab-btn { 
+            background-color: #111317; 
+            color: var(--primary-yellow); 
+            border: 2px solid #000; 
+            padding: 12px 22px; 
+            border-radius: 25px; 
+            font-size: 16px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            transition: 0.3s;
+        }
+        .tab-btn:hover, .tab-btn.active { 
+            background-color: #ffffff; 
+            color: #111317; 
+            border-color: #111317;
+        }
+
+        .truck-display-box { 
+            background: #fff8e1; 
+            border: 3px dashed #000000; 
+            border-radius: 18px; 
+            padding: 30px; 
+            text-align: center; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            display: none;
+        }
+        .truck-display-box.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .truck-icon { font-size: 50px; color: #111317; margin-bottom: 15px; }
+        .truck-display-box h3 { color: #000000; font-size: 24px; margin-bottom: 12px; font-weight: 800; }
+        .truck-display-box p { color: #222222; font-size: 16px; max-width: 700px; margin: 0 auto 20px; line-height: 1.8; }
+
+        .action-btn { 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center;
+            gap: 10px; 
+            background-color: #111317; 
+            color: var(--primary-yellow); 
+            text-decoration: none; 
+            padding: 14px 30px; 
+            border-radius: 30px; 
+            font-weight: bold; 
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .action-btn:hover { background-color: #000000; color: #ffffff; transform: scale(1.03); }
+
+        /* Modal window */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none; justify-content: center; align-items: center;
+            z-index: 2000; padding: 20px;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal-content {
+            background-color: #fff8e1; border: 3px solid #000000; border-radius: 16px;
+            width: 100%; max-width: 500px; padding: 25px; position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5); max-height: 90vh; overflow-y: auto;
+        }
+        .modal-close { position: absolute; top: 15px; left: 15px; background: none; border: none; color: #000000; font-size: 24px; cursor: pointer; }
+        .modal-header { text-align: center; margin-bottom: 20px; }
+        .modal-header h3 { color: #000000; font-size: 22px; margin-bottom: 5px; font-weight: 800; }
+        .modal-header p { color: #444; font-size: 13px; }
+
+        .booking-form { display: flex; flex-direction: column; gap: 15px; }
+        .form-group { display: flex; flex-direction: column; gap: 6px; text-align: right; }
+        .form-group label { color: #000000; font-size: 14px; font-weight: bold; }
+        .form-group input, .form-group select {
+            background-color: #ffffff; border: 2px solid #ccc; border-radius: 8px; padding: 12px; color: #000000; font-size: 14px; outline: none; transition: 0.2s;
+        }
+        .form-group input:focus, .form-group select:focus { border-color: #000000; box-shadow: 0 0 5px rgba(0,0,0,0.3); }
+        .submit-btn { background-color: #111317; color: var(--primary-yellow); font-weight: bold; font-size: 16px; padding: 12px; border: none; border-radius: 8px; cursor: pointer; margin-top: 10px; transition: 0.3s; }
+        .submit-btn:hover { background-color: #000000; color: #ffffff; }
+
+        /* قسم أخبارنا (المدونة) */
+        .blog-container { padding: 0 20px; max-width: 1100px; margin: 0 auto; }
+        .accordion-item {
+            background-color: #fff8e1;
+            border: 2px solid #e6b800;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 20px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #000000;
+            cursor: pointer;
+            list-style: none;
+            user-select: none;
+        }
+        .accordion-header::-webkit-details-marker { display: none; }
+        .accordion-icon { font-size: 16px; color: #000000; transition: transform 0.3s ease; }
+        .accordion-item[open] .accordion-icon { transform: rotate(180deg); }
+        .accordion-content { padding: 0 20px 20px 20px; border-top: 1px solid #e6b800; margin-top: 5px; }
+        .accordion-content p { color: #333333; font-size: 15px; line-height: 1.8; margin-top: 12px; }
+
+        /* قسم خريطة الموقع HTML */
+        .sitemap-section { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .sitemap-container { background: #fff8e1; border: 2px solid #111317; border-radius: 15px; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .sitemap-group h3 { font-size: 17px; color: #111317; border-bottom: 2px solid #e6b800; padding-bottom: 8px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .sitemap-group ul { list-style: none; padding: 0; }
+        .sitemap-group li { margin-bottom: 8px; }
+        .sitemap-group a { color: #333; text-decoration: none; font-size: 14px; font-weight: 600; transition: 0.2s; }
+        .sitemap-group a:hover { color: #000; padding-right: 5px; }
+
+        /* قسم الخريطة */
+        .map-section { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .map-box { border-radius: 15px; overflow: hidden; border: 3px solid #111317; box-shadow: 0 4px 15px rgba(0,0,0,0.15); height: 350px; }
+        .map-box iframe { width: 100%; height: 100%; border: 0; }
+
+        footer { background-color: #111317; padding: 25px 20px; text-align: center; font-size: 14px; color: #aaa; margin-top: 50px; border-top: 3px solid var(--dark-yellow); }
+
+        .float-btn { position: fixed; width: 55px; height: 55px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; text-decoration: none; z-index: 1000; font-size: 22px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
+        .btn-whatsapp { background: #25d366; bottom: 90px; left: 20px; }
+        .btn-phone { background: #111317; color: var(--primary-yellow); bottom: 20px; left: 20px; border: 2px solid var(--primary-yellow); }
+    </style>
+</head>
+<body>
+
+    <div id="menuOverlay" class="side-menu-overlay" onclick="toggleSideMenu()"></div>
+    <div id="sideMenu" class="side-menu">
+        <button class="close-btn" onclick="toggleSideMenu()">×</button>
+        <ul class="side-menu-links">
+            <li><a href="#story" onclick="toggleSideMenu()">قصتنا</a></li>
+            <li><a href="#menu-sheet" onclick="toggleSideMenu()">صورة المنيو الشاملة</a></li>
+            <li><a href="#menu" onclick="toggleSideMenu()">أهم الوجبات المصورة</a></li>
+            <li><a href="#full-menu" onclick="toggleSideMenu()">المنيو الكامل</a></li>
+            <li><a href="#catering" onclick="toggleSideMenu()">قسم الجمعات</a></li>
+            <li><a href="#blog" onclick="toggleSideMenu()">أخبارنا</a></li>
+            <li><a href="#site-map" onclick="toggleSideMenu()">خريطة الموقع</a></li>
+            <li><a href="#location-map" onclick="toggleSideMenu()">موقع الفرع</a></li>
+        </ul>
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png.jpg" alt="شعار مطعم شفزار للوجبات السريعة" class="logo-img">
+            <span class="brand-title">مطعم شفزار</span>
+        </div>
+        <button class="menu-toggle-btn" onclick="toggleSideMenu()"><i class="fas fa-bars"></i></button>
+    </header>
+    
+    <section class="hero">
+        <h1>مرحباً بكم في مطعم شفزار للوجبات السريعة 🍔🍟</h1>
+        <p>نقدم لكم أشهى الوجبات بجودة عالية وطعم مميز يرضي جميع الأذواق. أسطورة الشاورما الأصيلة، شاورما القرصان، البرجر الكريسبي، وحجز عربات المناسبات.</p>
+        
+        <div class="info-bar">
+            <div class="info-item"><i class="fas fa-clock"></i> أوقات الدوام: يومياً من 4:00 عصراً حتى 3:00 صباحاً</div>
+            <div class="info-item"><i class="fas fa-motorcycle"></i> استلام من الفرع وخدمة توصيل</div>
+            <a href="tel:0558473815" class="info-item"><i class="fas fa-phone-alt"></i> للطلبات: 0558473815</a>
+            <a href="https://maps.app.goo.gl/W1fiw5UD98r9NF9L8" target="_blank" class="info-item"><i class="fas fa-map-marker-alt"></i> موقع المحل على الخريطة</a>
+        </div>
+    </section>
+
+    <h2 id="story" class="section-title">قصتنا الأسطورية | من الجمر وُلدت الأسطورة 🔥</h2>
+    <div class="story-section">
+        <div class="story-box">
+            <h3>من مجرد فكرة إلى أسطورة تتناقلها الأجيال!</h3>
+            <p>لم تكن بداية <strong>مطعم شفزار</strong> مجرد افتتاح مطعم وجبات سريعة آخر، بل كانت شرارة شغف حقيقي بالبحث عن الطعم المفقود للشاورما الكلاسيكية الأصيلة وشاورما القرصان الفاخرة. وسط عالم يملؤه الفلسفة والتعقيد، قررنا أن نعود إلى الأصل: الدجاج الطازج المتبل بأعرق البهارات، الخبز الدافئ، وصلصة الثومية السحرية المحضرة بكل حب يومياً.</p>
+            <p>بدأنا بمبدأ أسطوري راسخ: <strong>"لا تنازل عن النكهة ولا مساومة على الجودة"</strong>. دمجنا بين أصالة الشاورما اليدوية وإبداع البرجر الكريسبي المقرمش لنصنع تجربة فريدة ترضي كافة الأذواق.</p>
+        </div>
+    </div>
+
+    <!-- قسم صورة المنيو الكبيرة المخصصة للعميل -->
+    <h2 id="menu-sheet" class="section-title">قائمة الطعام (المنيو الرسمي) 📜</h2>
+    <div class="full-menu-image-container">
+        <div class="full-menu-image-box">
+            <a href="images/menu.jpg" target="_blank">
+                <img src="images/menu.jpg" alt="قائمة طعام مطعم شفزار الرسمية - المنيو الكامل">
+            </a>
+        </div>
+    </div>
+
+    <!-- الأصناف المميزة بالصور -->
+    <h2 id="menu" class="section-title">وجبات شفزار المميزة (اسحب لمشاهدة الصور 👈)</h2>
+    <div class="menu-grid-wrapper">
+        <div class="menu-grid">
+
+            <div class="card">
+                <img src="images/gurtsan-shawarma.jpg" alt="شاورما القرصان الخاصة من مطعم شفزار">
+                <div class="card-content">
+                    <h3>شاورما القرصان الأسطورية</h3>
+                    <p>شاورما دجاج متبلة بخلطتنا الذهبية الخاصة في خبز القرصان المحمص مع البطاطس والثومية.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price">6.00 ر.س</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/shefzar-trio.jpg" alt="عرض ثلاثي شفزار المميز">
+                <div class="card-content">
+                    <h3>عرض ثلاثي شفزار</h3>
+                    <p>1 شاورما عادي + 1 شاورما مكسيكي + 1 شاورما قرصان + صحن بطاطس صغير.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price">21.00 ر.س</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/saadah-box.jpg" alt="مكس السعادة من شفزار">
+                <div class="card-content">
+                    <h3>مكس السعادة</h3>
+                    <p>2 برجر كريسبي سبيشل + 2 شاورما + 2 مشروب غازي منعش.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price">34.00 ر.س</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/family-box.jpg" alt="بوكس العائلة الشامل">
+                <div class="card-content">
+                    <h3>بوكس العائلة</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- قسم خريطة الموقع (HTML Sitemap) -->
+    <h2 id="site-map" class="section-title">خريطة الموقع 🗺️</h2>
+    <div class="sitemap-section">
+        <div class="sitemap-container">
+            <div class="sitemap-group">
+                <h3><i class="fas fa-compass"></i> التصفح الرئيسي</h3>
+                <ul>
+                    <li><a href="#story">قصتنا والأصل</a></li>
+                    <li><a href="#menu-sheet">المنيو المصور الرسمي</a></li>
+                    <li><a href="#menu">الأطباق المميزة</a></li>
+                    <li><a href="#full-menu">قائمة الطعام الكاملة</a></li>
+                </ul>
+            </div>
+            <div class="sitemap-group">
+                <h3><i class="fas fa-concierge-bell"></i> الخدمات والحجوزات</h3>
+                <ul>
+                    <li><a href="#catering">قسم الفود تراك والجمعات</a></li>
+                    <li><a href="#blog">أخبارنا والمدونة</a></li>
+                    <li><a href="tel:0558473815">الطلب المباشر والتوصيل</a></li>
+                </ul>
+            </div>
+            <div class="sitemap-group">
+                <h3><i class="fas fa-map-marker-alt"></i> الوصول إلينا</h3>
+                <ul>
+                    <li><a href="#location-map">موقع الفرع بالرياض</a></li>
+                    <li><a href="https://maps.app.goo.gl/W1fiw5UD98r9NF9L8" target="_blank">فتح الموقع في خرائط Google</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSideMenu() {
+            document.getElementById('sideMenu').classList.toggle('active');
+            document.getElementById('menuOverlay').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
