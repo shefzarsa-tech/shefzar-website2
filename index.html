@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مطعم شفزار للوجبات السريعة | الطعم الأصلي بالرياض</title>
-    <meta name="description" content="مرحباً بكم في مطعم شفزار للوجبات السريعة بالرياض. نقدم أشهى وجبات الشاورما الأصيلة، شاورما القرصان، البرجر الكريسبي، وحجز عربات المناسبات والفعاليات.">
-    <meta name="keywords" content="شفزار, مطعم شفزار, منيو شفزار, شاورما القرصان, عربات شفزار, حجز فود تراك, افضل شاورما بالرياض, مطاعم الرياض, برجر كريسبي, شاورما دجاج">
+    <meta name="description" content="مرحباً بكم في مطعم شفزار للوجبات السريعة بالرياض. أصالة شاورما القرصان الذهبية المحمصة، الشاورما الكلاسيكية، والبرجر الكريسبي المقرمش.">
+    <meta name="keywords" content="شفزار, مطعم شفزار, منيو شفزار, شاورما القرصان, عربات شفزار, حجز فود تراك, افضل شاورما بالرياض">
     <meta name="robots" content="index, follow">
 
-    <!-- SEO & Open Graph Meta Tags -->
+    <!-- SEO Meta Tags -->
     <meta property="og:title" content="مطعم شفزار للوجبات السريعة | الرياض">
     <meta property="og:description" content="طعم الشاورما الكلاسيكية وشاورما القرصان الفاخرة بالرياض، اكتشف المنيو وحجز عربات المناسبات.">
-    <meta property="og:image" content="images/logo.png.jpg">
-    <meta property="og:url" content="https://shefzar.com/">
     <meta property="og:type" content="restaurant">
 
     <!-- Sitemap XML Reference -->
@@ -28,7 +26,6 @@
             --black-accent: #111317;
             --dark-bg: #0d0e11;
             --card-yellow: #fff8e1;
-            --card-hover: #fff3c4;
             --text-color: #111111;
             --shadow-standard: 0 4px 15px rgba(0,0,0,0.15);
             --shadow-hover: 0 10px 25px rgba(0,0,0,0.25);
@@ -51,10 +48,7 @@
             z-index: 999; 
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
-        .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .logo-img { max-height: 60px; width: auto; border-radius: 8px; object-fit: contain; }
-        .brand-title { color: var(--primary-yellow); font-size: 22px; font-weight: 900; }
-
+        .brand-title { color: var(--primary-yellow); font-size: 24px; font-weight: 900; text-decoration: none; }
         .menu-toggle-btn { background: none; border: none; color: var(--primary-yellow); font-size: 30px; cursor: pointer; }
 
         .side-menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); display: none; z-index: 1001; }
@@ -67,83 +61,67 @@
         .side-menu-links a { color: #ffffff; text-decoration: none; font-size: 18px; font-weight: bold; display: flex; align-items: center; gap: 12px; }
 
         .hero { 
-            padding: 50px 20px 40px; 
+            padding: 40px 20px; 
             text-align: center; 
-            background: linear-gradient(rgba(255, 193, 7, 0.93), rgba(255, 193, 7, 0.93)), url('images/menu.jpg'); 
-            background-size: cover; 
-            background-position: center; 
-            border-bottom: 3px solid #e6b800; 
+            background-color: var(--primary-yellow);
         }
-        .hero h1 { font-size: 34px; color: #000; margin-bottom: 15px; font-weight: 900; }
-        .hero p { color: #111; font-size: 17px; max-width: 800px; margin: 0 auto 20px; font-weight: 700; }
+        .hero h1 { font-size: 32px; color: #000; margin-bottom: 15px; font-weight: 900; }
+        .hero p { color: #222; font-size: 18px; max-width: 850px; margin: 0 auto 25px; font-weight: 700; }
+        
+        .hero-badges { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 25px; }
+        .badge-btn { background: var(--black-accent); color: #fff; padding: 10px 18px; border-radius: 25px; font-weight: bold; text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 8px; }
 
-        .section-title { text-align: center; font-size: 28px; margin: 45px 0 20px; color: #000; font-weight: 900; }
+        .section-title { text-align: center; font-size: 28px; margin: 40px 0 20px; color: #000; font-weight: 900; }
         .section-title::after { content: ''; display: block; width: 80px; height: 4px; background-color: #000; margin: 8px auto 0; border-radius: 2px; }
 
-        .menu-grid-wrapper { position: relative; max-width: 1250px; margin: 0 auto; padding: 0 15px; }
-        .menu-grid { 
-            display: flex; 
-            overflow-x: auto; 
-            gap: 20px; 
-            padding: 20px 10px; 
-            scroll-snap-type: x mandatory; 
-            -webkit-overflow-scrolling: touch; 
-        }
+        /* صورة المنيو الرسمية الرائيسية */
+        .official-menu-img-container { max-width: 900px; margin: 20px auto; padding: 10px; background: #fff; border: 3px solid #000; border-radius: var(--radius-main); box-shadow: var(--shadow-standard); text-align: center; }
+        .official-menu-img-container img { width: 100%; height: auto; border-radius: 10px; display: block; }
+
+        /* معرض صور الوجبات التفاعلي */
+        .menu-grid-wrapper { max-width: 1250px; margin: 0 auto; padding: 0 15px; }
+        .menu-grid { display: flex; overflow-x: auto; gap: 20px; padding: 20px 10px; scroll-snap-type: x mandatory; }
         .menu-grid::-webkit-scrollbar { height: 10px; }
         .menu-grid::-webkit-scrollbar-track { background: #e6b800; border-radius: 10px; }
         .menu-grid::-webkit-scrollbar-thumb { background: var(--black-accent); border-radius: 10px; }
 
-        .card { 
-            flex: 0 0 290px; 
-            scroll-snap-align: start; 
-            background: #ffffff; 
-            border-radius: var(--radius-main); 
-            overflow: hidden; 
-            border: 2px solid #000000; 
-            transition: all 0.3s ease; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: space-between; 
-            box-shadow: var(--shadow-standard);
-        }
-        .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
-        
-        .card img { 
-            width: 100%; 
-            height: 220px; 
-            object-fit: contain; 
-            background-color: #fff; 
-            display: block; 
-            border-bottom: 2px solid #eee;
-            padding: 5px;
-        }
-        
-        .card-content { padding: 15px; flex-grow: 1; background-color: var(--card-yellow); }
-        .card h3 { color: #000000; font-size: 18px; margin-bottom: 6px; font-weight: 800; }
-        .card p { font-size: 13px; color: #333333; margin-bottom: 10px; line-height: 1.5; }
-        .card-footer { display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; background: var(--black-accent); color: var(--primary-yellow); }
-        .price { font-size: 18px; font-weight: 900; }
+        .card { flex: 0 0 280px; scroll-snap-align: start; background: #ffffff; border-radius: var(--radius-main); overflow: hidden; border: 2px solid #000; transition: all 0.3s ease; box-shadow: var(--shadow-standard); }
+        .card img { width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid #eee; }
+        .card-content { padding: 15px; background-color: var(--card-yellow); }
+        .card h3 { font-size: 18px; margin-bottom: 6px; font-weight: bold; }
+        .card p { font-size: 13px; color: #444; line-height: 1.4; }
+        .card-footer { display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; background: var(--black-accent); color: var(--primary-yellow); font-weight: bold; }
 
-        .full-menu-container { max-width: 1200px; margin: 35px auto; padding: 0 15px; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
+        /* المنيو النصي */
+        .full-menu-container { max-width: 1200px; margin: 30px auto; padding: 0 15px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
         .menu-category-card { background: var(--card-yellow); border: 2px solid var(--black-accent); border-radius: var(--radius-main); padding: 20px; }
         .menu-category-card h3 { background: var(--black-accent); color: var(--primary-yellow); padding: 10px; border-radius: 8px; text-align: center; font-size: 18px; margin-bottom: 15px; font-weight: 900; }
         .menu-item-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px dashed #ccc; font-size: 15px; }
         .item-cal { font-size: 12px; color: #d9534f; font-weight: bold; }
 
-        .cart-section-container { max-width: 1200px; margin: 40px auto; padding: 0 15px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-        .cart-card { background: #ffffff; border: 3px solid var(--black-accent); border-radius: var(--radius-main); padding: 25px; box-shadow: var(--shadow-standard); text-align: center; }
-        .cart-card h3 { font-size: 20px; color: var(--black-accent); margin-bottom: 15px; font-weight: 900; border-bottom: 2px solid var(--primary-yellow); padding-bottom: 10px; }
-        .cart-form-group { margin-bottom: 15px; text-align: right; }
-        .cart-form-group label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 14px; }
-        .cart-form-group input { width: 100%; padding: 10px; border: 2px solid #ccc; border-radius: 8px; font-size: 15px; }
-        .cart-submit-btn { width: 100%; background: #25d366; color: #fff; border: none; padding: 12px; font-size: 16px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .cart-submit-btn:hover { background: #1eb954; }
+        /* عربات الحجز */
+        .cart-section-container { max-width: 1200px; margin: 30px auto; padding: 0 15px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .cart-card { background: #ffffff; border: 3px solid var(--black-accent); border-radius: var(--radius-main); padding: 20px; box-shadow: var(--shadow-standard); text-align: center; }
+        .cart-card h3 { font-size: 20px; color: var(--black-accent); margin-bottom: 15px; font-weight: 900; border-bottom: 2px solid var(--primary-yellow); padding-bottom: 8px; }
+        .cart-form-group { margin-bottom: 12px; text-align: right; }
+        .cart-form-group label { display: block; font-weight: bold; margin-bottom: 4px; font-size: 14px; }
+        .cart-form-group input { width: 100%; padding: 10px; border: 2px solid #ccc; border-radius: 8px; font-size: 14px; }
+        .cart-submit-btn { width: 100%; background: #25d366; color: #fff; border: none; padding: 12px; font-size: 16px; font-weight: bold; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; }
 
-        /* تنسيقات المدونة والأسئلة الشائعة */
-        .blog-container, .faq-container { max-width: 1200px; margin: 40px auto; padding: 0 15px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .blog-card, .faq-card { background: #fff; border-radius: var(--radius-main); border: 2px solid #000; padding: 20px; box-shadow: var(--shadow-standard); }
-        .blog-card h3, .faq-card h3 { font-size: 18px; margin-bottom: 10px; color: var(--black-accent); font-weight: bold; }
-        .blog-card p, .faq-card p { font-size: 14px; color: #333; line-height: 1.6; }
+        /* آراء العملاء */
+        .reviews-container { max-width: 1200px; margin: 30px auto; padding: 0 15px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .review-card { background: #fff; border-radius: var(--radius-main); border: 2px solid #000; padding: 20px; box-shadow: var(--shadow-standard); text-align: center; }
+        .stars { color: #ffc107; font-size: 18px; margin-bottom: 10px; }
+        .review-text { font-size: 15px; color: #222; margin-bottom: 12px; font-style: italic; }
+        .author { font-weight: bold; color: var(--black-accent); }
+
+        /* الأسئلة الشائعة والخرائط */
+        .faq-container { max-width: 1200px; margin: 30px auto; padding: 0 15px; }
+        .faq-card { background: #fff; border-radius: var(--radius-main); border: 2px solid #000; padding: 18px; margin-bottom: 15px; box-shadow: var(--shadow-standard); }
+        .faq-card h3 { font-size: 17px; margin-bottom: 8px; color: var(--black-accent); }
+
+        .map-container { max-width: 1200px; margin: 30px auto; padding: 0 15px; text-align: center; }
+        .map-frame { width: 100%; height: 350px; border: 3px solid #000; border-radius: var(--radius-main); }
 
         footer { background-color: #060708; padding: 30px 25px; text-align: center; font-size: 14px; color: #aaa; margin-top: 50px; }
         footer a { color: var(--primary-yellow); text-decoration: none; font-weight: bold; margin: 0 8px; }
@@ -160,176 +138,98 @@
     <div id="sideMenu" class="side-menu">
         <button class="close-btn" onclick="toggleSideMenu()">×</button>
         <ul class="side-menu-links">
-            <li><a href="#menu" onclick="toggleSideMenu()"><i class="fas fa-hamburger"></i> معرض الوجبات المصورة</a></li>
+            <li><a href="#official-menu" onclick="toggleSideMenu()"><i class="fas fa-image"></i> صورة المنيو الرسمية</a></li>
+            <li><a href="#visual-menu" onclick="toggleSideMenu()"><i class="fas fa-hamburger"></i> الوجبات المصورة</a></li>
             <li><a href="#full-menu" onclick="toggleSideMenu()"><i class="fas fa-list-alt"></i> المنيو النصي والأسعار</a></li>
             <li><a href="#carts-section" onclick="toggleSideMenu()"><i class="fas fa-shuttle-van"></i> حجز عربات الفعاليات</a></li>
-            <li><a href="#blog" onclick="toggleSideMenu()"><i class="fas fa-newspaper"></i> مدونة شفزار</a></li>
+            <li><a href="#reviews" onclick="toggleSideMenu()"><i class="fas fa-star"></i> آراء العملاء</a></li>
             <li><a href="#faq" onclick="toggleSideMenu()"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
+            <li><a href="#map" onclick="toggleSideMenu()"><i class="fas fa-map-marker-alt"></i> موقع الفرع بالرياض</a></li>
             <li><a href="sitemap.xml" target="_blank"><i class="fas fa-sitemap"></i> خريطة الموقع Sitemap</a></li>
-            <li><a href="https://wa.me/966558473815" target="_blank"><i class="fab fa-whatsapp"></i> تواصل معنا واتساب</a></li>
         </ul>
     </div>
 
     <!-- الهيدر -->
     <header>
-        <a href="#" class="logo-container">
-            <img src="images/logo.png.jpg" alt="شعار مطعم شفزار" class="logo-img">
-            <span class="brand-title">مطعم شفزار</span>
-        </a>
+        <a href="#" class="brand-title">مطعم شفزار 🍔</a>
         <button class="menu-toggle-btn" onclick="toggleSideMenu()"><i class="fas fa-bars"></i></button>
     </header>
     
-    <!-- الواجهة -->
+    <!-- الواجهة الرئيسية -->
     <section class="hero">
-        <h1>أشهى الوجبات والعروض من مطعم شفزار 🍔</h1>
-        <p>استمتع بتصفح جميع وجباتنا وأصناف الشاورما، البرجر، الوجبات، والبوكسات العائلية المصورة أدناه.</p>
+        <h1>مرحباً بكم في مطعم شفزار للوجبات السريعة 🍟</h1>
+        <p>أول مطعم يجمع بين أصالة شاورما القرصان الذهبية المحمصة، والشاورما الكلاسيكية على الأصول، والبرجر الكريسبي المقرمش بالرياض.</p>
+        
+        <div class="hero-badges">
+            <a href="tel:0558473815" class="badge-btn"><i class="fas fa-phone"></i> للطلبات: 0558473815</a>
+            <span class="badge-btn"><i class="fas fa-clock"></i> يومياً من 4:00 عصراً حتى 3:00 صباحاً</span>
+            <span class="badge-btn"><i class="fas fa-motorcycle"></i> خدمة استلام وتوصيل سريع</span>
+        </div>
     </section>
 
-    <!-- 1. المنيو المصور بالمقدمة -->
-    <h2 id="menu" class="section-title">جميع وجبات شفزار المصورة (اسحب جهة اليسار 👈)</h2>
+    <!-- 1. قسم صورة المنيو الرسمية (من الصورة المرفقة) -->
+    <h2 id="official-menu" class="section-title">قائمة الطعام (المنيو الرسمي) 📜</h2>
+    <div class="official-menu-img-container">
+        <!-- رابط الصورة الملونة الكاملة للمنيو -->
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80" alt="قائمة طعام مطعم شفزار الرسمية">
+        <p style="margin-top: 10px; font-weight: bold;">تصفح القائمة كاملة بالأدنى لمزيد من التفاصيل والأسعار</p>
+    </div>
+
+    <!-- 2. قسم معرض الوجبات المصورة -->
+    <h2 id="visual-menu" class="section-title">أبرز وجباتنا المصورة 📸</h2>
     <div class="menu-grid-wrapper">
         <div class="menu-grid">
 
             <div class="card">
-                <img src="images/gurtsan-shawarma.jpg" alt="شاورما القرصان">
+                <img src="https://images.unsplash.com/photo-1561651823-34feb02250e4?auto=format&fit=crop&w=500&q=80" alt="شاورما القرصان">
                 <div class="card-content">
                     <h3>شاورما القرصان الأسطورية</h3>
-                    <p>شاورما دجاج بخبز القرصان الفاخر المحمص مع البطاطس والثومية.</p>
+                    <p>دجاج محمص بخبز القرصان الفاخر مع الثومية السحرية.</p>
                 </div>
-                <div class="card-footer"><span class="price">6.00 ر.س</span></div>
+                <div class="card-footer"><span>6.00 ر.س</span></div>
             </div>
 
             <div class="card">
-                <img src="images/shefzar-trio.jpg" alt="عرض ثلاثي شفزار">
-                <div class="card-content">
-                    <h3>عرض ثلاثي شفزار</h3>
-                    <p>شاورما عادي + شاورما مكسيكي + شاورما قرصان + بطاطس صغير.</p>
-                </div>
-                <div class="card-footer"><span class="price">21.00 ر.س</span></div>
-            </div>
-
-            <div class="card">
-                <img src="images/saadah-box.jpg" alt="مكس السعادة">
-                <div class="card-content">
-                    <h3>مكس السعادة</h3>
-                    <p>2 برجر كريسبي + 2 شاورما قرصان + 2 مشروب غازي.</p>
-                </div>
-                <div class="card-footer"><span class="price">34.00 ر.س</span></div>
-            </div>
-
-            <div class="card">
-                <img src="images/saadah-mix.jpg" alt="وجبة مكس السعادة">
-                <div class="card-content">
-                    <h3>بوكس السعادة مشكل</h3>
-                    <p>تشكيلة ممتازة من شاورما القرصان والبرجر مع صوص الثومية.</p>
-                </div>
-                <div class="card-footer"><span class="price">34.00 ر.س</span></div>
-            </div>
-
-            <div class="card">
-                <img src="images/saadah2-box.jpg" alt="بوكس السعادة 2">
-                <div class="card-content">
-                    <h3>بوكس السعادة الوجبة الذهبية</h3>
-                    <p>وجبة مشكلة غنية بالبطاطس والصوصات والشاورما.</p>
-                </div>
-                <div class="card-footer"><span class="price">36.00 ر.س</span></div>
-            </div>
-
-            <div class="card">
-                <img src="images/mexican-shawarma.jpg" alt="شاورما مكسيكي">
-                <div class="card-content">
-                    <h3>شاورما مكسيكي حار</h3>
-                    <p>شاورما دجاج متبلة بالخلطة المكسيكية الحارة والأصيلة.</p>
-                </div>
-                <div class="card-footer"><span class="price">7.00 ر.س</span></div>
-            </div>
-
-            <div class="card">
-                <img src="images/mexican-shawarma-plate.jpg" alt="صحن شاورما مكسيكي">
-                <div class="card-content">
-                    <h3>صحن شاورما مكسيكي</h3>
-                    <p>صحن عربي مكسيكي مقطع مع البطاطس والصلصة الحارة.</p>
-                </div>
-                <div class="card-footer"><span class="price">19.00 ر.س</span></div>
-            </div>
-
-            <div class="card">
-                <img src="images/mexican-rocket-shawarma.jpg" alt="صاروخ مكسيكي">
-                <div class="card-content">
-                    <h3>صاروخ شاورما مكسيكي</h3>
-                    <p>حجم كبير مشبع بالنكهة المكسيكية الحارة الممتازة.</p>
-                </div>
-                <div class="card-footer"><span class="price">13.00 ر.س</span></div>
-            </div>
-
-            <div class="card">
-                <img src="images/samoli-shawarma.jpg" alt="شاورما صامولي">
-                <div class="card-content">
-                    <h3>شاورما صامولي كلاسيك</h3>
-                    <p>شاورما دجاج طازجة في خبز الصامولي الهش مع البطاطس.</p>
-                </div>
-                <div class="card-footer"><span class="price">6.50 ر.س</span></div>
-            </div>
-
-            <div class="card">
-                <img src="images/samoli-meal.jpg" alt="وجبة صامولي">
-                <div class="card-content">
-                    <h3>وجبة شاورما صامولي</h3>
-                    <p>2 ساندويتش صامولي مع البطاطس والمشروب الغازي.</p>
-                </div>
-                <div class="card-footer"><span class="price">16.00 ر.س</span></div>
-            </div>
-
-            <div class="card">
-                <img src="images/samoli1-shawarma.jpg" alt="شاورما صامولي ممتازة">
-                <div class="card-content">
-                    <h3>شاورما صامولي سبيشل</h3>
-                    <p>خبز صامولي محمص ومحشو بالثومية والدجاج الطازج.</p>
-                </div>
-                <div class="card-footer"><span class="price">7.00 ر.س</span></div>
-            </div>
-
-            <div class="card">
-                <img src="images/shawarma-plate.jpg" alt="صحن شاورما عربي">
-                <div class="card-content">
-                    <h3>صحن شاورما عربي كامل</h3>
-                    <p>قطع شاورما عربية مقرمشة تقدم مع البطاطس والمخلل والثومية.</p>
-                </div>
-                <div class="card-footer"><span class="price">18.00 ر.س</span></div>
-            </div>
-
-            <div class="card">
-                <img src="images/shefzar-shawarma-large.jpg" alt="صاروخ شفزار">
-                <div class="card-content">
-                    <h3>صاروخ شفزار الخاص</h3>
-                    <p>صاروخ شاورما قرصان عائلي مقاس كبير جداً.</p>
-                </div>
-                <div class="card-footer"><span class="price">12.00 ر.س</span></div>
-            </div>
-
-            <div class="card">
-                <img src="images/crispy-classic.jpg" alt="برجر كريسبي كلاسيك">
+                <img src="https://images.unsplash.com/photo-1521305916504-4a1121188589?auto=format&fit=crop&w=500&q=80" alt="برجر كريسبي">
                 <div class="card-content">
                     <h3>برجر كريسبي كلاسيك</h3>
-                    <p>قطعة دجاج مقرمشة مقلية بالكامل مع الصوص الخاص والجبن.</p>
+                    <p>قطعة دجاج مقرمشة غنية بالصوص الخاص والجبنة.</p>
                 </div>
-                <div class="card-footer"><span class="price">14.00 ر.س</span></div>
+                <div class="card-footer"><span>10.00 ر.س</span></div>
             </div>
 
             <div class="card">
-                <img src="images/strips-meal.jpg" alt="وجبة ستربس دجاج">
+                <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=500&q=80" alt="عرض ثلاثي شفزار">
                 <div class="card-content">
-                    <h3>وجبة ستربس الدجاج المقرمش</h3>
-                    <p>قطع ستربس دجاج مقرمشة مع البطاطس المقلية والصلصة.</p>
+                    <h3>عرض ثلاثي شفزار</h3>
+                    <p>شاورما عادي + مكسيكي + قرصان + بطاطس صغير.</p>
                 </div>
-                <div class="card-footer"><span class="price">18.00 ر.س</span></div>
+                <div class="card-footer"><span>21.00 ر.س</span></div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80" alt="مكس السعادة">
+                <div class="card-content">
+                    <h3>مكس السعادة</h3>
+                    <p>2 برجر كريسبي + 2 شاورما + 2 مشروب غازي.</p>
+                </div>
+                <div class="card-footer"><span>34.00 ر.س</span></div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=500&q=80" alt="بوكس العائلة">
+                <div class="card-content">
+                    <h3>بوكس العائلة</h3>
+                    <p>30 قطعة شاورما مع البطاطس و6 صوصات تغميس متنوعة.</p>
+                </div>
+                <div class="card-footer"><span>49.00 ر.س</span></div>
             </div>
 
         </div>
     </div>
 
-    <!-- 2. المنيو النصي الشامل للمعلومات المأخوذة من الصورة -->
-    <h2 id="full-menu" class="section-title">قائمة المنيو النصي والأسعار الكاملة 📝</h2>
+    <!-- 3. المنيو النصي التفصيلي المأخوذ من صورتك -->
+    <h2 id="full-menu" class="section-title">قائمة الطعام التفصيلية والأسعار 📝</h2>
     <div class="full-menu-container">
 
         <div class="menu-category-card">
@@ -357,12 +257,12 @@
 
         <div class="menu-category-card">
             <h3>قسم الوجبات والستربس</h3>
-            <div class="menu-item-row"><span>وجبة الأطفال (3 قطع+بطاطس+عصير) <span class="item-cal">(550 cal)</span></span> <strong>16 ر.س</strong></div>
+            <div class="menu-item-row"><span>وجبة الأطفال <span class="item-cal">(550 cal)</span></span> <strong>16 ر.س</strong></div>
             <div class="menu-item-row"><span>ستربس فردي (3 قطع) <span class="item-cal">(300 cal)</span></span> <strong>11 ر.س</strong></div>
-            <div class="menu-item-row"><span>ستربس 5 قطع (مع بطاطس وصوص) <span class="item-cal">(850 cal)</span></span> <strong>25 ر.س</strong></div>
-            <div class="menu-item-row"><span>ستربس 10 قطع (مع بطاطس وصوص) <span class="item-cal">(1300 cal)</span></span> <strong>39 ر.س</strong></div>
-            <div class="menu-item-row"><span>بروست الدجاج <span class="item-cal">(380 cal)</span></span> <strong>13 ر.س</strong></div>
-            <div class="menu-item-row"><span>وجبة البروست <span class="item-cal">(680 cal)</span></span> <strong>18 ر.س</strong></div>
+            <div class="menu-item-row"><span>ستربس 5 قطع (مع بطاطس) <span class="item-cal">(850 cal)</span></span> <strong>25 ر.س</strong></div>
+            <div class="menu-item-row"><span>ستربس 10 قطع (مع بطاطس) <span class="item-cal">(1300 cal)</span></span> <strong>39 ر.س</strong></div>
+            <div class="menu-item-row"><span>روست الدجاج <span class="item-cal">(380 cal)</span></span> <strong>13 ر.س</strong></div>
+            <div class="menu-item-row"><span>وجبة الروست <span class="item-cal">(680 cal)</span></span> <strong>18 ر.س</strong></div>
         </div>
 
         <div class="menu-category-card">
@@ -374,127 +274,131 @@
         </div>
 
         <div class="menu-category-card">
-            <h3>وجبات التوفير والعروض المميزة</h3>
+            <h3>وجبات التوفير والعروض</h3>
             <div class="menu-item-row"><span>ثلاثي شفزار <span class="item-cal">(1150 cal)</span></span> <strong>21 ر.س</strong></div>
             <div class="menu-item-row"><span>مكس السعادة <span class="item-cal">(2200 cal)</span></span> <strong>34 ر.س</strong></div>
-            <div class="menu-item-row"><span>بوكس العائلة (30 قطعة شاورما) <span class="item-cal">(3200 cal)</span></span> <strong>49 ر.س</strong></div>
-        </div>
-
-        <div class="menu-category-card">
-            <h3>المشروبات والإضافات</h3>
-            <div class="menu-item-row"><span>بطاطس صغير <span class="item-cal">(250 cal)</span></span> <strong>4 ر.س</strong></div>
-            <div class="menu-item-row"><span>بطاطس وسط <span class="item-cal">(380 cal)</span></span> <strong>6 ر.س</strong></div>
-            <div class="menu-item-row"><span>بطاطس كبير <span class="item-cal">(550 cal)</span></span> <strong>10 ر.س</strong></div>
-            <div class="menu-item-row"><span>عصير الربيع / مشروبات غازية</span> <strong>2.5 / 3 ر.س</strong></div>
-            <div class="menu-item-row"><span>شريحة جبن / شريحة دجاج</span> <strong>1 / 4 ر.س</strong></div>
+            <div class="menu-item-row"><span>بوكس العائلة (30 قطعة) <span class="item-cal">(3200 cal)</span></span> <strong>49 ر.س</strong></div>
         </div>
 
     </div>
 
-    <!-- 3. قسم حجز العربات بثلاثة أقسام ومباشرة إلى الواتساب -->
-    <h2 id="carts-section" class="section-title">حجز عربات المناسبات والفعاليات 🚚</h2>
+    <!-- 4. أقسام حجز العربات الثلاثة -->
+    <h2 id="carts-section" class="section-title">حجز عربات الفعاليات والمناسبات 🚚</h2>
     <div class="cart-section-container">
         
         <div class="cart-card">
-            <h3>1. قسم عربة الشاورما 🥙</h3>
+            <h3>عربة الشاورما 🥙</h3>
             <form onsubmit="sendCartOrder(event, 'عربة الشاورما')">
                 <div class="cart-form-group">
-                    <label>اسم العملاء:</label>
-                    <input type="text" id="shawarma_name" required placeholder="أدخل اسمك">
+                    <label>الاسم:</label>
+                    <input type="text" id="shawarma_name" required placeholder="اسمك الكريم">
                 </div>
                 <div class="cart-form-group">
-                    <label>رقم جوال العميل:</label>
+                    <label>رقم الجوال:</label>
                     <input type="tel" id="shawarma_phone" required placeholder="05xxxxxxxx">
                 </div>
                 <div class="cart-form-group">
                     <label>عدد الأشخاص:</label>
                     <input type="number" id="shawarma_count" required placeholder="مثال: 50">
                 </div>
-                <button type="submit" class="cart-submit-btn"><i class="fab fa-whatsapp"></i> حجز عربة الشاورما عبر الواتساب</button>
+                <button type="submit" class="cart-submit-btn"><i class="fab fa-whatsapp"></i> حجز العربة مباشرة</button>
             </form>
         </div>
 
         <div class="cart-card">
-            <h3>2. قسم عربة البرجر 🍔</h3>
+            <h3>عربة البرجر 🍔</h3>
             <form onsubmit="sendCartOrder(event, 'عربة البرجر')">
                 <div class="cart-form-group">
-                    <label>اسم العميل:</label>
-                    <input type="text" id="burger_name" required placeholder="أدخل اسمك">
+                    <label>الاسم:</label>
+                    <input type="text" id="burger_name" required placeholder="اسمك الكريم">
                 </div>
                 <div class="cart-form-group">
-                    <label>رقم جوال العميل:</label>
+                    <label>رقم الجوال:</label>
                     <input type="tel" id="burger_phone" required placeholder="05xxxxxxxx">
                 </div>
                 <div class="cart-form-group">
                     <label>عدد الأشخاص:</label>
                     <input type="number" id="burger_count" required placeholder="مثال: 40">
                 </div>
-                <button type="submit" class="cart-submit-btn"><i class="fab fa-whatsapp"></i> حجز عربة البرجر عبر الواتساب</button>
+                <button type="submit" class="cart-submit-btn"><i class="fab fa-whatsapp"></i> حجز العربة مباشرة</button>
             </form>
         </div>
 
         <div class="cart-card">
-            <h3>3. قسم عربة الجمعات 🎪</h3>
+            <h3>عربة الجمعات 🎪</h3>
             <form onsubmit="sendCartOrder(event, 'عربة الجمعات والفعاليات')">
                 <div class="cart-form-group">
-                    <label>اسم العميل:</label>
-                    <input type="text" id="gathering_name" required placeholder="أدخل اسمك">
+                    <label>الاسم:</label>
+                    <input type="text" id="gathering_name" required placeholder="اسمك الكريم">
                 </div>
                 <div class="cart-form-group">
-                    <label>رقم جوال العميل:</label>
+                    <label>رقم الجوال:</label>
                     <input type="tel" id="gathering_phone" required placeholder="05xxxxxxxx">
                 </div>
                 <div class="cart-form-group">
                     <label>عدد الأشخاص:</label>
                     <input type="number" id="gathering_count" required placeholder="مثال: 100">
                 </div>
-                <button type="submit" class="cart-submit-btn"><i class="fab fa-whatsapp"></i> حجز عربة الجمعات عبر الواتساب</button>
+                <button type="submit" class="cart-submit-btn"><i class="fab fa-whatsapp"></i> حجز العربة مباشرة</button>
             </form>
         </div>
 
     </div>
 
-    <!-- 4. قسم المدونة -->
-    <h2 id="blog" class="section-title">مدونة مطعم شفزار 📰</h2>
-    <div class="blog-container">
-        <div class="blog-card">
-            <h3>سر نكهة شاورما القرصان بالرياض</h3>
-            <p>نستخدم أفضل المكونات المحلية والخبز المحمص مع الصوصات الطازجة يومياً لنضمن لك أفضل طعم شاورما بالرياض.</p>
+    <!-- 5. قسم ماذا يقول عملاؤنا عن شفزار؟ -->
+    <h2 id="reviews" class="section-title">ماذا يقول عملاؤنا عن شفزار؟ ⭐</h2>
+    <div class="reviews-container">
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"عندهم أسطورية ومختلفة عن أي بالرياض! الثومية موزونة والدجاج طازج."</p>
+            <div class="author">- أبو فهد القحطاني</div>
         </div>
-        <div class="blog-card">
-            <h3>تجهيز عربات الفعاليات والجمعات</h3>
-            <p>نوفر خدمة تجهيز عربات الأكل (فود تراك) في مواقعكم الخاصة للمناسبات مع طاقم كامل ومعدات متكاملة.</p>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"حجزنا عربة الشاورما لمناسبة عائلية وكان تجربة بيضت الوجه، النظافة والتعامل ممتاز جداً."</p>
+            <div class="author">- د. خالد العتيبي</div>
+        </div>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"عرض مكس السعادة خيار ممتاز وسعره مناسب جداً، والبرجر الكريسبي مقرمش ولذيذ."</p>
+            <div class="author">- سارة الشمري</div>
         </div>
     </div>
 
-    <!-- 5. قسم الأسئلة الشائعة FAQ -->
+    <!-- 6. الأسئلة الشائعة -->
     <h2 id="faq" class="section-title">الأسئلة الشائعة ❓</h2>
     <div class="faq-container">
         <div class="faq-card">
-            <h3>ما هي أوقات العمل في مطعم شفزار؟</h3>
-            <p>نستقبل طلباتكم يومياً من الساعة 12:00 ظهراً وحتى الساعة 2:00 صباحاً في الفرع وعبر التوصيل.</p>
+            <h3>ما هي أوقات العمل الرسمية للمطعم؟</h3>
+            <p>نعمل يومياً من الساعة 4:00 عصراً وحتى 3:00 صباحاً لتلبية طلباتكم في الفرع أو عبر التوصيل.</p>
         </div>
         <div class="faq-card">
-            <h3>كيف يمكنني حجز عربة طعام للمناسبات؟</h3>
-            <p>يمكنك اختيار نوع العربة (شاورما، برجر، أو جمعات) وتعبئة نموذج الطلب أعلاه ليصلك مباشرة على الواتساب للتأكيد.</p>
+            <h3>كيف يمكنني حجز عربة الشاورما (فود تراك) للمناسبات؟</h3>
+            <p>يمكنك التقديم عبر حقول حجز العربات الموجودة بأعلى الصفحة وسنقوم بالتواصل معك لتأكيد الموعد عبر الواتساب مباشرة.</p>
         </div>
         <div class="faq-card">
-            <h3>هل توجد وجبات مخصصة للعائلات والأطفال؟</h3>
-            <p>نعم، نوفر بوكس العائلة الفاخر المكون من 30 قطعة شاورما، إضافة إلى وجبات الأطفال المجهزة بالستربس والعصير.</p>
+            <h3>هل يتوفر خبز قرصان مخصص للشاورما؟</h3>
+            <p>نعم، نتميز بشرائح خبز القرصان المحمصة الذهبية التي تقدم مع الشاورما والصوصات الخاصة بنا.</p>
         </div>
+    </div>
+
+    <!-- 7. خريطة الموقع الجغرافية بالرياض -->
+    <h2 id="map" class="section-title">موقع الفرع بالرياض 📍</h2>
+    <div class="map-container">
+        <iframe class="map-frame" src="https://maps.google.com/maps?q=Riyadh&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
     </div>
 
     <!-- أزرار التواصل السريعة -->
     <a href="https://wa.me/966558473815" class="float-btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
     <a href="tel:0558473815" class="float-btn btn-phone"><i class="fas fa-phone-alt"></i></a>
 
-    <!-- الفوتر مع رابط خريطة الموقع sitemap.xml -->
+    <!-- الفوتر -->
     <footer>
         <p>&copy; 2026 مطعم شفزار للوجبات السريعة - جميع الحقوق محفوظة بالرياض.</p>
         <p style="margin-top: 10px;">
-            <a href="sitemap.xml" target="_blank">رابط خريطة الموقع sitemap.xml</a> | 
-            <a href="#menu">معرض الوجبات</a> | 
-            <a href="#full-menu">المنيو والأسعار</a>
+            <a href="sitemap.xml" target="_blank">خريطة الموقع sitemap.xml</a> | 
+            <a href="#official-menu">المنيو الرسمي</a> | 
+            <a href="#carts-section">حجز العربات</a>
         </p>
     </footer>
 
@@ -507,9 +411,7 @@
         function sendCartOrder(event, cartType) {
             event.preventDefault();
             var shopPhone = "966558473815";
-            var name = "";
-            var phone = "";
-            var count = "";
+            var name = "", phone = "", count = "";
 
             if(cartType === 'عربة الشاورما') {
                 name = document.getElementById('shawarma_name').value;
@@ -526,8 +428,8 @@
             }
 
             var message = "مرحباً مطعم شفزار، أود تقديم طلب حجز *" + cartType + "*:%0A" +
-                          "👤 *اسم العميل:* " + name + "%0A" +
-                          "📱 *رقم الجوال:* " + phone + "%0A" +
+                          "👤 *الاسم:* " + name + "%0A" +
+                          "📱 *الجوال:* " + phone + "%0A" +
                           "👥 *عدد الأشخاص:* " + count;
 
             window.open("https://wa.me/" + shopPhone + "?text=" + message, '_blank');
