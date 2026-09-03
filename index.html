@@ -7,14 +7,12 @@
     <meta name="description" content="مرحباً بكم في مطعم شفزار للوجبات السريعة بالرياض. نجمع بين أصالة شاورما القرصان الذهبية المحمصة، والشاورما الكلاسيكية، والبرجر الكريسبي.">
     <meta name="keywords" content="شفزار, مطعم شفزار, شاورما القرصان, منيو شفزار, فود تراك الرياض, حجز عربات المناسبات">
     
-    <!-- Open Graph SEO -->
     <meta property="og:title" content="مطعم شفزار للوجبات السريعة">
     <meta property="og:description" content="من مجرد فكرة إلى أسطورة تناقلها الأجيال! طعم أسطوري يرضي جميع الأذواق.">
     <meta property="og:image" content="images/logo.png.jpg">
     <meta property="og:url" content="https://shefzar.com">
     <meta property="og:type" content="restaurant">
 
-    <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -122,7 +120,7 @@
             color: #000;
         }
 
-        /* Horizontal Scroll for Text Menu (المنيو النصي أفقي بالكامل) */
+        /* Horizontal Scroll for Text Menu */
         .menu-card-horizontal {
             flex: 0 0 320px;
             scroll-snap-align: start;
@@ -185,7 +183,6 @@
 </head>
 <body>
 
-    <!-- Header -->
     <header>
         <a href="#" class="logo-area">
             <img src="images/logo.png.jpg" alt="مطعم شفزار">
@@ -194,7 +191,6 @@
         <button class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
     </header>
 
-    <!-- Side Navigation -->
     <div class="side-nav" id="sideNav">
         <button class="close-nav" onclick="toggleNav()">×</button>
         <a href="#menu" onclick="toggleNav()">قائمة الطعام</a>
@@ -208,7 +204,6 @@
 
     <div class="container">
         
-        <!-- Hero Section -->
         <section class="hero">
             <h1>مرحباً بكم في مطعم شفزار للوجبات السريعة 🍔🍟</h1>
             <p>أول مطعم يجمع بين أصالة شاورما القرصان الذهبية المحمصة، والشاورما الكلاسيكية على الأصول، والبرجر الكريسبي المقرمش بالرياض. جودة عالية وطعم أسطوري يرضي جميع الأذواق.</p>
@@ -219,7 +214,6 @@
             </div>
         </section>
 
-        <!-- Story Section -->
         <div class="section-header">
             <h2>قصتنا الأسطورية | من الجمر ولدت الأسطورة 🔥</h2>
         </div>
@@ -228,7 +222,6 @@
             <strong>"لا تنازل عن النكهة ولا مساومة على الجودة"</strong>.
         </p>
 
-        <!-- Feature Badges -->
         <div class="badges-grid">
             <div class="badge-box"><i class="fas fa-check-circle" style="color: green;"></i> خبز قرصان فاخر</div>
             <div class="badge-box"><i class="fas fa-check-circle" style="color: green;"></i> خلطة ثوم سحرية</div>
@@ -236,7 +229,6 @@
             <div class="badge-box"><i class="fas fa-check-circle" style="color: green;"></i> مكونات طازجة يومياً</div>
         </div>
 
-        <!-- 1. Full Menu Image (المنيو الرسمي) -->
         <div class="section-header" id="menu">
             <h2>قائمة الطعام (المنيو الرسمي) 📜</h2>
         </div>
@@ -245,7 +237,6 @@
             <img src="images/menu.jpg" alt="قائمة طعام مطعم شفزار الرسمية">
         </div>
 
-        <!-- 2. Horizontal Scrollable Image Gallery (صور الوجبات أفقياً) -->
         <div class="section-header" id="gallery">
             <h2>وجبات شفزار المميزة (اسحب لمشاهدة الصور 👉)</h2>
         </div>
@@ -277,13 +268,11 @@
             </div>
         </div>
 
-        <!-- 3. Horizontal Scrollable Text Menu (المنيو النصي أفقي بالكامل) -->
         <div class="section-header" id="text-menu">
             <h2>قائمة المنيو النصي والأسعار الكاملة 📝 (اسحب أفقياً 👉)</h2>
         </div>
 
         <div class="horizontal-slider">
-            <!-- Card 1 -->
             <div class="menu-card-horizontal">
                 <h3>قسم الساندوتشات</h3>
                 <div class="menu-row">
@@ -344,7 +333,6 @@
                 </div>
             </div>
 
-            <!-- Card 2 -->
             <div class="menu-card-horizontal">
                 <h3>قسم الشاورما العربي</h3>
                 <div class="menu-row">
@@ -398,7 +386,6 @@
                 </div>
             </div>
 
-            <!-- Card 3 -->
             <div class="menu-card-horizontal">
                 <h3>قسم الوجبات والاستربس</h3>
                 <div class="menu-row">
@@ -445,7 +432,6 @@
                 </div>
             </div>
 
-            <!-- Card 4 -->
             <div class="menu-card-horizontal">
                 <h3>المشروبات والإضافات</h3>
                 <div class="menu-row">
@@ -483,7 +469,6 @@
                 </div>
             </div>
 
-            <!-- Card 5 -->
             <div class="menu-card-horizontal">
                 <h3>وجبات التوفير والعروض المميزة</h3>
                 <div class="menu-row">
@@ -509,7 +494,6 @@
                 </div>
             </div>
 
-            <!-- Card 6 -->
             <div class="menu-card-horizontal">
                 <h3>قسم البرجر</h3>
                 <div class="menu-row">
@@ -543,7 +527,6 @@
             </div>
         </div>
 
-        <!-- 4. Catering Vehicles Horizontal Slider (حجز عربات المناسبات أفقياً) -->
         <div class="section-header" id="catering">
             <h2>حجز عربات المناسبات والفعاليات 🚚 (اسحب أفقياً 👉)</h2>
         </div>
@@ -576,20 +559,19 @@
             </div>
 
             <div class="truck-card">
-                <h3>3. قسم عربة الجمعات 🎪</h3>
-                <form class="truck-form" onsubmit="sendTruckWa(event, 'عربة الجمعات', 'jm-n', 'jm-p', 'jm-c')">
+                <h3>3. قسم عربة تسالي شفزار 🍿🍟</h3>
+                <form class="truck-form" onsubmit="sendTruckWa(event, 'عربة تسالي شفزار', 'ts-n', 'ts-p', 'ts-c')">
                     <label>اسم العميل:</label>
-                    <input type="text" id="jm-n" placeholder="أدخل اسمك" required>
+                    <input type="text" id="ts-n" placeholder="أدخل اسمك" required>
                     <label>رقم جوال العميل:</label>
-                    <input type="tel" id="jm-p" placeholder="05XXXXXXXX" required>
+                    <input type="tel" id="ts-p" placeholder="05XXXXXXXX" required>
                     <label>عدد الأشخاص:</label>
-                    <input type="number" id="jm-c" placeholder="مثال: 100" required>
-                    <button type="submit"><i class="fab fa-whatsapp"></i> حجز عربة الجمعات</button>
+                    <input type="number" id="ts-c" placeholder="مثال: 100" required>
+                    <button type="submit"><i class="fab fa-whatsapp"></i> حجز عربة تسالي شفزار</button>
                 </form>
             </div>
         </div>
 
-        <!-- Blog Section -->
         <div class="section-header" id="blog">
             <h2>مدونة مطعم شفزار 📰</h2>
         </div>
@@ -604,7 +586,6 @@
             </div>
         </div>
 
-        <!-- Reviews Section -->
         <div class="section-header">
             <h2>آراء عملاء شفزار ⭐</h2>
         </div>
@@ -626,7 +607,6 @@
             </div>
         </div>
 
-        <!-- FAQ Section -->
         <div class="section-header" id="faq">
             <h2>الأسئلة الشائعة 💬</h2>
         </div>
@@ -641,17 +621,15 @@
             <div class="faq-content">يمكنك اختيار نوع العربة من شريط العربات أعلاه وتعبئة بياناتك ليتم تحويلك للواتساب مباشرة.</div>
         </div>
 
-        <!-- Location Section -->
         <div class="section-header">
             <h2>موقع الفرع بالرياض 📍</h2>
         </div>
         <div style="width: 100%; border-radius: 12px; overflow: hidden; border: 2px solid #000;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.7136!2d46.6753!3d24.7136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQyJzg5LjAiTiA0NsKwNDAnMzEuMSJF!5e0!3m2!1sar!2ssa!4v1620000000000!5m2!1sar!2ssa" width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://maps.app.goo.gl/thuQ5YLRPDchTgpi6?g_st=iw" width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
     </div>
 
-    <!-- Floating Action Buttons -->
     <div class="floating-btns">
         <a href="https://wa.me/966558473815" class="float-btn float-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
         <a href="tel:0558473815" class="float-btn float-phone"><i class="fas fa-phone"></i></a>
