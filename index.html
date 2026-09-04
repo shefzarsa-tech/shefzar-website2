@@ -38,18 +38,17 @@
     <style>
         :root {
             --bg-yellow: #ffc107;
-            --text-yellow: #d99b00; /* أصفر ذهبي واضح للقراءة على الخلفية البيضاء */
+            --text-yellow: #d99b00;
             --dark-yellow: #e6a100;
             --black-card: #141414;
             --white-card: #ffffff;
-            --green-title: #008000; /* اللون الأخضر للعنوان الرئيسي */
+            --green-title: #008000;
             --radius-box: 14px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         html { scroll-behavior: smooth; }
         
-        /* الخلفية بيضاء والخط أصفر في كامل الموقع */
         body { 
             background-color: #ffffff; 
             color: var(--text-yellow); 
@@ -74,7 +73,6 @@
         /* Hero Section & Framing */
         .hero { text-align: center; padding: 20px 15px 10px; }
         
-        /* برواز عبارة الترحيب الخضراء */
         .hero-title-box {
             display: inline-block;
             border: 3px double var(--green-title);
@@ -87,7 +85,7 @@
         .hero h1 { 
             font-size: 26px; 
             font-weight: 900; 
-            color: var(--green-title); /* الخط الأخضر الكبير */
+            color: var(--green-title);
             margin: 0;
         }
         
@@ -95,11 +93,10 @@
         .hero-buttons { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 25px; }
         .hero-btn { background: #000; color: var(--bg-yellow); padding: 10px 18px; border-radius: 20px; font-weight: bold; font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; }
 
-        /* Titles & Titles Styling */
+        /* Titles Styling */
         .section-header { text-align: center; margin: 30px 0 15px; }
         .section-header h2 { font-size: 22px; font-weight: 900; color: var(--text-yellow); }
 
-        /* برواز أسطوري مخصص لقصتنا الأسطورية مع العبارة التي تحتها */
         .story-frame {
             border: 3px solid var(--text-yellow);
             border-radius: 18px;
@@ -292,55 +289,46 @@
         .truck-form input, .truck-form select, .truck-form textarea { width: 100%; padding: 8px 10px; border: 1px solid var(--text-yellow); border-radius: 6px; margin-top: 4px; font-size: 14px; }
         .truck-form button { width: 100%; background: #25d366; color: #fff; border: none; padding: 10px; border-radius: 6px; font-weight: bold; margin-top: 12px; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; font-size: 14px; }
 
-        /* Suppliers Section */
-        .suppliers-wrapper {
-            background: #fff;
+        /* Suppliers Compact Card */
+        .suppliers-compact-card {
+            background: #fffdf8;
             border: 2px solid var(--text-yellow);
-            border-radius: var(--radius-box);
+            border-radius: 16px;
             padding: 20px;
-            margin-top: 25px;
+            margin: 25px 0;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: center;
         }
-        .suppliers-intro {
-            font-size: 14.5px;
+        .suppliers-compact-card h3 {
+            color: var(--text-yellow);
+            font-size: 20px;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+        .suppliers-compact-card p {
+            font-size: 14px;
             line-height: 1.7;
             color: var(--text-yellow);
-            margin-bottom: 15px;
             font-weight: 600;
+            margin-bottom: 15px;
         }
-        .suppliers-categories {
-            background: #fffdf8;
-            border: 1px dashed var(--text-yellow);
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 20px;
-        }
-        .suppliers-categories h3 {
-            font-size: 16px;
-            margin-bottom: 10px;
-            color: var(--text-yellow);
-        }
-        .suppliers-categories ul { list-style: none; padding-right: 5px; }
-        .suppliers-categories li {
-            font-size: 13.5px;
-            margin-bottom: 6px;
-            font-weight: bold;
-            display: flex;
+        .suppliers-compact-card .wa-btn {
+            display: inline-flex;
             align-items: center;
-            gap: 8px;
-            color: var(--text-yellow);
+            justify-content: center;
+            gap: 10px;
+            background: #25d366;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 15px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            transition: 0.3s;
         }
-        .suppliers-form-card {
-            background: #fffdf8;
-            border-radius: 10px;
-            padding: 18px;
-            border: 1px solid var(--text-yellow);
-        }
-        .suppliers-form-card h3 {
-            text-align: center;
-            font-size: 18px;
-            margin-bottom: 12px;
-            color: var(--text-yellow);
+        .suppliers-compact-card .wa-btn:hover {
+            background: #1eb954;
         }
 
         /* Blog Section */
@@ -425,8 +413,7 @@
         <a href="#offers" onclick="toggleNav()">العروض المميزة</a>
         <a href="#catering" onclick="toggleNav()">حجز العربات</a>
         <a href="#suppliers" onclick="toggleNav()">بوابة الموردين</a>
-        <a href="#blog" onclick="toggleNav()">مدونة شفزار</a>
-        <a href="#faq" onclick="toggleNav()">الأسئلة الشائعة</a>
+        <a href="#inform-us" onclick="toggleNav()">اخبرنا</a>
         <a href="#location" onclick="toggleNav()">موقعنا على الخريطة</a>
     </div>
 
@@ -462,7 +449,7 @@
             <div class="badge-box"><i class="fas fa-check-circle" style="color: green;"></i> مكونات طازجة يومياً</div>
         </div>
 
-        <!-- 1. Full Menu Image -->
+        <!-- Official Menu Image -->
         <div class="section-header" id="menu">
             <h2>قائمة الطعام (المنيو الرسمي) 📜</h2>
         </div>
@@ -471,7 +458,54 @@
             <img src="images/menu.jpg" alt="قائمة طعام شفزار الرسمية">
         </div>
 
-        <!-- 2. Horizontal Scrollable Image Gallery -->
+        <!-- Offers Section -->
+        <div id="offers">
+            <div class="offers-wrapper">
+                <div class="offers-header">وجبات التوفير (العروض المميزة)</div>
+                <div class="offers-grid">
+                    <div class="offer-card">
+                        <div class="offer-title">ثلاثي شفزار</div>
+                        <div class="offer-desc">1 شاورما عادي + 1 شاورما مكسيكي + 1 شاورما قرصان + بطاطس صغير</div>
+                        <div class="offer-price">21 ر.س <span>(1150 سعرة)</span></div>
+                    </div>
+                    <div class="offer-card">
+                        <div class="offer-title">مكس السعادة</div>
+                        <div class="offer-desc">2 كريسبي سبيشل عادي + 2 شاورما + 2 مشروب غازي</div>
+                        <div class="offer-price">34 ر.س <span>(2200 سعرة)</span></div>
+                    </div>
+                    <div class="offer-card">
+                        <div class="offer-title">بوكس العائلة</div>
+                        <div class="offer-desc">30 قطعة شاورما دجاج مع البطاطس + 4 صوصات تغميس</div>
+                        <div class="offer-price">49 ر.س <span>(3200 سعرة)</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="side-by-side-grid">
+                <div class="custom-card-section">
+                    <div class="custom-card-header">البطاطس والإضافات</div>
+                    <div class="custom-card-body">
+                        <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس صغير</span><span class="item-cal">(250 سعرة)</span></div><span class="item-price">4 ر.س</span></div>
+                        <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس وسط</span><span class="item-cal">(350 سعرة)</span></div><span class="item-price">6 ر.س</span></div>
+                        <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس كبير</span><span class="item-cal">(550 سعرة)</span></div><span class="item-price">10 ر.س</span></div>
+                        <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس عائلي</span><span class="item-cal">(850 سعرة)</span></div><span class="item-price">15 ر.س</span></div>
+                        <div class="menu-row"><div class="item-info"><span class="item-name">شريحة جبن</span><span class="item-cal">(60 سعرة)</span></div><span class="item-price">1 ر.س</span></div>
+                        <div class="menu-row"><div class="item-info"><span class="item-name">شريحة دجاج</span><span class="item-cal">(120 سعرة)</span></div><span class="item-price">4 ر.س</span></div>
+                    </div>
+                </div>
+
+                <div class="custom-card-section">
+                    <div class="custom-card-header">المشروبات</div>
+                    <div class="custom-card-body">
+                        <div class="menu-row"><div class="item-info"><span class="item-name">عصير ربيع</span><span class="item-cal">(150 سعرة)</span></div><span class="item-price">2.5 ر.س</span></div>
+                        <div class="menu-row"><div class="item-info"><span class="item-name">مشروبات غازية</span><span class="item-cal">(170 سعرة)</span></div><span class="item-price">3 ر.س</span></div>
+                        <div class="menu-row"><div class="item-info"><span class="item-name">ماء</span><span class="item-cal">(0 سعرة)</span></div><span class="item-price">1 ر.س</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Horizontal Scrollable Image Gallery -->
         <div class="section-header" id="gallery">
             <h2>وجبات شفزار المميزة (اسحب لمشاهدة الصور 👉)</h2>
         </div>
@@ -503,7 +537,7 @@
             </div>
         </div>
 
-        <!-- 3. Horizontal Scrollable Text Menu -->
+        <!-- Horizontal Scrollable Text Menu -->
         <div class="section-header" id="text-menu">
             <h2>قائمة المنيو النصي والأسعار الكاملة 📝 (اسحب أفقياً 👉)</h2>
         </div>
@@ -551,63 +585,12 @@
             </div>
         </div>
 
-        <div id="offers">
-            <!-- 1. Offers Box -->
-            <div class="offers-wrapper">
-                <div class="offers-header">وجبات التوفير (العروض المميزة)</div>
-                <div class="offers-grid">
-                    <div class="offer-card">
-                        <div class="offer-title">ثلاثي شفزار</div>
-                        <div class="offer-desc">1 شاورما عادي + 1 شاورما مكسيكي + 1 شاورما قرصان + بطاطس صغير</div>
-                        <div class="offer-price">21 ر.س <span>(1150 سعرة)</span></div>
-                    </div>
-                    <div class="offer-card">
-                        <div class="offer-title">مكس السعادة</div>
-                        <div class="offer-desc">2 كريسبي سبيشل عادي + 2 شاورما + 2 مشروب غازي</div>
-                        <div class="offer-price">34 ر.س <span>(2200 سعرة)</span></div>
-                    </div>
-                    <div class="offer-card">
-                        <div class="offer-title">بوكس العائلة</div>
-                        <div class="offer-desc">30 قطعة شاورما دجاج مع البطاطس + 4 صوصات تغميس</div>
-                        <div class="offer-price">49 ر.س <span>(3200 سعرة)</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2. Side-by-side Sections for Fries/Extras and Drinks -->
-            <div class="side-by-side-grid">
-                <!-- Fries and Extras -->
-                <div class="custom-card-section">
-                    <div class="custom-card-header">البطاطس والإضافات</div>
-                    <div class="custom-card-body">
-                        <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس صغير</span><span class="item-cal">(250 سعرة)</span></div><span class="item-price">4 ر.س</span></div>
-                        <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس وسط</span><span class="item-cal">(350 سعرة)</span></div><span class="item-price">6 ر.س</span></div>
-                        <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس كبير</span><span class="item-cal">(550 سعرة)</span></div><span class="item-price">10 ر.س</span></div>
-                        <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس عائلي</span><span class="item-cal">(850 سعرة)</span></div><span class="item-price">15 ر.س</span></div>
-                        <div class="menu-row"><div class="item-info"><span class="item-name">شريحة جبن</span><span class="item-cal">(60 سعرة)</span></div><span class="item-price">1 ر.س</span></div>
-                        <div class="menu-row"><div class="item-info"><span class="item-name">شريحة دجاج</span><span class="item-cal">(120 سعرة)</span></div><span class="item-price">4 ر.س</span></div>
-                    </div>
-                </div>
-
-                <!-- Beverages -->
-                <div class="custom-card-section">
-                    <div class="custom-card-header">المشروبات</div>
-                    <div class="custom-card-body">
-                        <div class="menu-row"><div class="item-info"><span class="item-name">عصير ربيع</span><span class="item-cal">(150 سعرة)</span></div><span class="item-price">2.5 ر.س</span></div>
-                        <div class="menu-row"><div class="item-info"><span class="item-name">مشروبات غازية</span><span class="item-cal">(170 سعرة)</span></div><span class="item-price">3 ر.س</span></div>
-                        <div class="menu-row"><div class="item-info"><span class="item-name">ماء</span><span class="item-cal">(0 سعرة)</span></div><span class="item-price">1 ر.س</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 4. Catering Vehicles Horizontal Slider -->
+        <!-- Catering Vehicles Slider -->
         <div class="section-header" id="catering">
             <h2>قسم الجمعات والمناسبات 🎪 (اسحب أفقياً 👉)</h2>
         </div>
 
         <div class="horizontal-slider">
-            <!-- Truck 1 -->
             <div class="truck-card">
                 <h3>1. عربة البرجر 🍔</h3>
                 <form class="truck-form" onsubmit="sendTruckWa(event, 'عربة البرجر', 'bg-n', 'bg-p', 'bg-c')">
@@ -621,7 +604,6 @@
                 </form>
             </div>
 
-            <!-- Truck 2 -->
             <div class="truck-card">
                 <h3>2. عربة الشاورما 🥙</h3>
                 <form class="truck-form" onsubmit="sendTruckWa(event, 'عربة الشاورما', 'sh-n', 'sh-p', 'sh-c')">
@@ -635,7 +617,6 @@
                 </form>
             </div>
 
-            <!-- Truck 3 -->
             <div class="truck-card">
                 <h3>3. عربة تسالي شفزار 🍿🍟</h3>
                 <form class="truck-form" onsubmit="sendTruckWa(event, 'عربة تسالي شفزار', 'ts-n', 'ts-p', 'ts-c')">
@@ -650,65 +631,30 @@
             </div>
         </div>
 
-        <!-- 5. Suppliers Section -->
+        <!-- Suppliers Section (Compact Card) -->
         <div class="section-header" id="suppliers">
-            <h2>شراكات تصنع الجودة والتميز 🤝</h2>
+            <h2>بوابة الموردين 🤝</h2>
         </div>
 
-        <div class="suppliers-wrapper">
-            <p class="suppliers-intro">
-                في شفزار، نؤمن أن جودة ما نقدمه تبدأ من شراكات قوية مع أفضل الموردين ومزودي الخدمات. نرحب بالتعاون مع الموردين المعتمدين والمتميزين الذين يشاركوننا الالتزام بأعلى معايير الجودة، الموثوقية، وسرعة الإمداد.
+        <div class="suppliers-compact-card">
+            <h3>شراكات تصنع الجودة والتميز</h3>
+            <p>
+                في شفزار، نؤمن أن جودة ما نقدمه تبدأ من شراكات قوية مع أفضل الموردين ومزودي الخدمات. نرحب بالتعاون مع الموردين المعتمدين والمتميزين الذين يشاركوننا الالتزام بأعلى معايير الجودة، الموثوقية، وسرعة الإمداد.<br><br>
+                <strong>خطوات تقديم عروض الأسعار:</strong><br>
+                لتسهيل وسرعة مراجعة ملف شركتكم من قبل فريق سلاسل الإمداد والمشتريات، نسعد باستقبال عروضكم مباشرة عبر منصة الواتساب المركزية للشركة.<br>
+                <em>(يرجى إرفاق: الملف التعريفي للشركة Company Profile + قائمة الأسعار المعتمدة + السجل التجاري والمستندات المالية إن وجدت).</em>
             </p>
-
-            <div class="suppliers-categories">
-                <h3>مجالات التوريد المستهدفة:</h3>
-                <ul>
-                    <li><i class="fas fa-drumstick-bite" style="color: #d02d18;"></i> المواد الغذائية الخام واللحوم والدواجن الطازجة.</li>
-                    <li><i class="fas fa-bread-slice" style="color: var(--text-yellow);"></i> المخبوزات والصلصات والتوابل المتخصصة.</li>
-                    <li><i class="fas fa-box-open" style="color: #2b78e4;"></i> حلول التغليف والتعبئة الصديقة للبيئة والمعتمدة.</li>
-                    <li><i class="fas fa-tools" style="color: #555;"></i> معدات المطابخ، التشغيل، ومواد النظافة والتعقيم.</li>
-                </ul>
-            </div>
-
-            <div class="suppliers-form-card">
-                <h3>تقديم عرض سعر وتوريد 📦</h3>
-                <p style="font-size: 13px; text-align: center; color: var(--text-yellow); margin-bottom: 15px;">
-                    يرجى تعبئة البيانات أدناه ثم الضغط على زر التواصل، وإرفاق (Profile الشركة + قائمة الأسعار + السجل التجاري) عند تحويلك للواتساب.
-                </p>
-
-                <form class="truck-form" onsubmit="sendSupplierWa(event)">
-                    <label>اسم الشركة / المورد:</label>
-                    <input type="text" id="sup-name" placeholder="أدخل اسم الشركة أو المؤسسة" required>
-
-                    <label>نوع المنتجات / الخدمات:</label>
-                    <select id="sup-type" required>
-                        <option value="" disabled selected>اختر مجال التوريد...</option>
-                        <option value="دواجن ولحوم طازجة (تبع الشاورما والبرجر)">دواجن ولحوم طازجة (تبع الشاورما والبرجر)</option>
-                        <option value="مواد غذائية وخام">مواد غذائية وخام</option>
-                        <option value="مخبوزات وصلصات وبهارات">مخبوزات وصلصات وبهارات</option>
-                        <option value="تغليف وتعبئة">تغليف وتعبئة</option>
-                        <option value="معدات مطابخ وتشغيل ونظافة">معدات مطابخ وتشغيل ونظافة</option>
-                        <option value="خدمات أخرى">خدمات أخرى</option>
-                    </select>
-
-                    <label>تفاصيل المنتجات والمعلومات:</label>
-                    <textarea id="sup-details" rows="3" placeholder="اكتب نبذة مختصرة عن المنتجات التي ترغب بتوريدها..." required></textarea>
-
-                    <label>رقم جوال التواصل:</label>
-                    <input type="tel" id="sup-phone" placeholder="05XXXXXXXX" required>
-
-                    <button type="submit" style="background: #112233; color: #fff;">
-                        <i class="fab fa-whatsapp"></i> تواصل مع إدارة المشتريات عبر واتساب
-                    </button>
-                </form>
-            </div>
+            <a href="https://wa.me/966544955085?text=السلام%20عليكم%20ورحمة%20الله%20وبركاته،%20نود%20تقديم%20عرض%20سعر%20تأمين/توريد%20لشركة%20شفزار" target="_blank" class="wa-btn">
+                <i class="fab fa-whatsapp"></i> تواصل مع إدارة المشتريات عبر واتساب
+            </a>
         </div>
 
-        <!-- Blog Section -->
-        <div class="section-header" id="blog">
-            <h2>مدونة شفزار 📰</h2>
+        <!-- Integrated Inform-Us Section (Merged Blog & FAQ) -->
+        <div class="section-header" id="inform-us">
+            <h2>اخبرنا 📢</h2>
         </div>
-        <div class="blog-grid">
+
+        <div class="blog-grid" style="margin-bottom: 20px;">
             <div class="blog-card">
                 <h3>سر نكهة شاورما القرصان بالرياض</h3>
                 <p>نستخدم أفضل المكونات المحلية والخبز المحمص مع الصوصات الطازجة يومياً لنضمن لك أفضل طعم شاورما بالرياض.</p>
@@ -717,6 +663,16 @@
                 <h3>تجهيز عربات الفعاليات والجمعات</h3>
                 <p>نوفر خدمة تجهيز عربات الأكل (فود تراكس) في مواقعكم الخاصة للمناسبات مع طاقم كامل ومعدات متكاملة.</p>
             </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-title" onclick="toggleFaq(this)">ما هي أوقات العمل الرسمية للمطعم؟ <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-content">نستقبل طلباتكم يومياً من الساعة 4:00 عصراً وحتى الساعة 3:00 صباحاً.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-title" onclick="toggleFaq(this)">كيف يمكنني حجز عربة طعام للمناسبات؟ <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-content">يمكنك اختيار نوع العربة من شريط العربات أعلاه وتعبئة بياناتك ليتم تحويلك للواتساب مباشرة.</div>
         </div>
 
         <!-- Reviews Section -->
@@ -739,21 +695,6 @@
                 <p>"بوكس العائلة يواجه وسعره مناسب جداً للجمعات."</p>
                 <div class="review-author">- سارة الشمري</div>
             </div>
-        </div>
-
-        <!-- FAQ Section -->
-        <div class="section-header" id="faq">
-            <h2>الأسئلة الشائعة 💬</h2>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-title" onclick="toggleFaq(this)">ما هي أوقات العمل الرسمية للمطعم؟ <i class="fas fa-chevron-down"></i></div>
-            <div class="faq-content">نستقبل طلباتكم يومياً من الساعة 4:00 عصراً وحتى الساعة 3:00 صباحاً.</div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-title" onclick="toggleFaq(this)">كيف يمكنني حجز عربة طعام للمناسبات؟ <i class="fas fa-chevron-down"></i></div>
-            <div class="faq-content">يمكنك اختيار نوع العربة من شريط العربات أعلاه وتعبئة بياناتك ليتم تحويلك للواتساب مباشرة.</div>
         </div>
 
         <!-- Official Location Section -->
@@ -800,18 +741,6 @@
             const count = document.getElementById(cId).value;
             const msg = `مرحباً شفزار، أرغب في حجز (${type})%0Aالاسم: ${name}%0Aالجوال: ${phone}%0Aعدد الأشخاص: ${count}`;
             window.open(`https://wa.me/966558473815?text=${msg}`, '_blank');
-        }
-
-        function sendSupplierWa(e) {
-            e.preventDefault();
-            const name = document.getElementById('sup-name').value;
-            const type = document.getElementById('sup-type').value;
-            const details = document.getElementById('sup-details').value;
-            const phone = document.getElementById('sup-phone').value;
-            
-            const msg = `السلام عليكم ورحمة الله وبركاته،%0A*طلب تقديم عرض توريد - إدارة المشتريات (شفزار)*%0A%0A*اسم الشركة / المورد:* ${name}%0A*مجال التوريد:* ${type}%0A*تفاصيل المنتجات:* ${details}%0A*رقم جوال التواصل:* ${phone}%0A%0A(يرجى الانتظار، جاري إرفاق ملف الشركة / الملف التعريفي والأسعار)`;
-            
-            window.open(`https://wa.me/96654455085?text=${msg}`, '_blank');
         }
     </script>
 </body>
