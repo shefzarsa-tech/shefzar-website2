@@ -128,6 +128,130 @@
         .badges-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 25px; }
         .badge-box { background: #fff; border: 1px solid var(--text-yellow); border-radius: 10px; padding: 10px; text-align: center; font-weight: bold; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); color: var(--text-yellow); }
 
+        /* Animated Offers Banner Slider */
+        .offers-banner-slider {
+            position: relative;
+            max-width: 100%;
+            height: 220px;
+            border-radius: var(--radius-box);
+            overflow: hidden;
+            border: 3px solid #d02d18;
+            box-shadow: 0 6px 18px rgba(208, 45, 24, 0.25);
+            margin: 15px 0 25px;
+            background: #111;
+        }
+
+        .banner-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .banner-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 30px;
+            background: linear-gradient(135deg, #111 0%, #2a0805 100%);
+            color: #fff;
+        }
+
+        .banner-slide:nth-child(2) {
+            background: linear-gradient(135deg, #1a1500 0%, #3a2b00 100%);
+        }
+
+        .banner-slide:nth-child(3) {
+            background: linear-gradient(135deg, #0d1a0d 0%, #173817 100%);
+        }
+
+        .banner-badge {
+            position: absolute;
+            top: 12px;
+            right: 15px;
+            background: #d02d18;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .banner-content {
+            max-width: 65%;
+            z-index: 2;
+        }
+
+        .banner-title {
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--bg-yellow);
+            margin-bottom: 8px;
+        }
+
+        .banner-desc {
+            font-size: 14px;
+            color: #ddd;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        .banner-price-tag {
+            display: inline-block;
+            background: #25d366;
+            color: #000;
+            padding: 6px 16px;
+            border-radius: 8px;
+            font-weight: 900;
+            font-size: 16px;
+        }
+
+        .banner-icon {
+            font-size: 80px;
+            color: rgba(255, 193, 7, 0.2);
+            position: absolute;
+            left: 20px;
+            bottom: 10px;
+            z-index: 1;
+        }
+
+        /* Banner Indicators */
+        .banner-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 5;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .dot.active {
+            background: var(--bg-yellow);
+            width: 25px;
+            border-radius: 10px;
+        }
+
         /* Menu Image Box */
         .menu-image-container { text-align: center; margin: 15px 0 25px; background: #fff; padding: 10px; border-radius: var(--radius-box); border: 2px solid var(--text-yellow); box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
         .menu-image-container img { width: 100%; height: auto; border-radius: 8px; display: block; }
@@ -189,63 +313,7 @@
         .item-cal { font-size: 11.5px; color: #888; margin-top: 2px; }
         .item-price { font-weight: 900; color: #000; font-size: 15px; white-space: nowrap; }
 
-        /* Offers Wrapper */
-        .offers-wrapper {
-            background: #fffdf8;
-            border-radius: 16px;
-            padding: 15px;
-            margin: 25px 0;
-            border: 2px solid var(--text-yellow);
-        }
-        .offers-header {
-            background: #d02d18;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            border-radius: 10px;
-            font-size: 20px;
-            font-weight: 900;
-            margin-bottom: 15px;
-        }
-        .offers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 15px;
-        }
-        .offer-card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 18px 12px;
-            text-align: center;
-            border: 1px solid var(--text-yellow);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .offer-title {
-            color: #bd2310;
-            font-weight: bold;
-            font-size: 17px;
-            margin-bottom: 8px;
-        }
-        .offer-desc {
-            font-size: 12.5px;
-            color: var(--text-yellow);
-            font-weight: 600;
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
-        .offer-price {
-            font-size: 16px;
-            font-weight: 900;
-            color: #000;
-        }
-        .offer-price span {
-            font-size: 12px;
-            color: #666;
-            font-weight: normal;
-        }
-
+        /* Offers Wrapper & Side Grid */
         .side-by-side-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -407,10 +475,10 @@
     <!-- Side Navigation -->
     <div class="side-nav" id="sideNav">
         <button class="close-nav" onclick="toggleNav()">×</button>
-        <a href="#menu" onclick="toggleNav()">قائمة الطعام</a>
+        <a href="#offers" onclick="toggleNav()">عروض شفزار</a>
+        <a href="#menu" onclick="toggleNav()">منيو شفزار</a>
         <a href="#gallery" onclick="toggleNav()">معرض الوجبات</a>
         <a href="#text-menu" onclick="toggleNav()">المنيو النصي</a>
-        <a href="#offers" onclick="toggleNav()">العروض المميزة</a>
         <a href="#catering" onclick="toggleNav()">حجز العربات</a>
         <a href="#suppliers" onclick="toggleNav()">بوابة الموردين</a>
         <a href="#inform-us" onclick="toggleNav()">اخبرنا</a>
@@ -449,58 +517,80 @@
             <div class="badge-box"><i class="fas fa-check-circle" style="color: green;"></i> مكونات طازجة يومياً</div>
         </div>
 
-        <!-- Official Menu Image -->
+        <!-- Offers Animated Banner Carousel -->
+        <div class="section-header" id="offers">
+            <h2>العروض التوفيرية والمميزة 🔥</h2>
+        </div>
+
+        <div class="offers-banner-slider">
+            <div class="banner-track" id="bannerTrack">
+                <!-- Banner 1 -->
+                <div class="banner-slide">
+                    <span class="banner-badge">العرض الأقوى 🔥</span>
+                    <div class="banner-content">
+                        <div class="banner-title">عرض ثلاثي شفزار</div>
+                        <div class="banner-desc">1 شاورما عادي + 1 شاورما مكسيكي + 1 شاورما قرصان + بطاطس صغير</div>
+                        <div class="banner-price-tag">21 ر.س فقط!</div>
+                    </div>
+                    <i class="fas fa-hamburger banner-icon"></i>
+                </div>
+                <!-- Banner 2 -->
+                <div class="banner-slide">
+                    <span class="banner-badge">الأكثر مبيعاً ⭐</span>
+                    <div class="banner-content">
+                        <div class="banner-title">مكس السعادة</div>
+                        <div class="banner-desc">2 كريسبي سبيشل عادي + 2 شاورما + 2 مشروب غازي</div>
+                        <div class="banner-price-tag">34 ر.س فقط!</div>
+                    </div>
+                    <i class="fas fa-drumstick-bite banner-icon"></i>
+                </div>
+                <!-- Banner 3 -->
+                <div class="banner-slide">
+                    <span class="banner-badge">عروض الجمعات 👨‍👩‍👧‍👦</span>
+                    <div class="banner-content">
+                        <div class="banner-title">بوكس العائلة الأسطوري</div>
+                        <div class="banner-desc">30 قطعة شاورما دجاج مع البطاطس + 4 صوصات تغميس</div>
+                        <div class="banner-price-tag">49 ر.س فقط!</div>
+                    </div>
+                    <i class="fas fa-box banner-icon"></i>
+                </div>
+            </div>
+            <div class="banner-dots">
+                <div class="dot active" onclick="goToBanner(0)"></div>
+                <div class="dot" onclick="goToBanner(1)"></div>
+                <div class="dot" onclick="goToBanner(2)"></div>
+            </div>
+        </div>
+
+        <!-- Official Menu Section (Formally Menu Image Container) -->
         <div class="section-header" id="menu">
-            <h2>قائمة الطعام (المنيو الرسمي) 📜</h2>
+            <h2>منيو شفزار 📜</h2>
         </div>
 
         <div class="menu-image-container">
-            <img src="images/menu.jpg" alt="قائمة طعام شفزار الرسمية">
+            <img src="images/menu.jpg" alt="منيو شفزار الرسمي">
         </div>
 
-        <!-- Offers Section -->
-        <div id="offers">
-            <div class="offers-wrapper">
-                <div class="offers-header">وجبات التوفير (العروض المميزة)</div>
-                <div class="offers-grid">
-                    <div class="offer-card">
-                        <div class="offer-title">ثلاثي شفزار</div>
-                        <div class="offer-desc">1 شاورما عادي + 1 شاورما مكسيكي + 1 شاورما قرصان + بطاطس صغير</div>
-                        <div class="offer-price">21 ر.س <span>(1150 سعرة)</span></div>
-                    </div>
-                    <div class="offer-card">
-                        <div class="offer-title">مكس السعادة</div>
-                        <div class="offer-desc">2 كريسبي سبيشل عادي + 2 شاورما + 2 مشروب غازي</div>
-                        <div class="offer-price">34 ر.س <span>(2200 سعرة)</span></div>
-                    </div>
-                    <div class="offer-card">
-                        <div class="offer-title">بوكس العائلة</div>
-                        <div class="offer-desc">30 قطعة شاورما دجاج مع البطاطس + 4 صوصات تغميس</div>
-                        <div class="offer-price">49 ر.س <span>(3200 سعرة)</span></div>
-                    </div>
+        <!-- Side-by-side Addons Section -->
+        <div class="side-by-side-grid">
+            <div class="custom-card-section">
+                <div class="custom-card-header">البطاطس والإضافات</div>
+                <div class="custom-card-body">
+                    <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس صغير</span><span class="item-cal">(250 سعرة)</span></div><span class="item-price">4 ر.س</span></div>
+                    <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس وسط</span><span class="item-cal">(350 سعرة)</span></div><span class="item-price">6 ر.س</span></div>
+                    <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس كبير</span><span class="item-cal">(550 سعرة)</span></div><span class="item-price">10 ر.س</span></div>
+                    <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس عائلي</span><span class="item-cal">(850 سعرة)</span></div><span class="item-price">15 ر.س</span></div>
+                    <div class="menu-row"><div class="item-info"><span class="item-name">شريحة جبن</span><span class="item-cal">(60 سعرة)</span></div><span class="item-price">1 ر.س</span></div>
+                    <div class="menu-row"><div class="item-info"><span class="item-name">شريحة دجاج</span><span class="item-cal">(120 سعرة)</span></div><span class="item-price">4 ر.س</span></div>
                 </div>
             </div>
 
-            <div class="side-by-side-grid">
-                <div class="custom-card-section">
-                    <div class="custom-card-header">البطاطس والإضافات</div>
-                    <div class="custom-card-body">
-                        <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس صغير</span><span class="item-cal">(250 سعرة)</span></div><span class="item-price">4 ر.س</span></div>
-                        <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس وسط</span><span class="item-cal">(350 سعرة)</span></div><span class="item-price">6 ر.س</span></div>
-                        <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس كبير</span><span class="item-cal">(550 سعرة)</span></div><span class="item-price">10 ر.س</span></div>
-                        <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس عائلي</span><span class="item-cal">(850 سعرة)</span></div><span class="item-price">15 ر.س</span></div>
-                        <div class="menu-row"><div class="item-info"><span class="item-name">شريحة جبن</span><span class="item-cal">(60 سعرة)</span></div><span class="item-price">1 ر.س</span></div>
-                        <div class="menu-row"><div class="item-info"><span class="item-name">شريحة دجاج</span><span class="item-cal">(120 سعرة)</span></div><span class="item-price">4 ر.س</span></div>
-                    </div>
-                </div>
-
-                <div class="custom-card-section">
-                    <div class="custom-card-header">المشروبات</div>
-                    <div class="custom-card-body">
-                        <div class="menu-row"><div class="item-info"><span class="item-name">عصير ربيع</span><span class="item-cal">(150 سعرة)</span></div><span class="item-price">2.5 ر.س</span></div>
-                        <div class="menu-row"><div class="item-info"><span class="item-name">مشروبات غازية</span><span class="item-cal">(170 سعرة)</span></div><span class="item-price">3 ر.س</span></div>
-                        <div class="menu-row"><div class="item-info"><span class="item-name">ماء</span><span class="item-cal">(0 سعرة)</span></div><span class="item-price">1 ر.س</span></div>
-                    </div>
+            <div class="custom-card-section">
+                <div class="custom-card-header">المشروبات</div>
+                <div class="custom-card-body">
+                    <div class="menu-row"><div class="item-info"><span class="item-name">عصير ربيع</span><span class="item-cal">(150 سعرة)</span></div><span class="item-price">2.5 ر.س</span></div>
+                    <div class="menu-row"><div class="item-info"><span class="item-name">مشروبات غازية</span><span class="item-cal">(170 سعرة)</span></div><span class="item-price">3 ر.س</span></div>
+                    <div class="menu-row"><div class="item-info"><span class="item-name">ماء</span><span class="item-cal">(0 سعرة)</span></div><span class="item-price">1 ر.س</span></div>
                 </div>
             </div>
         </div>
@@ -649,7 +739,7 @@
             </a>
         </div>
 
-        <!-- Integrated Inform-Us Section (Merged Blog & FAQ) -->
+        <!-- Integrated Inform-Us Section -->
         <div class="section-header" id="inform-us">
             <h2>اخبرنا 📢</h2>
         </div>
@@ -742,6 +832,28 @@
             const msg = `مرحباً شفزار، أرغب في حجز (${type})%0Aالاسم: ${name}%0Aالجوال: ${phone}%0Aعدد الأشخاص: ${count}`;
             window.open(`https://wa.me/966558473815?text=${msg}`, '_blank');
         }
+
+        /* Banner Carousel Functionality */
+        let currentBanner = 0;
+        const totalBanners = 3;
+
+        function goToBanner(index) {
+            currentBanner = index;
+            const track = document.getElementById('bannerTrack');
+            const dots = document.querySelectorAll('.banner-dots .dot');
+            
+            track.style.transform = `translateX(${currentBanner * 100}%)`;
+            
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentBanner);
+            });
+        }
+
+        // Auto slide banners every 4 seconds
+        setInterval(() => {
+            currentBanner = (currentBanner + 1) % totalBanners;
+            goToBanner(currentBanner);
+        }, 4000);
     </script>
 </body>
 </html>
