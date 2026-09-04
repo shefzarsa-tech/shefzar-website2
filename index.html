@@ -238,8 +238,61 @@
         }
         .truck-card h3 { text-align: center; font-size: 17px; font-weight: bold; margin-bottom: 12px; border-bottom: 2px solid #ffc107; padding-bottom: 8px; }
         .truck-form label { font-size: 13px; font-weight: bold; display: block; margin-top: 8px; }
-        .truck-form input { width: 100%; padding: 8px 10px; border: 1px solid #ccc; border-radius: 6px; margin-top: 4px; font-size: 14px; }
+        .truck-form input, .truck-form select, .truck-form textarea { width: 100%; padding: 8px 10px; border: 1px solid #ccc; border-radius: 6px; margin-top: 4px; font-size: 14px; }
         .truck-form button { width: 100%; background: #25d366; color: #fff; border: none; padding: 10px; border-radius: 6px; font-weight: bold; margin-top: 12px; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; font-size: 14px; }
+
+        /* Suppliers Section Styling */
+        .suppliers-wrapper {
+            background: #fff;
+            border: 2px solid #000;
+            border-radius: var(--radius-box);
+            padding: 20px;
+            margin-top: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .suppliers-intro {
+            font-size: 14.5px;
+            line-height: 1.7;
+            color: #222;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .suppliers-categories {
+            background: #f8f9fa;
+            border: 1px dashed #000;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .suppliers-categories h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #000;
+        }
+        .suppliers-categories ul {
+            list-style: none;
+            padding-right: 5px;
+        }
+        .suppliers-categories li {
+            font-size: 13.5px;
+            margin-bottom: 6px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .suppliers-form-card {
+            background: #f1f1f1;
+            border-radius: 10px;
+            padding: 18px;
+            border: 1px solid #ccc;
+        }
+        .suppliers-form-card h3 {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #111;
+        }
 
         /* Blog Section */
         .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
@@ -322,6 +375,7 @@
         <a href="#text-menu" onclick="toggleNav()">المنيو النصي</a>
         <a href="#offers" onclick="toggleNav()">العروض المميزة</a>
         <a href="#catering" onclick="toggleNav()">حجز العربات</a>
+        <a href="#suppliers" onclick="toggleNav()">بوابة الموردين</a>
         <a href="#blog" onclick="toggleNav()">مدونة شفزار</a>
         <a href="#faq" onclick="toggleNav()">الأسئلة الشائعة</a>
         <a href="#location" onclick="toggleNav()">موقعنا على الخريطة</a>
@@ -429,7 +483,7 @@
             </div>
 
             <div class="menu-card-horizontal">
-                <h3>قسم الوجبات والاستربس</h3>
+                <h3>قسم الوجبات واستربس</h3>
                 <div class="menu-row"><div class="item-info"><span class="item-name">وجبة الأطفال (3 قطع+عصير)</span><span class="item-cal">(550 سعرة)</span></div><span class="item-price">16 ر.س</span></div>
                 <div class="menu-row"><div class="item-info"><span class="item-name">ستربس فردي (3 قطع)</span><span class="item-cal">(300 سعرة)</span></div><span class="item-price">11 ر.س</span></div>
                 <div class="menu-row"><div class="item-info"><span class="item-name">ستربس 5 قطع مع بطاطس</span><span class="item-cal">(850 سعرة)</span></div><span class="item-price">25 ر.س</span></div>
@@ -546,6 +600,60 @@
             </div>
         </div>
 
+        <!-- 5. Suppliers Section -->
+        <div class="section-header" id="suppliers">
+            <h2>شراكات تصنع الجودة والتميز 🤝</h2>
+        </div>
+
+        <div class="suppliers-wrapper">
+            <p class="suppliers-intro">
+                في شفزار، نؤمن أن جودة ما نقدمه تبدأ من شراكات قوية مع أفضل الموردين ومزودي الخدمات. نرحب بالتعاون مع الموردين المعتمدين والمتميزين الذين يشاركوننا الالتزام بأعلى معايير الجودة، الموثوقية، وسرعة الإمداد.
+            </p>
+
+            <div class="suppliers-categories">
+                <h3>مجالات التوريد المستهدفة:</h3>
+                <ul>
+                    <li><i class="fas fa-drumstick-bite" style="color: #d02d18;"></i> المواد الغذائية الخام واللحوم والدواجن الطازجة.</li>
+                    <li><i class="fas fa-bread-slice" style="color: #e6a100;"></i> المخبوزات والصلصات والتوابل المتخصصة.</li>
+                    <li><i class="fas fa-box-open" style="color: #2b78e4;"></i> حلول التغليف والتعبئة الصديقة للبيئة والمعتمدة.</li>
+                    <li><i class="fas fa-tools" style="color: #555;"></i> معدات المطابخ، التشغيل، ومواد النظافة والتعقيم.</li>
+                </ul>
+            </div>
+
+            <div class="suppliers-form-card">
+                <h3>تقديم عرض سعر وتوريد 📦</h3>
+                <p style="font-size: 13px; text-align: center; color: #555; margin-bottom: 15px;">
+                    يرجى تعبئة البيانات أدناه ثم الضغط على زر التواصل، وإرفاق (Profile الشركة + قائمة الأسعار + السجل التجاري) عند تحويلك للواتساب.
+                </p>
+
+                <form class="truck-form" onsubmit="sendSupplierWa(event)">
+                    <label>اسم الشركة / المورد:</label>
+                    <input type="text" id="sup-name" placeholder="أدخل اسم الشركة أو المؤسسة" required>
+
+                    <label>نوع المنتجات / الخدمات:</label>
+                    <select id="sup-type" required>
+                        <option value="" disabled selected>اختر مجال التوريد...</option>
+                        <option value="دواجن ولحوم طازجة (تبع الشاورما والبرجر)">دواجن ولحوم طازجة (تبع الشاورما والبرجر)</option>
+                        <option value="مواد غذائية وخام">مواد غذائية وخام</option>
+                        <option value="مخبوزات وصلصات وبهارات">مخبوزات وصلصات وبهارات</option>
+                        <option value="تغليف وتعبئة">تغليف وتعبئة</option>
+                        <option value="معدات مطابخ وتشغيل ونظافة">معدات مطابخ وتشغيل ونظافة</option>
+                        <option value="خدمات أخرى">خدمات أخرى</option>
+                    </select>
+
+                    <label>تفاصيل المنتجات والمعلومات:</label>
+                    <textarea id="sup-details" rows="3" placeholder="اكتب نبذة مختصرة عن المنتجات التي ترغب بتوريدها..." required></textarea>
+
+                    <label>رقم جوال التواصل:</label>
+                    <input type="tel" id="sup-phone" placeholder="05XXXXXXXX" required>
+
+                    <button type="submit" style="background: #112233; color: #fff;">
+                        <i class="fab fa-whatsapp"></i> تواصل مع إدارة المشتريات عبر واتساب
+                    </button>
+                </form>
+            </div>
+        </div>
+
         <!-- Blog Section -->
         <div class="section-header" id="blog">
             <h2>مدونة مطعم شفزار 📰</h2>
@@ -642,6 +750,18 @@
             const count = document.getElementById(cId).value;
             const msg = `مرحباً مطعم شفزار، أرغب في حجز (${type})%0Aالاسم: ${name}%0Aالجوال: ${phone}%0Aعدد الأشخاص: ${count}`;
             window.open(`https://wa.me/966558473815?text=${msg}`, '_blank');
+        }
+
+        function sendSupplierWa(e) {
+            e.preventDefault();
+            const name = document.getElementById('sup-name').value;
+            const type = document.getElementById('sup-type').value;
+            const details = document.getElementById('sup-details').value;
+            const phone = document.getElementById('sup-phone').value;
+            
+            const msg = `السلام عليكم ورحمة الله وبركاته،%0A*طلب تقديم عرض توريد - إدارة المشتريات (مطعم شفزار)*%0A%0A*اسم الشركة / المورد:* ${name}%0A*مجال التوريد:* ${type}%0A*تفاصيل المنتجات:* ${details}%0A*رقم جوال التواصل:* ${phone}%0A%0A(يرجى الانتظار، جاري إرفاق ملف الشركة / الملف التعريفي والأسعار)`;
+            
+            window.open(`https://wa.me/96654455085?text=${msg}`, '_blank');
         }
     </script>
 </body>
