@@ -313,35 +313,6 @@
         .item-cal { font-size: 11.5px; color: #888; margin-top: 2px; }
         .item-price { font-weight: 900; color: #000; font-size: 15px; white-space: nowrap; }
 
-        /* Offers Wrapper & Side Grid */
-        .side-by-side-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-        .custom-card-section {
-            background: #fffdf8;
-            border-radius: 16px;
-            padding: 12px;
-            border: 2px solid var(--text-yellow);
-        }
-        .custom-card-header {
-            background: #112233;
-            color: #fff;
-            text-align: center;
-            padding: 8px;
-            border-radius: 8px;
-            font-size: 17px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .custom-card-body {
-            background: #fff;
-            border-radius: 10px;
-            padding: 10px 15px;
-        }
-
         /* Catering Trucks */
         .truck-card {
             flex: 0 0 320px;
@@ -476,9 +447,9 @@
     <div class="side-nav" id="sideNav">
         <button class="close-nav" onclick="toggleNav()">×</button>
         <a href="#offers" onclick="toggleNav()">عروض شفزار</a>
-        <a href="#menu" onclick="toggleNav()">منيو شفزار</a>
-        <a href="#gallery" onclick="toggleNav()">معرض الوجبات</a>
-        <a href="#text-menu" onclick="toggleNav()">المنيو النصي</a>
+        <a href="#gallery" onclick="toggleNav()">منيو شفزار المميز</a>
+        <a href="#menu-img" onclick="toggleNav()">منيو شفزار الرسمية</a>
+        <a href="#text-menu" onclick="toggleNav()">المنيو النصي والأسعار</a>
         <a href="#catering" onclick="toggleNav()">حجز العربات</a>
         <a href="#suppliers" onclick="toggleNav()">بوابة الموردين</a>
         <a href="#inform-us" onclick="toggleNav()">اخبرنا</a>
@@ -562,42 +533,9 @@
             </div>
         </div>
 
-        <!-- Official Menu Section (Formally Menu Image Container) -->
-        <div class="section-header" id="menu">
-            <h2>منيو شفزار 📜</h2>
-        </div>
-
-        <div class="menu-image-container">
-            <img src="images/menu.jpg" alt="منيو شفزار الرسمي">
-        </div>
-
-        <!-- Side-by-side Addons Section -->
-        <div class="side-by-side-grid">
-            <div class="custom-card-section">
-                <div class="custom-card-header">البطاطس والإضافات</div>
-                <div class="custom-card-body">
-                    <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس صغير</span><span class="item-cal">(250 سعرة)</span></div><span class="item-price">4 ر.س</span></div>
-                    <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس وسط</span><span class="item-cal">(350 سعرة)</span></div><span class="item-price">6 ر.س</span></div>
-                    <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس كبير</span><span class="item-cal">(550 سعرة)</span></div><span class="item-price">10 ر.س</span></div>
-                    <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس عائلي</span><span class="item-cal">(850 سعرة)</span></div><span class="item-price">15 ر.س</span></div>
-                    <div class="menu-row"><div class="item-info"><span class="item-name">شريحة جبن</span><span class="item-cal">(60 سعرة)</span></div><span class="item-price">1 ر.س</span></div>
-                    <div class="menu-row"><div class="item-info"><span class="item-name">شريحة دجاج</span><span class="item-cal">(120 سعرة)</span></div><span class="item-price">4 ر.س</span></div>
-                </div>
-            </div>
-
-            <div class="custom-card-section">
-                <div class="custom-card-header">المشروبات</div>
-                <div class="custom-card-body">
-                    <div class="menu-row"><div class="item-info"><span class="item-name">عصير ربيع</span><span class="item-cal">(150 سعرة)</span></div><span class="item-price">2.5 ر.س</span></div>
-                    <div class="menu-row"><div class="item-info"><span class="item-name">مشروبات غازية</span><span class="item-cal">(170 سعرة)</span></div><span class="item-price">3 ر.س</span></div>
-                    <div class="menu-row"><div class="item-info"><span class="item-name">ماء</span><span class="item-cal">(0 سعرة)</span></div><span class="item-price">1 ر.س</span></div>
-                </div>
-            </div>
-        </div>
-
         <!-- Horizontal Scrollable Image Gallery -->
         <div class="section-header" id="gallery">
-            <h2>وجبات شفزار المميزة (اسحب لمشاهدة الصور 👉)</h2>
+            <h2>منيو شفزار المميز (اسحب لمشاهدة الصور 👉)</h2>
         </div>
         
         <div class="horizontal-slider">
@@ -627,12 +565,41 @@
             </div>
         </div>
 
-        <!-- Horizontal Scrollable Text Menu -->
+        <!-- Official Menu Image Section -->
+        <div class="section-header" id="menu-img">
+            <h2>منيو شفزار الرسمية 📜</h2>
+        </div>
+
+        <div class="menu-image-container">
+            <img src="images/menu.jpg" alt="منيو شفزار الرسمي">
+        </div>
+
+        <!-- Horizontal Scrollable Text Menu (Now 6 Cards) -->
         <div class="section-header" id="text-menu">
             <h2>قائمة المنيو النصي والأسعار الكاملة 📝 (اسحب أفقياً 👉)</h2>
         </div>
 
         <div class="horizontal-slider">
+            <!-- Card 1: البطاطس والإضافات -->
+            <div class="menu-card-horizontal">
+                <h3>البطاطس والإضافات</h3>
+                <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس صغير</span><span class="item-cal">(250 سعرة)</span></div><span class="item-price">4 ر.س</span></div>
+                <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس وسط</span><span class="item-cal">(350 سعرة)</span></div><span class="item-price">6 ر.س</span></div>
+                <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس كبير</span><span class="item-cal">(550 سعرة)</span></div><span class="item-price">10 ر.س</span></div>
+                <div class="menu-row"><div class="item-info"><span class="item-name">بطاطس عائلي</span><span class="item-cal">(850 سعرة)</span></div><span class="item-price">15 ر.س</span></div>
+                <div class="menu-row"><div class="item-info"><span class="item-name">شريحة جبن</span><span class="item-cal">(60 سعرة)</span></div><span class="item-price">1 ر.س</span></div>
+                <div class="menu-row"><div class="item-info"><span class="item-name">شريحة دجاج</span><span class="item-cal">(120 سعرة)</span></div><span class="item-price">4 ر.س</span></div>
+            </div>
+
+            <!-- Card 2: المشروبات -->
+            <div class="menu-card-horizontal">
+                <h3>المشروبات</h3>
+                <div class="menu-row"><div class="item-info"><span class="item-name">عصير ربيع</span><span class="item-cal">(150 سعرة)</span></div><span class="item-price">2.5 ر.س</span></div>
+                <div class="menu-row"><div class="item-info"><span class="item-name">مشروبات غازية</span><span class="item-cal">(170 سعرة)</span></div><span class="item-price">3 ر.س</span></div>
+                <div class="menu-row"><div class="item-info"><span class="item-name">ماء</span><span class="item-cal">(0 سعرة)</span></div><span class="item-price">1 ر.س</span></div>
+            </div>
+
+            <!-- Card 3: قسم الساندوتشات -->
             <div class="menu-card-horizontal">
                 <h3>قسم الساندوتشات</h3>
                 <div class="menu-row"><div class="item-info"><span class="item-name">شاورما عادي</span><span class="item-cal">(320 سعرة)</span></div><span class="item-price">6 ر.س</span></div>
@@ -645,6 +612,7 @@
                 <div class="menu-row"><div class="item-info"><span class="item-name">روست دجاج</span><span class="item-cal">(420 سعرة)</span></div><span class="item-price">13 ر.س</span></div>
             </div>
 
+            <!-- Card 4: قسم الشاورما العربي -->
             <div class="menu-card-horizontal">
                 <h3>قسم الشاورما العربي</h3>
                 <div class="menu-row"><div class="item-info"><span class="item-name">شاورما عربي سادة</span><span class="item-cal">(650 سعرة)</span></div><span class="item-price">16 ر.س</span></div>
@@ -656,6 +624,7 @@
                 <div class="menu-row"><div class="item-info"><span class="item-name">مكسيكي صحن</span><span class="item-cal">(600 سعرة)</span></div><span class="item-price">24 ر.س</span></div>
             </div>
 
+            <!-- Card 5: قسم الوجبات واستربس -->
             <div class="menu-card-horizontal">
                 <h3>قسم الوجبات واستربس</h3>
                 <div class="menu-row"><div class="item-info"><span class="item-name">وجبة الأطفال (3 قطع+عصير)</span><span class="item-cal">(550 سعرة)</span></div><span class="item-price">16 ر.س</span></div>
@@ -666,6 +635,7 @@
                 <div class="menu-row"><div class="item-info"><span class="item-name">وجبة البروست</span><span class="item-cal">(680 سعرة)</span></div><span class="item-price">18 ر.س</span></div>
             </div>
 
+            <!-- Card 6: قسم البرجر -->
             <div class="menu-card-horizontal">
                 <h3>قسم البرجر</h3>
                 <div class="menu-row"><div class="item-info"><span class="item-name">كريسبي كلاسيك عادي</span><span class="item-cal">(450 سعرة)</span></div><span class="item-price">10 ر.س</span></div>
