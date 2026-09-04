@@ -77,7 +77,7 @@
 
         /* Header */
         header { background: #ffffff; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
-        .logo-area { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--primary-orange); font-weight: 900; font-size: 22px; }
+        .logo-area { display: flex; align-items: center; gap: 10px; text-decoration: none; }
         .logo-area img { height: 45px; border-radius: 8px; object-fit: contain; }
         .nav-toggle { background: none; border: none; color: var(--primary-orange); font-size: 26px; cursor: pointer; }
 
@@ -396,10 +396,6 @@
         .badges-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 25px; }
         .badge-box { background: #fff; border: 2px solid var(--primary-orange); border-radius: 10px; padding: 10px; text-align: center; font-weight: bold; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--primary-orange); }
 
-        /* Menu Image Box */
-        .menu-image-container { text-align: center; margin: 15px 0 25px; background: #fff; padding: 10px; border-radius: var(--radius-box); border: 2px solid var(--primary-orange); }
-        .menu-image-container img { width: 100%; height: auto; border-radius: 8px; display: block; }
-
         /* Shared Horizontal Slider Styling */
         .horizontal-slider {
             display: flex;
@@ -599,7 +595,6 @@
     <header>
         <a href="https://shefzar.com" class="logo-area">
             <img src="images/logo.png.jpg" alt="شفزار">
-            <span>شفزار</span>
         </a>
         <button class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
     </header>
@@ -609,7 +604,6 @@
         <button class="close-nav" onclick="toggleNav()">×</button>
         <a href="#offers" onclick="toggleNav()">عروض شفزار</a>
         <a href="#gallery" onclick="toggleNav()">منيو شفزار المميز</a>
-        <a href="#menu-img" onclick="toggleNav()">منيو شفزار الرسمية</a>
         <a href="#text-menu" onclick="toggleNav()">المنيو النصي والأسعار</a>
         <a href="#catering" onclick="toggleNav()">حجز العربات</a>
         <a href="#suppliers" onclick="toggleNav()">بوابة الموردين</a>
@@ -722,15 +716,6 @@
                 <img src="images/fries.jpg" alt="بطاطس شفزار">
                 <div class="gallery-item-title">بطاطس مقرمشة</div>
             </div>
-        </div>
-
-        <!-- Official Menu Image Section -->
-        <div class="section-header" id="menu-img">
-            <h2>منيو شفزار الرسمية 📜</h2>
-        </div>
-
-        <div class="menu-image-container">
-            <img src="images/menu.jpg" alt="منيو شفزار الرسمي">
         </div>
 
         <!-- Horizontal Scrollable Text Menu (6 Cards) -->
