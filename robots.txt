@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.shefzar.com/sitemap.xml
+Sitemap: https://shefzar.com/sitemap.xml

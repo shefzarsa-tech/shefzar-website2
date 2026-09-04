@@ -1,26 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- الصفحة الرئيسية -->
-  <url>
-    <loc>https://www.shefzar.com/</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- الصفحة الرئيسية -->
+    <url>
+        <loc>https://shefzar.com/</loc>
+        <lastmod>2026-03-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        
+        <!-- صور المنيو والوجبات المضمنة لضمان أرشفة صور جوجل -->
+        <image:image>
+            <image:loc>https://shefzar.com/images/logo.png.jpg</image:loc>
+            <image:title>شعار مطعم شفزار</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://shefzar.com/images/menu.jpg</image:loc>
+            <image:title>قائمة طعام مطعم شفزار الرسمية</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://shefzar.com/images/gurtsan-shawarma.jpg</image:loc>
+            <image:title>شاورما القرصان المحمصة</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://shefzar.com/images/classic-burger.jpg</image:loc>
+            <image:title>برجر كريسبي كلاسيك</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://shefzar.com/images/arabic-shawarma-plate.jpg</image:loc>
+            <image:title>صحن شاورما عربي</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://shefzar.com/images/strips-meal.jpg</image:loc>
+            <image:title>وجبة ستربس دجاج مقرمش</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://shefzar.com/images/shefzar-shawarma-large.jpg</image:loc>
+            <image:title>شاورما صاروخ شفزار</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://shefzar.com/images/fries.jpg</image:loc>
+            <image:title>بطاطس شفزار المقرمشة</image:title>
+        </image:image>
+    </url>
 
-  <!-- مثال: صفحة المنيو -->
-  <url>
-    <loc>https://www.shefzar.com/menu</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- مثال: صفحة من نحن أو التواصل -->
-  <url>
-    <loc>https://www.shefzar.com/contact</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 </urlset>
