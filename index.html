@@ -103,7 +103,7 @@
             margin-bottom: 15px;
         }
         .hero h1 { 
-            font-size: 26px; 
+            font-size: 24px; 
             font-weight: 900; 
             color: var(--primary-orange);
             margin: 0;
@@ -112,6 +112,172 @@
         .hero p { font-size: 16px; font-weight: 700; line-height: 1.6; max-width: 800px; margin: 15px auto 20px; color: #444; }
         .hero-buttons { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 25px; }
         .hero-btn { background: var(--primary-orange); color: #fff; padding: 10px 18px; border-radius: 20px; font-weight: bold; font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+
+        /* Animated Offers Banner (بنر العروض المتحرك الرهيب) */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes pulseGlow {
+            0% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 85, 34, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 25px rgba(255, 85, 34, 0.8); }
+            100% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 85, 34, 0.4); }
+        }
+        @keyframes bounceBtn {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .offers-banner-animated {
+            background: linear-gradient(-45deg, #ff5522, #ff2200, #ff8800, #e04411);
+            background-size: 400% 400%;
+            animation: gradientBG 6s ease infinite, pulseGlow 3s infinite alternate;
+            border-radius: 20px;
+            padding: 30px 20px;
+            color: #fff;
+            text-align: center;
+            margin: 25px 0 35px;
+            border: 2px solid #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .offers-banner-animated h2 {
+            font-size: 30px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .offers-banner-animated p {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        .offers-banner-animated .btn-action {
+            display: inline-block;
+            background: #ffffff;
+            color: var(--primary-orange);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 900;
+            font-size: 18px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            animation: bounceBtn 2s infinite;
+            transition: all 0.3s ease;
+        }
+        .offers-banner-animated .btn-action:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        /* Popup Styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .popup-card {
+            background: #ff5522;
+            width: 90%;
+            max-width: 420px;
+            border-radius: 20px;
+            padding: 25px 20px;
+            text-align: center;
+            position: relative;
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background-image: radial-gradient(circle at center, #ff6b3d 0%, #ff5522 80%);
+            border: 3px solid #fff;
+        }
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #fff;
+            color: #000;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            font-size: 18px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .popup-img-wrapper {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 15px;
+        }
+        .popup-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+        .popup-badge {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #000;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-weight: 900;
+            font-size: 13px;
+            white-space: nowrap;
+            border: 1px solid #fff;
+        }
+
+        .popup-title {
+            font-size: 22px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+        .popup-subtitle {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        .popup-btn {
+            background: #25d366;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 900;
+            text-decoration: none;
+            font-size: 16px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .popup-footer-text {
+            font-size: 13px;
+            opacity: 0.95;
+            font-weight: bold;
+        }
 
         /* Section Titles Styling */
         .section-header { text-align: center; margin: 30px 0 15px; }
@@ -146,116 +312,6 @@
 
         .badges-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 25px; }
         .badge-box { background: #fff; border: 2px solid var(--primary-orange); border-radius: 10px; padding: 10px; text-align: center; font-weight: bold; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--primary-orange); }
-
-        /* Offers Banner Block (Matching Orange Style) */
-        .offers-banner-container {
-            background: var(--primary-orange);
-            border-radius: var(--radius-box);
-            padding: 25px 20px;
-            color: #fff;
-            text-align: center;
-            margin: 20px 0 30px;
-            box-shadow: 0 6px 18px rgba(255, 85, 34, 0.3);
-        }
-        .offers-banner-container h2 {
-            font-size: 28px;
-            font-weight: 900;
-            margin-bottom: 10px;
-        }
-        .offers-banner-container p {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-        .offers-banner-container .btn-action {
-            display: inline-block;
-            background: #fff;
-            color: var(--primary-orange);
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-weight: 900;
-            font-size: 16px;
-            text-decoration: none;
-        }
-
-        /* Popup Styles */
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.75);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-        .popup-card {
-            background: #ff5522;
-            width: 90%;
-            max-width: 450px;
-            border-radius: 20px;
-            padding: 25px 20px;
-            text-align: center;
-            position: relative;
-            color: #fff;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            background-image: radial-gradient(circle at center, #ff6b3d 0%, #ff5522 70%);
-        }
-        .popup-close {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: #fff;
-            color: #000;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            cursor: pointer;
-            border: none;
-            font-size: 16px;
-        }
-        .popup-img {
-            width: 140px;
-            height: 140px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid #fff;
-            margin: 0 auto 15px;
-            display: block;
-        }
-        .popup-title {
-            font-size: 20px;
-            font-weight: 900;
-            margin-bottom: 12px;
-        }
-        .popup-subtitle {
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-        .popup-btn {
-            background: #000;
-            color: #fff;
-            display: block;
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            font-weight: 900;
-            text-decoration: none;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-        .popup-footer-text {
-            font-size: 13px;
-            opacity: 0.9;
-        }
 
         /* Menu Image Box */
         .menu-image-container { text-align: center; margin: 15px 0 25px; background: #fff; padding: 10px; border-radius: var(--radius-box); border: 2px solid var(--primary-orange); }
@@ -434,17 +490,20 @@
 </head>
 <body>
 
-    <!-- Popup Section -->
+    <!-- Popup Section (نافذة منبثقة أول ما يفتح الموقع) -->
     <div class="popup-overlay" id="popupOverlay">
         <div class="popup-card">
             <button class="popup-close" onclick="closePopup()">×</button>
-            <img src="images/gurtsan-shawarma.jpg" alt="شاورما ملفوفة بورقة شفزار" class="popup-img">
-            <div class="popup-title">مرحباً بكم في شفزار للوجبات السريعة 🍔🍟</div>
-            <div class="popup-subtitle">الطلب الأول غير... خصم حصري بانتظارك عند الطلب المباشر!</div>
-            <a href="https://wa.me/966558473815?text=مرحباً%20شفزار،%20أرغب%20في%20الطلب" target="_blank" class="popup-btn">
-                <i class="fab fa-whatsapp"></i> اطلب الآن عبر الواتساب: 0558473815
+            <div class="popup-img-wrapper">
+                <img src="images/gurtsan-shawarma.jpg" alt="شاورما شفزار" class="popup-img">
+                <div class="popup-badge">شاورما شفزار</div>
+            </div>
+            <div class="popup-title">مرحباً بكم في شفزار 🥙🔥</div>
+            <div class="popup-subtitle">أهلاً بك! احصل على خصم خاص وحصري بانتظارك عند الطلب المباشر الآن.</div>
+            <a href="https://wa.me/966558473815?text=مرحباً%20شفزار،%20أرغب%20في%20الطلب%20واستفادة%20من%20الخصم" target="_blank" class="popup-btn">
+                <i class="fab fa-whatsapp"></i> اطلب الآن عبر الواتساب
             </a>
-            <div class="popup-footer-text">خصم خاص عند الطلب الأول</div>
+            <div class="popup-footer-text">خصم مميز عند طلبك الأول!</div>
         </div>
     </div>
 
@@ -480,7 +539,7 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-title-box">
-                <h1>حيّ هالشوف | شفزار كلاسيك</h1>
+                <h1>مرحبا بكم في شفزار للوجبات السريعه</h1>
             </div>
             <p>أول مطعم يجمع بين أصالة شاورما القرصان الذهبية المحمصة، والشاورما الكلاسيكية على الأصول، والبرجر الكريسبي المقرمش بالرياض. جودة عالية وطعم أسطوري يرضي جميع الأذواق.</p>
             <div class="hero-buttons">
@@ -490,11 +549,11 @@
             </div>
         </section>
 
-        <!-- Offers Banner -->
-        <div class="offers-banner-container" id="offers">
-            <h2>مع كسبان أكلك بالمجان 🍔</h2>
-            <p>كاش باك على كل طلب عبر الواتساب والموقع المباشر</p>
-            <a href="https://wa.me/966558473815?text=أرغب%20في%20الطلب%20واستفادة%20من%20العروض" class="btn-action">طلب الحين وشوف الجديد</a>
+        <!-- Animated Offers Banner (بنر العروض المتحرك) -->
+        <div class="offers-banner-animated" id="offers">
+            <h2>🔥 مع كسبان أكلك بالمجان 🍔</h2>
+            <p>كاش باك مميز على كل طلب عبر الواتساب والموقع المباشر!</p>
+            <a href="https://wa.me/966558473815?text=أرغب%20في%20الطلب%20واستفادة%20من%20العروض" class="btn-action">طلب الحين وشوف الجديد ✨</a>
         </div>
 
         <!-- Story Section -->
