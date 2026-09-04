@@ -34,226 +34,231 @@
     </script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-yellow: #ffc107;
-            --text-yellow: #d99b00;
-            --dark-yellow: #e6a100;
+            --primary-orange: #ff5522;
+            --dark-orange: #e04411;
+            --light-orange: #ffede8;
+            --bg-orange: #ff5522;
+            --text-white: #ffffff;
             --black-card: #141414;
             --white-card: #ffffff;
-            --green-title: #008000;
             --radius-box: 14px;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tajawal', 'Segoe UI', sans-serif; }
         html { scroll-behavior: smooth; }
         
         body { 
-            background-color: #ffffff; 
-            color: var(--text-yellow); 
+            background-color: #f9f9f9; 
+            color: #333; 
             direction: rtl; 
         }
 
+        /* Top Bar Contact Header */
+        .top-bar {
+            background-color: var(--primary-orange);
+            color: #fff;
+            padding: 8px 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .top-bar a {
+            color: #fff;
+            text-decoration: none;
+        }
+
         /* Header */
-        header { background: #0d0d0d; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        .logo-area { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--bg-yellow); font-weight: bold; font-size: 20px; }
+        header { background: #ffffff; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+        .logo-area { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--primary-orange); font-weight: 900; font-size: 22px; }
         .logo-area img { height: 45px; border-radius: 8px; object-fit: contain; }
-        .nav-toggle { background: none; border: none; color: var(--bg-yellow); font-size: 26px; cursor: pointer; }
+        .nav-toggle { background: none; border: none; color: var(--primary-orange); font-size: 26px; cursor: pointer; }
 
         /* Side Menu */
-        .side-nav { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: #111; z-index: 1001; transition: 0.3s; padding: 60px 20px 20px; }
+        .side-nav { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: var(--primary-orange); z-index: 1001; transition: 0.3s; padding: 60px 20px 20px; }
         .side-nav.open { right: 0; }
-        .side-nav a { color: #fff; text-decoration: none; display: block; padding: 12px 0; border-bottom: 1px solid #222; font-size: 16px; font-weight: bold; }
-        .side-nav a:hover { color: var(--bg-yellow); }
+        .side-nav a { color: #fff; text-decoration: none; display: block; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.2); font-size: 16px; font-weight: bold; }
+        .side-nav a:hover { color: #ffe5dd; }
         .close-nav { position: absolute; top: 15px; left: 15px; color: #fff; font-size: 28px; background: none; border: none; cursor: pointer; }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 20px 15px; }
 
-        /* Hero Section & Framing */
+        /* Hero Section */
         .hero { text-align: center; padding: 20px 15px 10px; }
         
         .hero-title-box {
             display: inline-block;
-            border: 3px double var(--green-title);
+            border: 3px solid var(--primary-orange);
             border-radius: 16px;
             padding: 15px 25px;
-            background-color: #fdfdfd;
-            box-shadow: 0 4px 12px rgba(0, 128, 0, 0.15);
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(255, 85, 34, 0.15);
             margin-bottom: 15px;
         }
         .hero h1 { 
             font-size: 26px; 
             font-weight: 900; 
-            color: var(--green-title);
+            color: var(--primary-orange);
             margin: 0;
         }
         
-        .hero p { font-size: 15px; font-weight: 600; line-height: 1.6; max-width: 800px; margin: 15px auto 20px; color: var(--text-yellow); }
+        .hero p { font-size: 16px; font-weight: 700; line-height: 1.6; max-width: 800px; margin: 15px auto 20px; color: #444; }
         .hero-buttons { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 25px; }
-        .hero-btn { background: #000; color: var(--bg-yellow); padding: 10px 18px; border-radius: 20px; font-weight: bold; font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .hero-btn { background: var(--primary-orange); color: #fff; padding: 10px 18px; border-radius: 20px; font-weight: bold; font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; }
 
-        /* Titles Styling */
+        /* Section Titles Styling */
         .section-header { text-align: center; margin: 30px 0 15px; }
-        .section-header h2 { font-size: 22px; font-weight: 900; color: var(--text-yellow); }
+        .section-header h2 { font-size: 24px; font-weight: 900; color: var(--primary-orange); }
 
         .story-frame {
-            border: 3px solid var(--text-yellow);
+            border: 3px solid var(--primary-orange);
             border-radius: 18px;
             padding: 25px 20px;
             margin: 25px auto;
             max-width: 950px;
-            background: linear-gradient(145deg, #ffffff, #fffdf5);
-            box-shadow: 0 8px 20px rgba(217, 155, 0, 0.15);
+            background: #ffffff;
+            box-shadow: 0 8px 20px rgba(255, 85, 34, 0.12);
             text-align: center;
-            position: relative;
         }
         .story-frame h2 {
             font-size: 24px;
             font-weight: 900;
-            color: #111;
+            color: var(--primary-orange);
             margin-bottom: 15px;
-            border-bottom: 2px dashed var(--text-yellow);
+            border-bottom: 2px dashed var(--primary-orange);
             padding-bottom: 10px;
             display: inline-block;
         }
         .story-text { 
             font-size: 15px; 
             line-height: 1.8; 
-            color: var(--text-yellow); 
+            color: #333; 
             font-weight: 700; 
             margin: 0;
         }
 
         .badges-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 25px; }
-        .badge-box { background: #fff; border: 1px solid var(--text-yellow); border-radius: 10px; padding: 10px; text-align: center; font-weight: bold; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); color: var(--text-yellow); }
+        .badge-box { background: #fff; border: 2px solid var(--primary-orange); border-radius: 10px; padding: 10px; text-align: center; font-weight: bold; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--primary-orange); }
 
-        /* Animated Offers Banner Slider */
-        .offers-banner-slider {
-            position: relative;
-            max-width: 100%;
-            height: 220px;
+        /* Offers Banner Block (Matching Orange Style) */
+        .offers-banner-container {
+            background: var(--primary-orange);
             border-radius: var(--radius-box);
-            overflow: hidden;
-            border: 3px solid #d02d18;
-            box-shadow: 0 6px 18px rgba(208, 45, 24, 0.25);
-            margin: 15px 0 25px;
-            background: #111;
-        }
-
-        .banner-track {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s ease-in-out;
-        }
-
-        .banner-slide {
-            min-width: 100%;
-            height: 100%;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px 30px;
-            background: linear-gradient(135deg, #111 0%, #2a0805 100%);
+            padding: 25px 20px;
             color: #fff;
+            text-align: center;
+            margin: 20px 0 30px;
+            box-shadow: 0 6px 18px rgba(255, 85, 34, 0.3);
         }
-
-        .banner-slide:nth-child(2) {
-            background: linear-gradient(135deg, #1a1500 0%, #3a2b00 100%);
-        }
-
-        .banner-slide:nth-child(3) {
-            background: linear-gradient(135deg, #0d1a0d 0%, #173817 100%);
-        }
-
-        .banner-badge {
-            position: absolute;
-            top: 12px;
-            right: 15px;
-            background: #d02d18;
-            color: #fff;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .banner-content {
-            max-width: 65%;
-            z-index: 2;
-        }
-
-        .banner-title {
-            font-size: 22px;
+        .offers-banner-container h2 {
+            font-size: 28px;
             font-weight: 900;
-            color: var(--bg-yellow);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
-
-        .banner-desc {
-            font-size: 14px;
-            color: #ddd;
-            font-weight: 600;
-            line-height: 1.4;
-            margin-bottom: 12px;
+        .offers-banner-container p {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
         }
-
-        .banner-price-tag {
+        .offers-banner-container .btn-action {
             display: inline-block;
-            background: #25d366;
-            color: #000;
-            padding: 6px 16px;
-            border-radius: 8px;
+            background: #fff;
+            color: var(--primary-orange);
+            padding: 10px 25px;
+            border-radius: 30px;
             font-weight: 900;
             font-size: 16px;
+            text-decoration: none;
         }
 
-        .banner-icon {
-            font-size: 80px;
-            color: rgba(255, 193, 7, 0.2);
-            position: absolute;
-            left: 20px;
-            bottom: 10px;
-            z-index: 1;
-        }
-
-        /* Banner Indicators */
-        .banner-dots {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
+        /* Popup Styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
             display: flex;
-            gap: 8px;
-            z-index: 5;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
         }
-
-        .dot {
-            width: 10px;
-            height: 10px;
+        .popup-card {
+            background: #ff5522;
+            width: 90%;
+            max-width: 450px;
+            border-radius: 20px;
+            padding: 25px 20px;
+            text-align: center;
+            position: relative;
+            color: #fff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            background-image: radial-gradient(circle at center, #ff6b3d 0%, #ff5522 70%);
+        }
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #fff;
+            color: #000;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
             cursor: pointer;
-            transition: 0.3s;
+            border: none;
+            font-size: 16px;
         }
-
-        .dot.active {
-            background: var(--bg-yellow);
-            width: 25px;
-            border-radius: 10px;
+        .popup-img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            margin: 0 auto 15px;
+            display: block;
+        }
+        .popup-title {
+            font-size: 20px;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+        .popup-subtitle {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .popup-btn {
+            background: #000;
+            color: #fff;
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 900;
+            text-decoration: none;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .popup-footer-text {
+            font-size: 13px;
+            opacity: 0.9;
         }
 
         /* Menu Image Box */
-        .menu-image-container { text-align: center; margin: 15px 0 25px; background: #fff; padding: 10px; border-radius: var(--radius-box); border: 2px solid var(--text-yellow); box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
+        .menu-image-container { text-align: center; margin: 15px 0 25px; background: #fff; padding: 10px; border-radius: var(--radius-box); border: 2px solid var(--primary-orange); }
         .menu-image-container img { width: 100%; height: auto; border-radius: 8px; display: block; }
 
         /* Shared Horizontal Slider Styling */
@@ -267,17 +272,16 @@
         }
         .horizontal-slider::-webkit-scrollbar { height: 8px; }
         .horizontal-slider::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); border-radius: 10px; }
-        .horizontal-slider::-webkit-scrollbar-thumb { background: var(--text-yellow); border-radius: 10px; }
+        .horizontal-slider::-webkit-scrollbar-thumb { background: var(--primary-orange); border-radius: 10px; }
 
         /* Gallery Item */
         .gallery-item {
             flex: 0 0 280px;
             scroll-snap-align: start;
             background: #fff;
-            border: 2px solid var(--text-yellow);
+            border: 2px solid var(--primary-orange);
             border-radius: var(--radius-box);
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
         .gallery-item img {
             width: 100%;
@@ -291,7 +295,7 @@
             font-weight: bold;
             font-size: 14px;
             background: #fff;
-            color: var(--text-yellow);
+            color: var(--primary-orange);
         }
 
         /* Menu Card Horizontal */
@@ -301,37 +305,37 @@
             background: #fff;
             border-radius: var(--radius-box);
             padding: 15px;
-            border: 2px solid var(--text-yellow);
+            border: 2px solid var(--primary-orange);
             box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
-        .menu-card-horizontal h3 { background: #111; color: var(--bg-yellow); text-align: center; padding: 10px; border-radius: 8px; font-size: 16px; margin-bottom: 12px; font-weight: bold; }
+        .menu-card-horizontal h3 { background: var(--primary-orange); color: #fff; text-align: center; padding: 10px; border-radius: 8px; font-size: 16px; margin-bottom: 12px; font-weight: bold; }
         
         .menu-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px dashed #eee; font-weight: bold; }
         .menu-row:last-child { border-bottom: none; }
         .item-info { display: flex; flex-direction: column; align-items: flex-start; }
-        .item-name { font-size: 14.5px; color: var(--text-yellow); }
+        .item-name { font-size: 14.5px; color: #333; }
         .item-cal { font-size: 11.5px; color: #888; margin-top: 2px; }
-        .item-price { font-weight: 900; color: #000; font-size: 15px; white-space: nowrap; }
+        .item-price { font-weight: 900; color: var(--primary-orange); font-size: 15px; white-space: nowrap; }
 
         /* Catering Trucks */
         .truck-card {
             flex: 0 0 320px;
             scroll-snap-align: start;
             background: #fff;
-            border: 2px solid var(--text-yellow);
+            border: 2px solid var(--primary-orange);
             border-radius: var(--radius-box);
             padding: 18px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
-        .truck-card h3 { text-align: center; font-size: 17px; font-weight: bold; margin-bottom: 12px; border-bottom: 2px solid var(--text-yellow); padding-bottom: 8px; color: var(--text-yellow); }
-        .truck-form label { font-size: 13px; font-weight: bold; display: block; margin-top: 8px; color: var(--text-yellow); }
-        .truck-form input, .truck-form select, .truck-form textarea { width: 100%; padding: 8px 10px; border: 1px solid var(--text-yellow); border-radius: 6px; margin-top: 4px; font-size: 14px; }
+        .truck-card h3 { text-align: center; font-size: 17px; font-weight: bold; margin-bottom: 12px; border-bottom: 2px solid var(--primary-orange); padding-bottom: 8px; color: var(--primary-orange); }
+        .truck-form label { font-size: 13px; font-weight: bold; display: block; margin-top: 8px; color: #333; }
+        .truck-form input, .truck-form select, .truck-form textarea { width: 100%; padding: 8px 10px; border: 1px solid var(--primary-orange); border-radius: 6px; margin-top: 4px; font-size: 14px; }
         .truck-form button { width: 100%; background: #25d366; color: #fff; border: none; padding: 10px; border-radius: 6px; font-weight: bold; margin-top: 12px; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; font-size: 14px; }
 
         /* Suppliers Compact Card */
         .suppliers-compact-card {
-            background: #fffdf8;
-            border: 2px solid var(--text-yellow);
+            background: #fff;
+            border: 2px solid var(--primary-orange);
             border-radius: 16px;
             padding: 20px;
             margin: 25px 0;
@@ -339,7 +343,7 @@
             text-align: center;
         }
         .suppliers-compact-card h3 {
-            color: var(--text-yellow);
+            color: var(--primary-orange);
             font-size: 20px;
             font-weight: 900;
             margin-bottom: 12px;
@@ -347,7 +351,7 @@
         .suppliers-compact-card p {
             font-size: 14px;
             line-height: 1.7;
-            color: var(--text-yellow);
+            color: #444;
             font-weight: 600;
             margin-bottom: 15px;
         }
@@ -364,34 +368,30 @@
             font-weight: bold;
             font-size: 15px;
             box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-            transition: 0.3s;
-        }
-        .suppliers-compact-card .wa-btn:hover {
-            background: #1eb954;
         }
 
         /* Blog Section */
         .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
-        .blog-card { background: #fff; border-radius: var(--radius-box); padding: 18px; border: 1px solid var(--text-yellow); }
-        .blog-card h3 { font-size: 16px; margin-bottom: 8px; font-weight: bold; color: var(--text-yellow); }
-        .blog-card p { font-size: 13.5px; color: var(--text-yellow); line-height: 1.6; }
+        .blog-card { background: #fff; border-radius: var(--radius-box); padding: 18px; border: 1px solid var(--primary-orange); }
+        .blog-card h3 { font-size: 16px; margin-bottom: 8px; font-weight: bold; color: var(--primary-orange); }
+        .blog-card p { font-size: 13.5px; color: #555; line-height: 1.6; }
 
         /* Reviews */
         .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; }
-        .review-card { background: #fff; padding: 15px; border-radius: 10px; border: 1px solid var(--text-yellow); text-align: center; }
+        .review-card { background: #fff; padding: 15px; border-radius: 10px; border: 1px solid var(--primary-orange); text-align: center; }
         .stars { color: #ff9800; margin-bottom: 6px; }
-        .review-card p { font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text-yellow); }
+        .review-card p { font-size: 13px; font-weight: 600; margin-bottom: 6px; color: #333; }
         .review-author { font-size: 12px; color: #888; font-weight: bold; }
 
         /* FAQ */
-        .faq-item { background: #fff; border: 1px solid var(--text-yellow); border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
-        .faq-title { padding: 14px; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 14.5px; color: var(--text-yellow); }
-        .faq-content { padding: 0 14px 14px; display: none; font-size: 13.5px; color: var(--text-yellow); line-height: 1.6; border-top: 1px dashed #eee; }
+        .faq-item { background: #fff; border: 1px solid var(--primary-orange); border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
+        .faq-title { padding: 14px; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 14.5px; color: var(--primary-orange); }
+        .faq-content { padding: 0 14px 14px; display: none; font-size: 13.5px; color: #444; line-height: 1.6; border-top: 1px dashed #eee; }
 
         /* Location Section */
         .map-section {
             background: #fff;
-            border: 2px solid var(--text-yellow);
+            border: 2px solid var(--primary-orange);
             border-radius: var(--radius-box);
             padding: 15px;
             margin-top: 20px;
@@ -403,14 +403,14 @@
             height: 320px;
             border-radius: 10px;
             overflow: hidden;
-            border: 1px solid var(--text-yellow);
+            border: 1px solid var(--primary-orange);
         }
         .map-btn-overlay {
             position: absolute;
             top: 12px;
             right: 12px;
             background: #fff;
-            color: #000;
+            color: var(--primary-orange);
             padding: 8px 14px;
             border-radius: 6px;
             font-weight: bold;
@@ -427,12 +427,31 @@
         .floating-btns { position: fixed; bottom: 20px; left: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 999; }
         .float-btn { width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); text-decoration: none; color: white; }
         .float-wa { background: #25d366; }
-        .float-phone { background: #000; color: var(--bg-yellow); }
+        .float-phone { background: var(--primary-orange); color: #fff; }
 
-        footer { background: #000; color: #aaa; text-align: center; padding: 20px; font-size: 14px; margin-top: 40px; }
+        footer { background: var(--primary-orange); color: #fff; text-align: center; padding: 20px; font-size: 14px; margin-top: 40px; font-weight: bold; }
     </style>
 </head>
 <body>
+
+    <!-- Popup Section -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-card">
+            <button class="popup-close" onclick="closePopup()">×</button>
+            <img src="images/gurtsan-shawarma.jpg" alt="شاورما ملفوفة بورقة شفزار" class="popup-img">
+            <div class="popup-title">مرحباً بكم في شفزار للوجبات السريعة 🍔🍟</div>
+            <div class="popup-subtitle">الطلب الأول غير... خصم حصري بانتظارك عند الطلب المباشر!</div>
+            <a href="https://wa.me/966558473815?text=مرحباً%20شفزار،%20أرغب%20في%20الطلب" target="_blank" class="popup-btn">
+                <i class="fab fa-whatsapp"></i> اطلب الآن عبر الواتساب: 0558473815
+            </a>
+            <div class="popup-footer-text">خصم خاص عند الطلب الأول</div>
+        </div>
+    </div>
+
+    <!-- Top Bar Contact Header -->
+    <div class="top-bar">
+        <i class="fas fa-phone-alt"></i> تواصل معنا: <a href="tel:0558473815">0558473815</a>
+    </div>
 
     <!-- Header -->
     <header>
@@ -461,17 +480,24 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-title-box">
-                <h1>مرحباً بكم في شفزار للوجبات السريعة 🍔🍟</h1>
+                <h1>حيّ هالشوف | شفزار كلاسيك</h1>
             </div>
             <p>أول مطعم يجمع بين أصالة شاورما القرصان الذهبية المحمصة، والشاورما الكلاسيكية على الأصول، والبرجر الكريسبي المقرمش بالرياض. جودة عالية وطعم أسطوري يرضي جميع الأذواق.</p>
             <div class="hero-buttons">
                 <span class="hero-btn"><i class="fas fa-clock"></i> يومياً من 4:00 عصراً حتى 3:00 صباحاً</span>
                 <span class="hero-btn"><i class="fas fa-motorcycle"></i> خدمة استلام من الفرع وتوصيل سريع</span>
-                <a href="tel:0558473815" class="hero-btn"><i class="fas fa-phone"></i> للطلبات: 0558473815</a>
+                <a href="https://wa.me/966558473815" class="hero-btn"><i class="fab fa-whatsapp"></i> للطلبات: 0558473815</a>
             </div>
         </section>
 
-        <!-- Story Section in Legend Frame -->
+        <!-- Offers Banner -->
+        <div class="offers-banner-container" id="offers">
+            <h2>مع كسبان أكلك بالمجان 🍔</h2>
+            <p>كاش باك على كل طلب عبر الواتساب والموقع المباشر</p>
+            <a href="https://wa.me/966558473815?text=أرغب%20في%20الطلب%20واستفادة%20من%20العروض" class="btn-action">طلب الحين وشوف الجديد</a>
+        </div>
+
+        <!-- Story Section -->
         <div class="story-frame">
             <h2>قصتنا الأسطورية | من الجمر ولدت الأسطورة 🔥</h2>
             <p class="story-text">
@@ -482,55 +508,10 @@
 
         <!-- Feature Badges -->
         <div class="badges-grid">
-            <div class="badge-box"><i class="fas fa-check-circle" style="color: green;"></i> خبز قرصان فاخر</div>
-            <div class="badge-box"><i class="fas fa-check-circle" style="color: green;"></i> خلطة ثوم سحرية</div>
-            <div class="badge-box"><i class="fas fa-check-circle" style="color: green;"></i> خدمة وتوصيل احترافي</div>
-            <div class="badge-box"><i class="fas fa-check-circle" style="color: green;"></i> مكونات طازجة يومياً</div>
-        </div>
-
-        <!-- Offers Animated Banner Carousel -->
-        <div class="section-header" id="offers">
-            <h2>العروض التوفيرية والمميزة 🔥</h2>
-        </div>
-
-        <div class="offers-banner-slider">
-            <div class="banner-track" id="bannerTrack">
-                <!-- Banner 1 -->
-                <div class="banner-slide">
-                    <span class="banner-badge">العرض الأقوى 🔥</span>
-                    <div class="banner-content">
-                        <div class="banner-title">عرض ثلاثي شفزار</div>
-                        <div class="banner-desc">1 شاورما عادي + 1 شاورما مكسيكي + 1 شاورما قرصان + بطاطس صغير</div>
-                        <div class="banner-price-tag">21 ر.س فقط!</div>
-                    </div>
-                    <i class="fas fa-hamburger banner-icon"></i>
-                </div>
-                <!-- Banner 2 -->
-                <div class="banner-slide">
-                    <span class="banner-badge">الأكثر مبيعاً ⭐</span>
-                    <div class="banner-content">
-                        <div class="banner-title">مكس السعادة</div>
-                        <div class="banner-desc">2 كريسبي سبيشل عادي + 2 شاورما + 2 مشروب غازي</div>
-                        <div class="banner-price-tag">34 ر.س فقط!</div>
-                    </div>
-                    <i class="fas fa-drumstick-bite banner-icon"></i>
-                </div>
-                <!-- Banner 3 -->
-                <div class="banner-slide">
-                    <span class="banner-badge">عروض الجمعات 👨‍👩‍👧‍👦</span>
-                    <div class="banner-content">
-                        <div class="banner-title">بوكس العائلة الأسطوري</div>
-                        <div class="banner-desc">30 قطعة شاورما دجاج مع البطاطس + 4 صوصات تغميس</div>
-                        <div class="banner-price-tag">49 ر.س فقط!</div>
-                    </div>
-                    <i class="fas fa-box banner-icon"></i>
-                </div>
-            </div>
-            <div class="banner-dots">
-                <div class="dot active" onclick="goToBanner(0)"></div>
-                <div class="dot" onclick="goToBanner(1)"></div>
-                <div class="dot" onclick="goToBanner(2)"></div>
-            </div>
+            <div class="badge-box"><i class="fas fa-check-circle"></i> خبز قرصان فاخر</div>
+            <div class="badge-box"><i class="fas fa-check-circle"></i> خلطة ثوم سحرية</div>
+            <div class="badge-box"><i class="fas fa-check-circle"></i> خدمة وتوصيل احترافي</div>
+            <div class="badge-box"><i class="fas fa-check-circle"></i> مكونات طازجة يومياً</div>
         </div>
 
         <!-- Horizontal Scrollable Image Gallery -->
@@ -574,7 +555,7 @@
             <img src="images/menu.jpg" alt="منيو شفزار الرسمي">
         </div>
 
-        <!-- Horizontal Scrollable Text Menu (Now 6 Cards) -->
+        <!-- Horizontal Scrollable Text Menu (6 Cards) -->
         <div class="section-header" id="text-menu">
             <h2>قائمة المنيو النصي والأسعار الكاملة 📝 (اسحب أفقياً 👉)</h2>
         </div>
@@ -787,6 +768,10 @@
             document.getElementById('sideNav').classList.toggle('open');
         }
 
+        function closePopup() {
+            document.getElementById('popupOverlay').style.display = 'none';
+        }
+
         function toggleFaq(element) {
             const content = element.nextElementSibling;
             const isVisible = content.style.display === 'block';
@@ -802,28 +787,6 @@
             const msg = `مرحباً شفزار، أرغب في حجز (${type})%0Aالاسم: ${name}%0Aالجوال: ${phone}%0Aعدد الأشخاص: ${count}`;
             window.open(`https://wa.me/966558473815?text=${msg}`, '_blank');
         }
-
-        /* Banner Carousel Functionality */
-        let currentBanner = 0;
-        const totalBanners = 3;
-
-        function goToBanner(index) {
-            currentBanner = index;
-            const track = document.getElementById('bannerTrack');
-            const dots = document.querySelectorAll('.banner-dots .dot');
-            
-            track.style.transform = `translateX(${currentBanner * 100}%)`;
-            
-            dots.forEach((dot, idx) => {
-                dot.classList.toggle('active', idx === currentBanner);
-            });
-        }
-
-        // Auto slide banners every 4 seconds
-        setInterval(() => {
-            currentBanner = (currentBanner + 1) % totalBanners;
-            goToBanner(currentBanner);
-        }, 4000);
     </script>
 </body>
 </html>
