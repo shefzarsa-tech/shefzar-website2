@@ -57,6 +57,15 @@
             direction: rtl; 
         }
 
+        /* Header Navigation Wrapper */
+        .site-header-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
         /* Top Bar Contact Header */
         .top-bar {
             background-color: var(--primary-orange);
@@ -75,13 +84,43 @@
             text-decoration: none;
         }
 
-        /* Header */
-        header { background: #ffffff; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+        /* Main Header */
+        header { 
+            padding: 10px 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            max-width: 1300px;
+            margin: 0 auto;
+        }
         .logo-area { display: flex; align-items: center; gap: 10px; text-decoration: none; }
         .logo-area img { height: 45px; border-radius: 8px; object-fit: contain; }
-        .nav-toggle { background: none; border: none; color: var(--primary-orange); font-size: 26px; cursor: pointer; }
 
-        /* Side Menu */
+        /* Desktop Header Nav Links */
+        .top-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            list-style: none;
+        }
+        .top-nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 6px 10px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .top-nav-links a:hover {
+            color: var(--primary-orange);
+            background: var(--light-orange);
+        }
+
+        .nav-toggle { display: none; background: none; border: none; color: var(--primary-orange); font-size: 26px; cursor: pointer; }
+
+        /* Side Menu for Mobile */
         .side-nav { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: var(--primary-orange); z-index: 1001; transition: 0.3s; padding: 60px 20px 20px; }
         .side-nav.open { right: 0; }
         .side-nav a { color: #fff; text-decoration: none; display: block; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.2); font-size: 16px; font-weight: bold; }
@@ -565,6 +604,12 @@
         .float-phone { background: var(--primary-orange); color: #fff; }
 
         footer { background: var(--primary-orange); color: #fff; text-align: center; padding: 20px; font-size: 14px; margin-top: 40px; font-weight: bold; }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .top-nav-links { display: none; }
+            .nav-toggle { display: block; }
+        }
     </style>
 </head>
 <body>
@@ -586,29 +631,44 @@
         </div>
     </div>
 
-    <!-- Top Bar Contact Header -->
-    <div class="top-bar">
-        <i class="fas fa-phone-alt"></i> تواصل معنا: <a href="tel:0558473815">0558473815</a>
+    <!-- Sticky Navigation Wrapper -->
+    <div class="site-header-wrapper">
+        <!-- Top Bar Contact Header -->
+        <div class="top-bar">
+            <i class="fas fa-phone-alt"></i> تواصل معنا: <a href="tel:0558473815">0558473815</a>
+        </div>
+
+        <!-- Main Header -->
+        <header>
+            <a href="https://shefzar.com" class="logo-area">
+                <img src="images/logo.png.jpg" alt="شفزار">
+            </a>
+
+            <!-- 7 Top Main Nav Links -->
+            <ul class="top-nav-links">
+                <li><a href="#offers">1. عروض شفزار</a></li>
+                <li><a href="#gallery">2. منيو شفزار الرسمي</a></li>
+                <li><a href="#text-menu">3. المنيو النصي والأسعار</a></li>
+                <li><a href="#catering">4. حجز العربات</a></li>
+                <li><a href="#suppliers">5. بوابة الموردين</a></li>
+                <li><a href="#news">6. اخبارنا</a></li>
+                <li><a href="#location">7. موقعنا على الخريطة</a></li>
+            </ul>
+
+            <button class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+        </header>
     </div>
 
-    <!-- Header -->
-    <header>
-        <a href="https://shefzar.com" class="logo-area">
-            <img src="images/logo.png.jpg" alt="شفزار">
-        </a>
-        <button class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
-    </header>
-
-    <!-- Side Navigation -->
+    <!-- Side Navigation for Mobile -->
     <div class="side-nav" id="sideNav">
         <button class="close-nav" onclick="toggleNav()">×</button>
-        <a href="#offers" onclick="toggleNav()">عروض شفزار</a>
-        <a href="#gallery" onclick="toggleNav()">منيو شفزار المميز</a>
-        <a href="#text-menu" onclick="toggleNav()">المنيو النصي والأسعار</a>
-        <a href="#catering" onclick="toggleNav()">حجز العربات</a>
-        <a href="#suppliers" onclick="toggleNav()">بوابة الموردين</a>
-        <a href="#inform-us" onclick="toggleNav()">اخبرنا</a>
-        <a href="#location" onclick="toggleNav()">موقعنا على الخريطة</a>
+        <a href="#offers" onclick="toggleNav()">1. عروض شفزار</a>
+        <a href="#gallery" onclick="toggleNav()">2. منيو شفزار الرسمي</a>
+        <a href="#text-menu" onclick="toggleNav()">3. المنيو النصي والأسعار</a>
+        <a href="#catering" onclick="toggleNav()">4. حجز العربات</a>
+        <a href="#suppliers" onclick="toggleNav()">5. بوابة الموردين</a>
+        <a href="#news" onclick="toggleNav()">6. اخبارنا</a>
+        <a href="#location" onclick="toggleNav()">7. موقعنا على الخريطة</a>
     </div>
 
     <div class="container">
@@ -688,7 +748,7 @@
 
         <!-- Horizontal Scrollable Image Gallery -->
         <div class="section-header" id="gallery">
-            <h2>منيو شفزار المميز (اسحب لمشاهدة الصور 👉)</h2>
+            <h2>منيو شفزار الرسمي (اسحب لمشاهدة الصور 👉)</h2>
         </div>
         
         <div class="horizontal-slider">
@@ -853,9 +913,9 @@
             </a>
         </div>
 
-        <!-- Integrated Inform-Us Section -->
-        <div class="section-header" id="inform-us">
-            <h2>اخبرنا 📢</h2>
+        <!-- Integrated News Section -->
+        <div class="section-header" id="news">
+            <h2>اخبارنا 📢</h2>
         </div>
 
         <div class="blog-grid" style="margin-bottom: 20px;">
