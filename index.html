@@ -113,7 +113,7 @@
         .hero-buttons { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 25px; }
         .hero-btn { background: var(--primary-orange); color: #fff; padding: 10px 18px; border-radius: 20px; font-weight: bold; font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; }
 
-        /* Animated Offers Banner */
+        /* Dynamic Animated Banner & Carousel */
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -121,7 +121,7 @@
         }
         @keyframes pulseGlow {
             0% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 85, 34, 0.4); }
-            50% { transform: scale(1.02); box-shadow: 0 0 25px rgba(255, 85, 34, 0.8); }
+            50% { transform: scale(1.01); box-shadow: 0 0 25px rgba(255, 85, 34, 0.8); }
             100% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 85, 34, 0.4); }
         }
         @keyframes bounceBtn {
@@ -134,7 +134,7 @@
             background-size: 400% 400%;
             animation: gradientBG 6s ease infinite, pulseGlow 3s infinite alternate;
             border-radius: 24px;
-            padding: 30px 20px;
+            padding: 25px 20px;
             color: #fff;
             text-align: center;
             margin: 30px 0;
@@ -143,31 +143,112 @@
             overflow: hidden;
             box-shadow: 0 8px 20px rgba(255, 85, 34, 0.25);
         }
-        .offers-banner-animated .icon-burger {
-            font-size: 40px;
-            margin-bottom: 10px;
-            display: block;
+
+        .banner-carousel {
+            position: relative;
+            min-height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .offers-banner-animated h2 {
-            font-size: 22px;
+
+        .banner-slide {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.6s ease-in-out, visibility 0.6s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .banner-slide.active {
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+        }
+
+        .offer-title {
+            font-size: 26px;
             font-weight: 900;
-            margin-bottom: 12px;
-            line-height: 1.4;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            color: #fff;
+            margin-bottom: 6px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
+
+        .offer-details {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: rgba(0,0,0,0.15);
+            padding: 6px 14px;
+            border-radius: 12px;
+            display: inline-block;
+            line-height: 1.5;
+        }
+
+        .offer-price-tag {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .price-badge {
+            background: #141414;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 900;
+            padding: 4px 14px;
+            border-radius: 20px;
+            border: 2px solid #fff;
+        }
+
+        .cal-badge {
+            background: rgba(255,255,255,0.25);
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #ffffff;
+            width: 25px;
+            border-radius: 10px;
+        }
+
         .offers-banner-animated .btn-action {
             display: inline-block;
             background: #ffffff;
             color: #ff5522;
-            padding: 12px 35px;
+            padding: 10px 30px;
             border-radius: 30px;
             font-weight: 900;
-            font-size: 18px;
+            font-size: 17px;
             text-decoration: none;
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
             animation: bounceBtn 2s infinite;
             transition: all 0.3s ease;
-            margin-top: 10px;
+            margin-top: 8px;
         }
         .offers-banner-animated .btn-action:hover {
             background: #141414;
@@ -568,10 +649,46 @@
             <div class="badge-box"><i class="fas fa-check-circle"></i> مكونات طازجة يومياً</div>
         </div>
 
-        <!-- Animated Offers Banner (بنر العروض المتحرك قبل قسم المنيو المميز) -->
+        <!-- Animated Dynamic Offers Banner & Carousel -->
         <div class="offers-banner-animated" id="offers">
-            <span class="icon-burger">🍔</span>
-            <h2>كاش باك مميز على كل طلب عبر الواتساب والموقع المباشر!</h2>
+            <div class="banner-carousel">
+                <!-- Slide 1: ثلاثي شفزار -->
+                <div class="banner-slide active">
+                    <div class="offer-title">🔥 ثلاثي شفزار 🔥</div>
+                    <div class="offer-details">1 شاورما عادي + 1 شاورما مكسيكي + 1 شاورما قرصان + بطاطس صغير</div>
+                    <div class="offer-price-tag">
+                        <span class="price-badge">21 ر.س</span>
+                        <span class="cal-badge">1150 سعرة</span>
+                    </div>
+                </div>
+
+                <!-- Slide 2: ميكس السعادة -->
+                <div class="banner-slide">
+                    <div class="offer-title">✨ ميكس السعادة ✨</div>
+                    <div class="offer-details">2 كريسبي سبيشل عادي + 2 شاورما + 2 مشروب غازي</div>
+                    <div class="offer-price-tag">
+                        <span class="price-badge">34 ر.س</span>
+                        <span class="cal-badge">2200 سعرة</span>
+                    </div>
+                </div>
+
+                <!-- Slide 3: بوكس العائلة -->
+                <div class="banner-slide">
+                    <div class="offer-title">👑 بوكس العائلة 👑</div>
+                    <div class="offer-details">30 قطعة شاورما دجاج مع البطاطس + 6 صوصات تغميس (2 ثومية، 2 صوص مكسيكي، 2 صوص كاتشب)</div>
+                    <div class="offer-price-tag">
+                        <span class="price-badge">49 ر.س</span>
+                        <span class="cal-badge">3200 سعرة</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-indicators">
+                <span class="dot active" onclick="setSlide(0)"></span>
+                <span class="dot" onclick="setSlide(1)"></span>
+                <span class="dot" onclick="setSlide(2)"></span>
+            </div>
+
             <a href="https://wa.me/966558473815?text=أرغب%20في%20الطلب%20واستفادة%20من%20العروض" class="btn-action">طلب الحين وشوف الجديد ✨</a>
         </div>
 
@@ -825,6 +942,38 @@
     </footer>
 
     <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.banner-slide');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                dots[i].classList.remove('active');
+            });
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let next = (currentSlide + 1) % totalSlides;
+            showSlide(next);
+        }
+
+        function setSlide(index) {
+            showSlide(index);
+            resetTimer();
+        }
+
+        let slideInterval = setInterval(nextSlide, 3500);
+
+        function resetTimer() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 3500);
+        }
+
         function toggleNav() {
             document.getElementById('sideNav').classList.toggle('open');
         }
