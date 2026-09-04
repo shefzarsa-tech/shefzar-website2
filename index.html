@@ -113,7 +113,7 @@
         .hero-buttons { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 25px; }
         .hero-btn { background: var(--primary-orange); color: #fff; padding: 10px 18px; border-radius: 20px; font-weight: bold; font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; }
 
-        /* Animated Offers Banner (بنر العروض المتحرك الرهيب) */
+        /* Animated Offers Banner */
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -143,7 +143,7 @@
             overflow: hidden;
         }
         .offers-banner-animated h2 {
-            font-size: 30px;
+            font-size: 28px;
             font-weight: 900;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -172,18 +172,23 @@
             color: #fff;
         }
 
-        /* Popup Styles */
+        /* Animated Popup Styles */
+        @keyframes popIn {
+            0% { transform: scale(0.7); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
         .popup-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.85);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 9999;
+            backdrop-filter: blur(4px);
         }
         .popup-card {
             background: #ff5522;
@@ -197,6 +202,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             background-image: radial-gradient(circle at center, #ff6b3d 0%, #ff5522 80%);
             border: 3px solid #fff;
+            animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         .popup-close {
             position: absolute;
@@ -219,8 +225,8 @@
         
         .popup-img-wrapper {
             position: relative;
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             margin: 0 auto 15px;
         }
         .popup-img {
@@ -238,10 +244,10 @@
             transform: translateX(-50%);
             background: #000;
             color: #fff;
-            padding: 4px 12px;
+            padding: 4px 14px;
             border-radius: 12px;
             font-weight: 900;
-            font-size: 13px;
+            font-size: 14px;
             white-space: nowrap;
             border: 1px solid #fff;
         }
@@ -490,20 +496,20 @@
 </head>
 <body>
 
-    <!-- Popup Section (نافذة منبثقة أول ما يفتح الموقع) -->
+    <!-- Popup Section (نافذة منبثقة تظهر صورة الشاورما المغلفة المطبوع عليها شفزار) -->
     <div class="popup-overlay" id="popupOverlay">
         <div class="popup-card">
             <button class="popup-close" onclick="closePopup()">×</button>
             <div class="popup-img-wrapper">
-                <img src="images/gurtsan-shawarma.jpg" alt="شاورما شفزار" class="popup-img">
-                <div class="popup-badge">شاورما شفزار</div>
+                <img src="images/gurtsan-shawarma.jpg" alt="شاورما شفزار المغلفة" class="popup-img">
+                <div class="popup-badge">شفزار Shefzar</div>
             </div>
             <div class="popup-title">مرحباً بكم في شفزار 🥙🔥</div>
-            <div class="popup-subtitle">أهلاً بك! احصل على خصم خاص وحصري بانتظارك عند الطلب المباشر الآن.</div>
-            <a href="https://wa.me/966558473815?text=مرحباً%20شفزار،%20أرغب%20في%20الطلب%20واستفادة%20من%20الخصم" target="_blank" class="popup-btn">
+            <div class="popup-subtitle">أهلاً بك! طعم أسطوري بانتظارك، اطلب الآن مباشرة واستفد من العروض الحصرية.</div>
+            <a href="https://wa.me/966558473815?text=مرحباً%20شفزار،%20أرغب%20في%20الطلب%20واستفادة%20من%20العروض" target="_blank" class="popup-btn">
                 <i class="fab fa-whatsapp"></i> اطلب الآن عبر الواتساب
             </a>
-            <div class="popup-footer-text">خصم مميز عند طلبك الأول!</div>
+            <div class="popup-footer-text">شاورما طازجة ولذيذة مغلفة بكل حب!</div>
         </div>
     </div>
 
@@ -536,6 +542,13 @@
 
     <div class="container">
         
+        <!-- Animated Offers Banner (بنر العروض المتحرك المطلوب) -->
+        <div class="offers-banner-animated" id="offers">
+            <h2>🔥 مع كسبان أكلك بالمجان 🍔</h2>
+            <p>كاش باك مميز على كل طلب عبر الواتساب والموقع المباشر!</p>
+            <a href="https://wa.me/966558473815?text=أرغب%20في%20الطلب%20واستفادة%20من%20العروض" class="btn-action">طلب الحين وشوف الجديد ✨</a>
+        </div>
+
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-title-box">
@@ -548,13 +561,6 @@
                 <a href="https://wa.me/966558473815" class="hero-btn"><i class="fab fa-whatsapp"></i> للطلبات: 0558473815</a>
             </div>
         </section>
-
-        <!-- Animated Offers Banner (بنر العروض المتحرك) -->
-        <div class="offers-banner-animated" id="offers">
-            <h2>🔥 مع كسبان أكلك بالمجان 🍔</h2>
-            <p>كاش باك مميز على كل طلب عبر الواتساب والموقع المباشر!</p>
-            <a href="https://wa.me/966558473815?text=أرغب%20في%20الطلب%20واستفادة%20من%20العروض" class="btn-action">طلب الحين وشوف الجديد ✨</a>
-        </div>
 
         <!-- Story Section -->
         <div class="story-frame">
